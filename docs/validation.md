@@ -23,13 +23,13 @@ python3 scripts/validate_codex_discovery.py /path/printed/by/validate_install
 
 The optional remote pass compares all installed skill files with the checkout and runs installer check/update against the pinned source. The discovery script starts a new Codex app-server and uses its `skills/list` API; it needs no model credentials. Retained evidence is under the run directory's `evidence/` folder. Remove that specific temporary run directory when finished with its evidence.
 
-Behavioral validation exercises representative tasks in disposable projects. The runner copies only the already-installed Bounds packages into another temporary home, creates a synthetic CLI project, and starts a fresh provider process. Model credentials are needed for actual turns. For Codex, `--codex-auth /path/to/auth.json` temporarily copies only that credential file with mode 0600 and deletes the copy in `finally`; it never prints its contents. Provider-managed system defaults may still start their own tools. The runner isolates writable homes, not the provider binary or system configuration.
+Behavioral validation exercises representative tasks in disposable projects. The runner copies only the already-installed Bounds packages into another temporary home, creates a synthetic CLI project, and starts a fresh provider process. Model credentials are needed for actual turns. Use `--codex-auth /path/to/auth.json` for Codex or `--claude-auth /path/to/.credentials.json` for an existing Claude file credential. The runner temporarily copies only that credential file with mode 0600 and deletes the copy in `finally`; it never prints its contents or changes the source credential. Provider-managed system defaults may still start their own tools. The runner isolates writable homes, not the provider binary or system configuration.
 
 ```sh
 python3 scripts/run_behavior.py /path/to/install-run --case simple --model YOUR_MODEL --effort YOUR_EFFORT --codex-auth /path/to/auth.json
 python3 scripts/run_behavior.py /path/to/install-run --case create --model YOUR_MODEL --effort YOUR_EFFORT --codex-auth /path/to/auth.json
 python3 scripts/run_behavior.py /path/to/install-run --case maintain --recipe-project /path/to/create-run/project --model YOUR_MODEL --effort YOUR_EFFORT --codex-auth /path/to/auth.json
-python3 scripts/run_behavior.py /path/to/install-run --provider claude --case simple
+python3 scripts/run_behavior.py /path/to/install-run --provider claude --case simple --claude-auth /path/to/.credentials.json
 ```
 
 Other cases are `plan`, `debug`, `review`, `retro`, `docs`, `missing`, `optout`, `optout_same`, and `catalog`. `optout_same` first invokes mode, then resumes that isolated Codex session with an opt-out; its initial turn is retained in `prime.jsonl`. The runner's exit code is provider process status, **not a behavioral pass**. Inspect the final result, commands, diff, and retained artifacts. `events.jsonl`, `prompt.txt`, and `result.json` remain in the printed temporary run directory; do not publish provider traces or authentication data. No real project or user-home skills are used as test fixtures.
@@ -38,7 +38,7 @@ Other cases are `plan`, `debug`, `review`, `retro`, `docs`, `missing`, `optout`,
 
 The immutable package source tested on GitHub is [`38703034edb2c9c163263278ffe3dde05ed32d4b`](https://github.com/boundsj/bounds-skills/tree/38703034edb2c9c163263278ffe3dde05ed32d4b). Later evidence/documentation commits do not change the skill payload unless noted below. No release tag was published; tag upgrade and SHA rollback used a disposable local Git remote.
 
-Completed on the Mac Mini, macOS 26.5 arm64, 2026-10-04. Installer: Node 26.0.0, npm 11.12.1, `skills@1.7.0`. Validation scripts: Python 3.14.2; Git 2.50.1 (Apple Git-155). Providers: Codex CLI 0.160.0 and Claude Code 2.1.288. Codex behavioral cases requested GPT-6 Astra, max reasoning, fast service. Fixture commands used the provider shell's Python 3.9.6.
+Completed on the Mac Mini, macOS 26.5 arm64, 2026-10-04. Installer: Node 26.0.0, npm 11.12.1, `skills@1.7.0`. Validation scripts: Python 3.14.2; Git 2.50.1 (Apple Git-155). Providers: Codex CLI 0.160.0 and Claude Code 2.1.288. Codex behavioral cases requested GPT-6 Astra, max reasoning, fast service; its fixture commands used the provider shell's Python 3.9.6. Claude used its default `claude-opus-5-5` model. The per-workflow rows below describe Codex; Claude coverage is listed explicitly.
 
 | Check | Observed result |
 | --- | --- |
@@ -50,7 +50,9 @@ Completed on the Mac Mini, macOS 26.5 arm64, 2026-10-04. Installer: Node 26.0.0,
 | Moving-ref update limit | Independent review reproduced an upstream CLI issue: after Codex/Claude-only installation, `update --global bounds-plan --yes` for a changed tracked ref also creates a Windsurf link when that provider is detected. The supported upgrade instructions use explicit pinned re-add with agent selection. |
 | Fresh Codex discovery | A new app-server's `skills/list` reports all eight enabled without parse errors, for both local and remote installs. |
 | Codex explicit-mode policy | A no-tool catalog query lists the seven supporting skills and excludes mode; explicit `$bounds-mode` loads and executes in the other cases. |
-| Fresh Claude discovery | New-process init reports all eight in `skills` and `slash_commands`. The attempted `/bounds-mode` turn returns `Not logged in`; no model invocation success is claimed. |
+| Fresh Claude discovery | New-process init reports all eight in `skills` and `slash_commands`. |
+| Authenticated Claude invocation | With a temporary copy of the existing credential, `/bounds-mode` makes exactly the requested typo edit. In a separate bug case it invokes `bounds-debug` through the Skill tool, reproduces the wrong page, makes the one-line fix, and checks pages 1–4 plus invalid-page rejection. Independent artifact checks confirm results and edit scope; temporary credential copies are deleted. |
+| Claude explicit-mode policy | A no-tool catalog query lists the seven supporting skills and excludes mode, while explicit `/bounds-mode` works in the authenticated cases. |
 | Simple mode | Only the requested README typo changes; diff check passes. No supporting skill or reference is read. |
 | Plan | Produces scope, retained JSON behavior, acceptance examples and dependencies; eight baseline checks pass; no files change. |
 | Debug via mode | Reads the debugging workflow, reproduces the wrong page, fixes the offset, and passes 12 concrete CLI cases. Only product correction changes. |
@@ -65,4 +67,4 @@ Completed on the Mac Mini, macOS 26.5 arm64, 2026-10-04. Installer: Node 26.0.0,
 
 An independent reviewer inspected base `722ce9ce2e5da00dc9946aa5e2553ec8599ed1b1` through package commit `38703034edb2c9c163263278ffe3dde05ed32d4b`. The moving-ref update recommendation was the sole actionable finding; the installation guide now uses the tested explicit re-add path. No skill-body or attribution findings were reported. Later documentation and harness changes receive local checks; the review is not claimed for an unseen revision.
 
-These are representative synthetic CLI cases, not a model reliability benchmark or proof for browser, mobile, performance, or production workflows. Claude authenticated invocation and implicit-selection behavior remain unverified. Fresh installed-bundle discovery in the T3 composer, other hosts/operating systems, and a real user-home rollout remain untested. No cross-host synchronization or delegation is provided by the bundle.
+These are representative synthetic CLI cases, not a model reliability benchmark or proof for browser, mobile, performance, or production workflows. Claude's full eight-workflow matrix and same-session opt-out remain untested. Fresh installed-bundle discovery in the T3 composer, other hosts/operating systems, and a real user-home rollout remain untested. No cross-host synchronization or delegation is provided by the bundle.

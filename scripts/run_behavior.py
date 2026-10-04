@@ -97,10 +97,12 @@ def run(args):
     prompt = (f"{prefix}{skill} " if skill else "") + task
     prompt += "\nThis is a synthetic disposable fixture. Work only in this project; do not install packages, publish, or access other projects."
     (root / "prompt.txt").write_text(prompt + "\n")
-    auth_target = Path(env["CODEX_HOME"]) / "auth.json"
-    if args.codex_auth:
-        assert args.provider == "codex"
-        shutil.copyfile(args.codex_auth, auth_target)
+    auth_source = args.codex_auth or args.claude_auth
+    auth_target = (Path(env["CODEX_HOME"]) / "auth.json" if args.provider == "codex"
+                   else Path(env["CLAUDE_CONFIG_DIR"]) / ".credentials.json")
+    if auth_source:
+        assert (args.provider == "codex") == bool(args.codex_auth), "Credential must match provider"
+        shutil.copyfile(auth_source, auth_target)
         auth_target.chmod(0o600)
     if args.provider == "codex":
         command = ["codex", "exec", "--ignore-user-config", "--ignore-rules", "--ephemeral", "--json",
@@ -168,7 +170,9 @@ if __name__ == "__main__":
     parser.add_argument("--model")
     parser.add_argument("--effort")
     parser.add_argument("--priority", action="store_true")
-    parser.add_argument("--codex-auth", type=Path, help="Copy only this auth file temporarily, delete after run; never logged")
+    auth = parser.add_mutually_exclusive_group()
+    auth.add_argument("--codex-auth", type=Path, help="Temporarily copy auth.json; delete after run; never logged")
+    auth.add_argument("--claude-auth", type=Path, help="Temporarily copy .credentials.json; delete after run; never logged")
     parser.add_argument("--recipe-project", type=Path)
     parser.add_argument("--timeout", type=int, default=480)
     sys.exit(run(parser.parse_args()))
