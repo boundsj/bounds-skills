@@ -4,10 +4,10 @@ The package uses standard `SKILL.md` directories. Only the explicit mode entrypo
 
 | Surface | Metadata / invocation | Validation boundary |
 | --- | --- | --- |
-| Codex | `agents/openai.yaml`: `allow_implicit_invocation: false`; explicit `$bounds-mode` | Discovery and actual invocation are checked separately. |
-| Claude Code | `disable-model-invocation: true`; explicit `/bounds-mode` | Codex policy files do not establish Claude behavior. |
+| Codex CLI 0.160.0 on macOS | `agents/openai.yaml`: `allow_implicit_invocation: false`; explicit `$bounds-mode` | Fresh discovery and representative actual invocations pass. |
+| Claude Code 2.1.288 on macOS | `disable-model-invocation: true`; explicit `/bounds-mode` | Fresh discovery passes. Actual invocation is blocked by missing isolated-home authentication; invocation-policy enforcement is unverified. |
 | Other seven skills | Normal skill discovery and automatic selection; individual explicit invocation remains available | Descriptions identify narrow tasks; bodies and references load when relevant. |
-| T3 Code | Uses its execution host's provider and exposed tools | Shared skills do not add orchestration, cross-host access, or a composer command parser. |
+| T3 Code | Uses its execution host's provider and exposed tools | This delivery was authored in T3; fresh installed-bundle composer discovery is not tested. Shared skills add no orchestration or cross-host access. |
 | Cursor and other hosts | No supplied adapter or support claim | Upstream Cursor mode metadata is intentionally omitted. |
 
 Exact tested versions, results, and gaps are in [validation](validation.md). Installation success alone establishes packaging. Fresh-session discovery establishes that the provider sees the files. An observed skill load and completed task establish invocation for that case. None guarantees identical future model behavior.

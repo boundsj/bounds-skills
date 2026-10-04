@@ -15,7 +15,7 @@ npx --yes skills@1.7.0 add "$bounds_source" --list
 npx --yes skills@1.7.0 add "$bounds_source" --global --agent codex claude-code --skill '*' --yes
 
 # Or select only the workflows you want.
-npx --yes skills@1.7.0 add "$bounds_source" --global --agent codex claude-code --skill bounds-mode bounds-plan bounds-debug --yes
+npx --yes skills@1.7.0 add "$bounds_source" --global --agent codex claude-code --skill bounds-mode bounds-plan --yes
 ```
 
 Installing a selection does not remove previously installed skills. Mode can use whichever supporting skills are present and reports missing ones. Each skill's references and license notices travel with it. In the tested CLI, Codex reads the canonical `~/.agents/skills` copy; Claude receives links in its configured skill home. Other providers that read the universal directory can also discover those files. Agent selection controls installer targets, not universal-directory visibility. Avoid `--all`, which selects every supported agent.
@@ -30,13 +30,7 @@ npx --yes skills@1.7.0 check
 
 For a reproducible upgrade or rollback, change `bounds_ref` to the chosen revision and rerun `add` with your same explicit skill/agent selection. Keep the previous ref if you need to roll back. Re-adding overwrites selected skill names, so preserve any intentional local edits first.
 
-The CLI also supports a scoped update of tracked sources:
-
-```sh
-npx --yes skills@1.7.0 update --global bounds-mode bounds-plan bounds-debug bounds-review bounds-retro bounds-agent-docs bounds-create-verification bounds-maintain-verification --yes
-```
-
-An immutable pinned source stays at that source; `update` is not a command to select a newer Bounds release. Use explicit re-add for that. Local-path installations may be skipped by automatic update tracking. Do not use an unscoped `update` for a Bounds-only rollout.
+Use explicit re-add for updates. In `skills@1.7.0`, `update --global <skill names> --yes` can install an updated skill into other detected providers because it does not preserve the original agent selection. This was reproduced in an isolated fixture. Naming only Bounds skills does not prevent that expansion. An immutable pinned source stays at that source; a successful no-change `update` is not proof of safe provider targeting, nor does it select a newer Bounds release. Local-path installations may also be skipped by update tracking. No custom installer is needed: re-add the chosen ref with the same explicit `--agent` and `--skill` arguments.
 
 ```sh
 # Remove one skill from one provider.

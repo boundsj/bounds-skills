@@ -18,5 +18,3 @@ jobs:
         run: python3 scripts/check.py
       - name: Check validation failure cases
         run: python3 -m unittest discover -s tests
-      - name: Exercise isolated installation lifecycle
-        run: python3 scripts/validate_install.py

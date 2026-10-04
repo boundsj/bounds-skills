@@ -39,6 +39,8 @@ TASKS = {
     "maintain": ("bounds-maintain-verification", "Maintain this project's existing verification recipe after the list subcommand was intentionally renamed to items. Audit all mapped behaviors. Intended pagination is still one-based. Edit only the recipe and its helpers; report any product defects."),
     "missing": ("bounds-mode", "Plan a CSV option for this CLI while preserving JSON as default. Do not implement it. Only bounds-mode is installed in this test home."),
     "optout": (None, 'Stop using bounds-mode for this request. Fix only the typo "teh" in README.md.'),
+    "optout_same": (None, 'Stop using bounds-mode for this request. Fix only the typo "teh" in README.md.'),
+    "catalog": (None, "Without calling tools, list only the bounds-* skills already present in your available-skills catalog. Do not infer names from the filesystem or from general knowledge. Do not perform any other task."),
 }
 
 
@@ -85,6 +87,8 @@ def run(args):
         git("commit", "-m", "Fixture change under evaluation")
     if args.case == "retro":
         (project / "WORK.md").write_text('# Synthetic work log\n\n1. Agent changed JSON default to CSV. User asked to preserve JSON.\n2. Agent checked only exit status 0 and missed incorrect page data. User corrected it.\n3. Agent added output-format handling and changed JSON default again. User repeated the constraint.\n4. tests/test_cli.py already checked default JSON output, but the agent never ran it.\n5. Repeated long instructions were added to AGENTS.md, but no check command was linked.\n')
+        (project / "tests").mkdir()
+        (project / "tests/test_cli.py").write_text('import subprocess\nimport sys\nimport unittest\n\nclass CLI(unittest.TestCase):\n    def test_default_json(self):\n        result = subprocess.run([sys.executable, "app.py", "list"], capture_output=True, text=True)\n        self.assertEqual(result.returncode, 0)\n        self.assertEqual(result.stdout, \'["alpha", "beta"]\\n\')\n')
     if args.case == "docs":
         (project / "AGENTS.md").write_text('# Agent guide\n\nRun `python3 app.py --list` to verify listing.\nAlways preserve JSON default.\nAlways preserve JSON default.\nSee README.md for expected page results.\n')
 
@@ -119,12 +123,12 @@ def run(args):
         if args.effort:
             command += ["--effort", args.effort]
         command += ["--", prompt]
-    print(f"Behavior run: {root}", flush=True)
-    try:
-        with (root / "events.jsonl").open("w") as out, (root / "stderr.log").open("w") as err:
-            process = subprocess.Popen(command, cwd=project, env=env, stdout=out, stderr=err, start_new_session=True)
+    def execute(argv, event_file, error_file):
+        with (root / event_file).open("w") as out, (root / error_file).open("w") as err:
+            process = subprocess.Popen(argv, cwd=project, env=env, stdin=subprocess.DEVNULL,
+                                       stdout=out, stderr=err, start_new_session=True)
             try:
-                code = process.wait(timeout=args.timeout)
+                return process.wait(timeout=args.timeout)
             except subprocess.TimeoutExpired:
                 import signal
                 os.killpg(process.pid, signal.SIGTERM)
@@ -133,7 +137,19 @@ def run(args):
                 except subprocess.TimeoutExpired:
                     os.killpg(process.pid, signal.SIGKILL)
                     process.wait()
-                code = 124
+                return 124
+
+    print(f"Behavior run: {root}", flush=True)
+    try:
+        if args.case == "optout_same":
+            assert args.provider == "codex", "Same-session resume case currently covers Codex only"
+            base_command = [part for part in command[:-1] if part != "--ephemeral"]
+            prime = "$bounds-mode Read README.md and summarize the fixture's behavior. Make no edits. This is a disposable test project; access only this project and the requested skill."
+            assert execute(base_command + [prime], "prime.jsonl", "prime.stderr.log") == 0
+            events = [json.loads(line) for line in (root / "prime.jsonl").read_text().splitlines()]
+            thread = next(e["thread_id"] for e in events if e.get("type") == "thread.started")
+            command = base_command + ["resume", thread, prompt]
+        code = execute(command, "events.jsonl", "stderr.log")
     finally:
         auth_target.unlink(missing_ok=True)
     summary = {"provider": args.provider, "model_requested": args.model, "case": args.case,
