@@ -16,7 +16,7 @@ Find the applicable request/spec and project conventions. If requirements are un
 - **Requirements:** missing behavior, unintended scope, and retained behavior at risk.
 - **Maintainability:** concrete costs in the changed paths, judged against the project's conventions. Preferences are optional observations.
 
-Use one independent reviewer for consequential changes when delegation is available and authorized; add another only for consequential uncertainty or disputed findings. Discover capabilities and follow the linked protocol. Otherwise do a local review and label it accurately.
+Use one independent reviewer for consequential changes when delegation is available and permitted by existing user and host instructions. Reuse authorization already granted; do not ask for it again. Add another only for consequential uncertainty or disputed findings. Discover capabilities and follow the linked protocol. Otherwise do a local review and label it accurately.
 
 For each actionable finding, give priority, file/line, trigger, consequence, evidence, and a focused correction. Distinguish executed checks, source-based reasoning, and assumptions. Evaluate findings on their evidence rather than reviewer agreement. State “no actionable findings” when appropriate, with coverage limits.
 

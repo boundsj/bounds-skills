@@ -2,6 +2,8 @@
 
 Requires Git, Node.js/npm, and the provider installed on the execution host. The tested installer is `skills@1.7.0`; `npx --yes` accepts downloading that CLI, while the final `--yes` accepts the selected skill installation.
 
+No repository registration or npm publication is needed. `npx` runs the skills CLI, which reads the skill directories directly from GitHub. The shorthand `boundsj/bounds-skills` follows the repository's default branch; use a pinned URL to try an unmerged candidate or keep installations repeatable.
+
 For repeatable installation, choose a reviewed full commit SHA (or a published release tag). Set `bounds_ref` to it, then use the same value on each host. Version 0.1.0 is a candidate; no release tag has been published. The exact tested revision is in [validation](validation.md).
 
 ```sh
@@ -11,7 +13,7 @@ bounds_source="https://github.com/boundsj/bounds-skills/tree/$bounds_ref"
 # Inspect the package before installation.
 npx --yes skills@1.7.0 add "$bounds_source" --list
 
-# Install all eight globally for these two providers only.
+# Install all eight globally with explicit provider targets.
 npx --yes skills@1.7.0 add "$bounds_source" --global --agent codex claude-code --skill '*' --yes
 
 # Or select only the workflows you want.

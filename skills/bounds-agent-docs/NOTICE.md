@@ -10,5 +10,11 @@ structural improvements, conditional documentation, and local verification. Boun
 removes mandatory tracker setup, seam approvals, broad mode hooks, Cursor-specific
 metadata and fixed model choices. Scope and permissions come from the user's task.
 
-Full notices are in LICENSE.txt. The per-skill source mapping is maintained at
-https://github.com/boundsj/bounds-skills/blob/main/THIRD_PARTY.md.
+## bounds-agent-docs
+
+Selected source material: Pocock `writing-for-agents`; pstack `principle-guard-the-context-window`.
+
+Adaptation: Short entrypoints, conditional pointers, observable completion and pruning. Uses portable distribution boundaries without universal word/style rituals.
+
+Full license notices are in [LICENSE.txt](LICENSE.txt). This source mapping travels
+with the installed revision; no link to a moving branch is required.

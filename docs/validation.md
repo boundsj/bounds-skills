@@ -21,7 +21,7 @@ python3 scripts/validate_install.py --remote "https://github.com/boundsj/bounds-
 python3 scripts/validate_codex_discovery.py /path/printed/by/validate_install
 ```
 
-The optional remote pass compares all installed skill files with the checkout and runs installer check/update against the pinned source. The discovery script starts a new Codex app-server and uses its `skills/list` API; it needs no model credentials. Retained evidence is under the run directory's `evidence/` folder. Remove that specific temporary run directory when finished with its evidence.
+The optional remote pass compares all installed skill files with the checkout and runs installer check/update against the pinned source. The update assertion checks unchanged content only; it does not test provider targeting. The discovery script starts a new Codex app-server and uses its `skills/list` API; it needs no model credentials. Retained evidence is under the run directory's `evidence/` folder. Remove that specific temporary run directory when finished with its evidence.
 
 Behavioral validation exercises representative tasks in disposable projects. The runner copies only the already-installed Bounds packages into another temporary home, creates a synthetic CLI project, and starts a fresh provider process. Model credentials are needed for actual turns. Use `--codex-auth /path/to/auth.json` for Codex or `--claude-auth /path/to/.credentials.json` for an existing Claude file credential. The runner temporarily copies only that credential file with mode 0600 and deletes the copy in `finally`; it never prints its contents or changes the source credential. Provider-managed system defaults may still start their own tools. The runner isolates writable homes, not the provider binary or system configuration.
 
@@ -42,11 +42,11 @@ Completed on the Mac Mini, macOS 26.5 arm64, 2026-10-04. Installer: Node 26.0.0,
 
 | Check | Observed result |
 | --- | --- |
-| Package integrity | Eight frontmatter records, internal reference links, explicit mode policy, reachable conditional references, and both MIT notices in each installable directory pass. Entrypoints are 254–332 words. |
+| Package integrity | Eight frontmatter records, internal reference links, explicit mode policy, reachable conditional references, and both MIT notices in each installable directory pass. Entrypoints are 254–343 words after the review clarifications. |
 | Validator failure cases | Five unit tests pass, including rejecting missing references, sibling-skill dependencies, missing attribution and accidental implicit mode. |
 | Upstream skill-creator check | Seven skills pass directly. Mode's portable fields pass; the validator's older allowlist rejects Claude's `disable-model-invocation` extension. Real Codex/Claude discovery parses that file successfully. The extension is deliberately retained. |
 | Isolated installation | Selective/full installation, complete file hashes, provider lists, tag upgrade, SHA rollback, scoped Claude removal, full removal and unrelated sentinels pass. |
-| GitHub distribution | Full-SHA tree URL installs all eight with identical hashes. `check` reports current; scoped `update` against that immutable source changes no payload. |
+| GitHub distribution | Full-SHA tree URL installs all eight with identical hashes. `check` reports current; unscoped `update` against that immutable source changes no payload. This no-change check does not establish preserved provider targeting. |
 | Moving-ref update limit | Independent review reproduced an upstream CLI issue: after Codex/Claude-only installation, `update --global bounds-plan --yes` for a changed tracked ref also creates a Windsurf link when that provider is detected. The supported upgrade instructions use explicit pinned re-add with agent selection. |
 | Fresh Codex discovery | A new app-server's `skills/list` reports all eight enabled without parse errors, for both local and remote installs. |
 | Codex explicit-mode policy | A no-tool catalog query lists the seven supporting skills and excludes mode; explicit `$bounds-mode` loads and executes in the other cases. |
@@ -66,5 +66,7 @@ Completed on the Mac Mini, macOS 26.5 arm64, 2026-10-04. Installer: Node 26.0.0,
 | Same-session opt-out | First invokes mode for a read-only summary, then resumes that same Codex session with an opt-out. The second turn makes only the requested typo correction and does not load supporting workflows. |
 
 An independent reviewer inspected base `722ce9ce2e5da00dc9946aa5e2553ec8599ed1b1` through package commit `38703034edb2c9c163263278ffe3dde05ed32d4b`. The moving-ref update recommendation was the sole actionable finding; the installation guide now uses the tested explicit re-add path. No skill-body or attribution findings were reported. Later documentation and harness changes receive local checks; the review is not claimed for an unseen revision.
+
+A separate Claude Opus 5.5 review at medium effort inspected that base through `9c2072a3c13e98caeeea0c2f0a02bc351abfcede`, including all eight skills, references, attribution, docs, and validation tools. Package checks and all five tests passed; the reviewer also verified the upstream license texts at their pinned revisions. It found no blockers and three minor issues: ambiguous update-test wording, notices linked to moving `main`, and unclear reuse of delegation authorization. The follow-up clarifies the no-op test's limits, includes the source/adaptation mapping inside each installed notice, and aligns mode/review with existing user and host permissions. License texts and other workflow bodies are unchanged.
 
 These are representative synthetic CLI cases, not a model reliability benchmark or proof for browser, mobile, performance, or production workflows. Claude's full eight-workflow matrix and same-session opt-out remain untested. Fresh installed-bundle discovery in the T3 composer, other hosts/operating systems, and a real user-home rollout remain untested. No cross-host synchronization or delegation is provided by the bundle.

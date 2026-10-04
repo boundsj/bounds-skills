@@ -25,7 +25,7 @@ Read the relevant project instructions and available skill descriptions. Load a 
 
 A typo needs a direct edit and a quick inspection. A feature may need a short plan, implementation, a behavior check, then review. A bug starts with reproduction. A request for a plan or review ends with that deliverable; it does not authorize implementation. Preserve relevant specialist skills and native tools.
 
-Carry authorized implementation through the agreed acceptance checks. Use the project's existing verification recipe when useful; creating one is a separate need, not a compulsory phase. Report the outcome, actual evidence, and consequential gaps. A short command/result is enough for a small change. Use independent review when warranted and available, under `bounds-review`'s bounded protocol.
+Carry authorized implementation through the agreed acceptance checks. Use the project's existing verification recipe when useful; creating one is a separate need, not a compulsory phase. Report the outcome, actual evidence, and consequential gaps. A short command/result is enough for a small change. Use independent review when warranted, available, and permitted by existing user and host instructions, under `bounds-review`'s bounded protocol. Reuse authorization already granted.
 
 If a selected skill is absent, say which one. Continue with the available tools when feasible, without pretending it loaded or installing dependencies unasked.
 

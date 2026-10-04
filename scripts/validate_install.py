@@ -164,6 +164,8 @@ def validate(root, source_repo, remote=None):
                 assert digest(folder / name) == digest(source_repo / "skills" / name), f"Remote differs: {name}"
         before = digest(Path(env["HOME"]) / ".agents/skills")
         run(CLI + ["check"])
+        # This immutable-source no-op checks content only, not provider targeting.
+        # For upgrades, use pinned add with explicit agents; see docs/install.md.
         run(CLI + ["update", "--global", *sorted(NAMES), "--yes"])
         assert digest(Path(env["HOME"]) / ".agents/skills") == before, "Pinned update changed content"
 
