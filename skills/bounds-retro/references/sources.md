@@ -5,7 +5,7 @@ Load this only when the user names work outside the current conversation. Read t
 | Record | How to read it |
 | --- | --- |
 | T3 Code thread | `t3_thread_read` with the messages view for user turns, then the activity view near a correction for tool calls. Use `t3_thread_list` with subagents included to find delegated reviews; their findings show what implementation missed. |
-| Claude Code session | `~/.claude/projects/<cwd-slug>/<session-id>.jsonl`. The slug is the working directory with `/` and `.` replaced by `-`. User turns have `"type":"user"`. |
+| Claude Code session | `~/.claude/projects/<cwd-slug>/<session-id>.jsonl`. The slug is roughly the working directory with each non-alphanumeric character replaced by `-`; long paths are shortened. Prefer a session file the user names, or match the `cwd` field inside records. User turns have `"type":"user"`. |
 | Codex session | `~/.codex/sessions/YYYY/MM/DD/rollout-*.jsonl`, or `~/.codex/archived_sessions/`. User messages are `response_item` records with `payload.role` of `user`; the first records are environment context. |
 | Pull request | `gh pr view <n> --comments`, review threads, and `gh pr checks <n>`. |
 

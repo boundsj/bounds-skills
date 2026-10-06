@@ -18,7 +18,7 @@ Human attention is the primary signal: user messages that correct, re-ask, repea
 
 When work spanned providers, models, or delegated reviewers, attribute each moment to its agent. The fix may belong in a review brief or host setting rather than the repository.
 
-Every candidate must trace to a specific turn, command, or finding. Discard untraceable generic advice. A smooth session may have nothing worth changing.
+Every candidate must trace to a specific turn, command, or finding; discard untraceable advice. Separate repeated patterns from single incidents. A smooth session may have nothing worth changing.
 
 ## Choose where the fix lands
 
@@ -32,7 +32,7 @@ Inspect existing check commands, hooks, and CI first. Then prefer the cheapest d
 
 ## Report
 
-Rank by cost to the user's attention, not loudness. For each: moment → cause → change and where it lands → how to validate. Keep each a short, phone-readable block; return a few unless asked for more. Mark deletions. Say what one retro cannot judge, such as whether an older rule now blocks good work. Do not invent time savings.
+Rank by cost to the user's attention, not loudness. For each: moment → cause → change and where it lands → how to validate. Keep each a short, phone-readable block; return few unless asked. Mark deletions. Say what one retro cannot judge, such as whether an older rule blocks good work. Invent no time savings.
 
 ## Act
 
