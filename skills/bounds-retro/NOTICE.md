@@ -12,9 +12,9 @@ metadata and fixed model choices. Scope and permissions come from the user's tas
 
 ## bounds-retro
 
-Selected source material: Pocock `retro`; pstack `correct`, `principle-encode-lessons-in-structure`.
+Selected source material: Pocock `retro`; pstack `correct`, `principle-encode-lessons-in-structure`. Also informed by Pocock's retro documentation at revision `4588b32ecab9ecc9fc8cc6b6c5e7d675b6004b0d`: https://github.com/mattpocock/skills/blob/4588b32ecab9ecc9fc8cc6b6c5e7d675b6004b0d/docs/engineering/retro.md
 
-Adaptation: Bounded accessible evidence, structural improvements before standing instructions. Removes automatic global edits, recurring rule tables and compulsory fixes.
+Adaptation: Bounded accessible evidence, structural improvements before standing instructions. Keeps retro's fix destinations, mechanical-check-first classification, reviewer-owned standards and moment-traceable candidates. Adds human-attention ranking, multi-provider attribution and a conditional reference for user-named T3, Claude, Codex and PR records. Removes automatic global edits, recurring rule tables, compulsory fixes and the required writing-style skill load.
 
 Full license notices are in [LICENSE.txt](LICENSE.txt). This source mapping travels
 with the installed revision; no link to a moving branch is required.

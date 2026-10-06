@@ -8,7 +8,7 @@ Build a small, portable collection of engineering workflows for Codex and Claude
 - `bounds-plan`: turn an idea into a concise plan with scope, retained behavior, acceptance checks and dependencies. Clarify material ambiguity; infer routine details from available context.
 - `bounds-debug`: reproduce an observed problem, isolate its cause, fix it and verify behavior with a meaningful repeatable check.
 - `bounds-review`: inspect a pinned change for correctness, requirement compliance and maintainability. Distinguish actionable findings from preferences and actual evidence from assumptions.
-- `bounds-retro`: examine a bounded set of accessible work for repeated corrections and wasted effort. Prefer improvements to structure, checks, tooling and navigation over additional standing instructions.
+- `bounds-retro`: examine a bounded set of accessible work for repeated corrections and wasted effort. Prefer improvements to structure, checks, tooling and navigation over additional standing instructions. Rank by human attention spent; read past session records only when the user names them, and never publish them.
 - `bounds-agent-docs`: create and maintain concise agent-facing documentation with accurate commands, clear entrypoints and conditional references.
 - `bounds-create-verification`: create a project-local recipe using existing tools: Launch, Doctor, Drive, Evidence, Cleanup. Prove it by execution; evidence must survive cleanup. Include a small feature map.
 - `bounds-maintain-verification`: keep that recipe and feature map accurate as the project changes. Separate documentation drift, harness gaps and product defects; report coverage honestly.
@@ -33,7 +33,7 @@ The README should lead with a bullet summary of each skill and useful example pr
 
 Adapt selected workflows; do not install upstream collections wholesale or copy their provider-specific assumptions unchanged.
 
-- Matt Pocock: https://github.com/mattpocock/skills/tree/24fe0ef7737efae15c87225755e9f6f5965e4888 — to-spec, to-tickets, diagnosing-bugs, tdd, code-review, retro and writing-for-agents.
+- Matt Pocock: https://github.com/mattpocock/skills/tree/24fe0ef7737efae15c87225755e9f6f5965e4888 — to-spec, to-tickets, diagnosing-bugs, tdd, code-review, retro and writing-for-agents. Retro documentation at revision 4588b32ecab9ecc9fc8cc6b6c5e7d675b6004b0d.
 - pstack: https://github.com/cursor/plugins/tree/e43c7ee26e0038c6c1fa8380dd34ce86ff94cb2a/pstack — mode routing, interrogate, correct, create-verification-skill, maintain-verification-skill and relevant engineering principles.
 - Installer: https://github.com/vercel-labs/skills
 
