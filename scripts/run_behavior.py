@@ -53,24 +53,23 @@ def seed_recall(project, git):
     app = project / "app.py"
     app.write_text(APP.replace('"--size", type=int, default=2', '"--size", type=int, default=3'))
     git("add", "app.py")
-    git("commit", "-m", "Increase default page size")
+    git("commit", "-m", "Increase default page size", GIT_AUTHOR_DATE=stamp(2), GIT_COMMITTER_DATE=stamp(2))
     change = git("rev-parse", "HEAD")
-    git("revert", "--no-edit", change)
-    reversal = git("rev-parse", "HEAD")
+    git("revert", "--no-edit", change, GIT_AUTHOR_DATE=stamp(1), GIT_COMMITTER_DATE=stamp(1))
     history = project / "history"
     history.mkdir()
     codex = [
         {"type": "session_meta", "payload": {"id": "synthetic-codex-session", "cwd": str(project), "host": "fixture-host"}},
         {"timestamp": stamp(3), "type": "response_item", "payload": {"type": "message", "role": "user", "content": [{"type": "input_text", "text": "Try a default page size of three. Keep JSON output."}]}},
-        {"timestamp": stamp(2), "type": "response_item", "payload": {"type": "message", "role": "assistant", "content": [{"type": "output_text", "text": f"Implemented and locally checked at {change}. Deployment has not been checked."}]}},
+        {"timestamp": stamp(2), "type": "response_item", "payload": {"type": "message", "role": "assistant", "content": [{"type": "output_text", "text": f"Implemented and locally checked at {change}."}]}},
     ]
     claude = [
         {"timestamp": stamp(1), "type": "user", "sessionId": "synthetic-claude-session", "cwd": str(project), "message": {"role": "user", "content": [{"type": "text", "text": "Put the default back to two; three breaks a consumer. Hold further implementation until I inspect that consumer."}]}},
-        {"timestamp": stamp(1), "type": "assistant", "sessionId": "synthetic-claude-session", "message": {"role": "assistant", "content": [{"type": "text", "text": f"Reverted by {reversal}. Deployment and laptop checkout were not inspected."}]}},
+        {"timestamp": stamp(1), "type": "assistant", "sessionId": "synthetic-claude-session", "message": {"role": "assistant", "content": [{"type": "text", "text": "Consumer inspection remains pending. No further implementation is planned before that inspection."}]}},
     ]
     for name, records in (("codex.jsonl", codex), ("claude.jsonl", claude)):
         (history / name).write_text("".join(json.dumps(row) + "\n" for row in records))
-    (project / "DEV_LOG.md").write_text(f"# Synthetic journal\n\nCoverage cutoff: {stamp(2)}\n\nDefault page size is three, implemented at {change}. This retells synthetic-codex-session; it is not independent evidence. No deployment receipt.\n")
+    (project / "DEV_LOG.md").write_text(f"# Synthetic journal\n\nCoverage cutoff: {stamp(2)}\n\nDefault page size is three, implemented at {change}. Source: synthetic-codex-session.\n")
     git("add", "history", "DEV_LOG.md")
     git("commit", "-m", "Add synthetic recall records")
 
@@ -101,14 +100,18 @@ def run(args):
         (project / "app.py").write_text(APP)
         (project / "README.md").write_text('# Fixture CLI\n\nUse `python3 app.py list --page 1 --size 2` to list items.\nPages are one-based; page 1 returns ["alpha", "beta"], page 2 returns ["gamma", "delta"].\nJSON is the default output. Page and size must be positive.\n\nThis is teh fixture.\n')
 
-    def git(*argv):
-        return subprocess.run(["git", *argv], cwd=project, env=env, text=True, capture_output=True, check=True).stdout.strip()
+    def git(*argv, **extra_env):
+        return subprocess.run(["git", *argv], cwd=project, env=dict(env, **extra_env), text=True, capture_output=True, check=True).stdout.strip()
 
     git("init", "-b", "main")
     git("config", "user.name", "Bounds fixture")
     git("config", "user.email", "fixture@example.invalid")
     git("add", ".")
-    git("commit", "-m", "Fixture baseline")
+    baseline_env = {}
+    if args.case == "recall":
+        baseline_date = (datetime.now(timezone.utc) - timedelta(days=4)).isoformat()
+        baseline_env = {"GIT_AUTHOR_DATE": baseline_date, "GIT_COMMITTER_DATE": baseline_date}
+    git("commit", "-m", "Fixture baseline", **baseline_env)
     if args.case == "recall":
         seed_recall(project, git)
     if args.case in ("debug", "review", "maintain"):
