@@ -18,6 +18,7 @@ Read the relevant project instructions and available skill descriptions. Load a 
 | Material scope, behavior, or dependency decisions | `bounds-plan` |
 | An observed failure or regression | `bounds-debug` |
 | A requested review or consequential implementation to check | `bounds-review` |
+| Prior decisions or unfinished work to recover | `bounds-recall` |
 | Repeated corrections or avoidable work to examine | `bounds-retro` |
 | Agent documentation to create or repair | `bounds-agent-docs` |
 | A reusable project verification recipe to establish | `bounds-create-verification` |

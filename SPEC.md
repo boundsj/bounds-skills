@@ -2,12 +2,13 @@
 
 Build a small, portable collection of engineering workflows for Codex and Claude Code, usable directly and through T3 Code. Optimize for accepted useful work per minute of human attention: selective context loading, fewer repeated corrections, and trustworthy implementation, review and verification evidence.
 
-## Eight skills
+## Nine skills
 
 - `bounds-mode`: explicit entrypoint that selects the appropriate workflow, coordinates supporting skills and carries work through proportionate verification and review. Keep routing thin. Do not run every phase on every task. Honor opt-out and explain provider limits on continuity across turns.
 - `bounds-plan`: turn an idea into a concise plan with scope, retained behavior, acceptance checks and dependencies. Clarify material ambiguity; infer routine details from available context.
 - `bounds-debug`: reproduce an observed problem, isolate its cause, fix it and verify behavior with a meaningful repeatable check.
 - `bounds-review`: inspect a pinned change for correctness, requirement compliance and maintainability. Distinguish actionable findings from preferences and actual evidence from assumptions.
+- `bounds-recall`: recover scoped decisions, constraints, failed approaches, and unfinished work from accessible sessions and project records; verify current state, cite evidence, and report host/source gaps. Recall is read-only and integrations are optional.
 - `bounds-retro`: examine a bounded set of accessible work for repeated corrections and wasted effort. Prefer improvements to structure, checks, tooling and navigation over additional standing instructions. Rank by human attention spent; read past session records only when the user names them, and never publish them.
 - `bounds-agent-docs`: create and maintain concise agent-facing documentation with accurate commands, clear entrypoints and conditional references.
 - `bounds-create-verification`: create a project-local recipe using existing tools: Launch, Doctor, Drive, Evidence, Cleanup. Prove it by execution; evidence must survive cleanup. Include a small feature map.
@@ -35,6 +36,7 @@ Adapt selected workflows; do not install upstream collections wholesale or copy 
 
 - Matt Pocock: https://github.com/mattpocock/skills/tree/24fe0ef7737efae15c87225755e9f6f5965e4888 — to-spec, to-tickets, diagnosing-bugs, tdd, code-review, retro and writing-for-agents. Retro documentation at revision 4588b32ecab9ecc9fc8cc6b6c5e7d675b6004b0d.
 - pstack: https://github.com/cursor/plugins/tree/e43c7ee26e0038c6c1fa8380dd34ce86ff94cb2a/pstack — mode routing, interrogate, correct, create-verification-skill, maintain-verification-skill and relevant engineering principles.
+- Recall source: pstack `recall` at revision `182f2ce414e83224915c190d2f63239c1608d0a5`; see THIRD_PARTY.md for the adaptation boundary.
 - Installer: https://github.com/vercel-labs/skills
 
 Retain both upstream MIT notices (Matt Pocock and Lauren Tan), source revisions and meaningful adaptation notes. If newer upstream material is needed, explicitly record the chosen revision. Avoid mandatory seam-approval rituals, excessive ticket breakdowns, broad rewrites and Cursor-only model/delegation assumptions.
@@ -43,4 +45,4 @@ Retain both upstream MIT notices (Matt Pocock and Lauren Tan), source revisions 
 
 This is a standalone workstream. No project-specific tickets, paths, private session histories, required Notion integration, broader fleet automation, Grok Bot, Pi or Durable integrations. Do not publish raw conversation history, private roadmap links or local authentication data.
 
-Deliver eight coherent skills, selective references, concise docs, attribution and reproducible validation. Test discovery/packaging, reference integrity, representative routing examples, installation/update/removal in isolated homes, and truthful missing-capability behavior. Show actual results and remaining gaps. Real installation into user homes is a separate rollout after the bundle is reviewable; do not change other projects or hosts during authoring.
+Deliver nine coherent skills, selective references, concise docs, attribution and reproducible validation. Test discovery/packaging, reference integrity, representative routing examples, installation/update/removal in isolated homes, and truthful missing-capability behavior. Show actual results and remaining gaps. Real installation into user homes is a separate rollout after the bundle is reviewable; do not change other projects or hosts during authoring.
