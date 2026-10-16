@@ -10,7 +10,7 @@ python3 -m unittest discover -s tests
 python3 scripts/validate_install.py
 ```
 
-The installer script prints its temporary run directory. It invokes the real `npx --yes skills@1.7.0` CLI and checks file hashes, selective discovery, all eight packages, provider lists, tag upgrades, SHA rollback, removal, and preservation of an unrelated installed sentinel. Its disposable HTTP Git remote tests refs without publishing test tags.
+The installer script prints its temporary run directory. It invokes the real `npx --yes skills@1.7.0` CLI and checks file hashes, selective discovery, all current packages, provider lists, tag upgrades, SHA rollback, removal, and preservation of an unrelated installed sentinel. Its disposable HTTP Git remote tests refs without publishing test tags.
 
 CI runs only package integrity and validator failure cases. Installer and provider tests are explicit local runs; CI does not install the bundle into provider homes.
 
@@ -32,9 +32,19 @@ python3 scripts/run_behavior.py /path/to/install-run --case maintain --recipe-pr
 python3 scripts/run_behavior.py /path/to/install-run --provider claude --case simple --claude-auth /path/to/.credentials.json
 ```
 
-Other cases are `plan`, `debug`, `review`, `retro`, `docs`, `missing`, `optout`, `optout_same`, and `catalog`. `optout_same` first invokes mode, then resumes that isolated Codex session with an opt-out; its initial turn is retained in `prime.jsonl`. The runner's exit code is provider process status, **not a behavioral pass**. Inspect the final result, commands, diff, and retained artifacts. `events.jsonl`, `prompt.txt`, and `result.json` remain in the printed temporary run directory; do not publish provider traces or authentication data. No real project or user-home skills are used as test fixtures.
+Other cases are `plan`, `debug`, `review`, `retro`, `recall`, `docs`, `missing`, `optout`, `optout_same`, and `catalog`. `optout_same` first invokes mode, then resumes that isolated Codex session with an opt-out; its initial turn is retained in `prime.jsonl`. The runner's exit code is provider process status, **not a behavioral pass**. Inspect the final result, commands, diff, and retained artifacts. `events.jsonl`, `prompt.txt`, and `result.json` remain in the printed temporary run directory; do not publish provider traces or authentication data. No real project or user-home skills are used as test fixtures.
 
-## Recorded results
+## Recall addition (0.2.0)
+
+The recall workflow was added on 2026-10-16. Research covered a bounded sample of local Codex/Claude sessions, relevant T3 messages/activity, and a development journal. Only generalized retrieval and evidence rules are distributed. Another requested host was absent from the available configured inventory; its history was not inspected. No private source links or transcripts are included here.
+
+Package integrity, all five package tests, Python syntax, and the skill-creator quick validator pass for the nine-skill bundle. The recall entrypoint is 424 words. The quick validator used an isolated Python environment with PyYAML; this is a validation dependency, not an invocation dependency.
+
+An independent Codex forward test exercised the final skill body against the synthetic `recall` fixture: actual Git change/revert commits, Codex and Claude JSONL messages, a stale journal retelling, a later hold instruction, and an unavailable second host. It found the reverted change and current default, preserved JSON and the hold, rejected the stale journal as current evidence, and marked deployment/remote-host state unverified. It cited the supplied records and Git evidence and made no edits. The parent independently checked the fixture's actual CLI output and clean working tree. This tests a supplied-record scenario, not automatic provider catalog selection or remote integration reliability.
+
+To reproduce through a fresh installed provider, use `scripts/run_behavior.py` with `--case recall` and the same provider/auth options as above. The fixture forbids real history/connector access. Inspect the answer for the later user constraint, Git reversal, stale journal, missing-host coverage, and unchanged files; provider exit status alone is insufficient. The scripted provider invocation is separate from the independent forward test described here.
+
+## Initial eight-skill results (0.1.0)
 
 The latest immutable package source tested on GitHub is [`eead99dee0bc7cd9b09b926720fe861db38853ab`](https://github.com/boundsj/bounds-skills/tree/eead99dee0bc7cd9b09b926720fe861db38853ab). The original full workflow matrix used [`38703034edb2c9c163263278ffe3dde05ed32d4b`](https://github.com/boundsj/bounds-skills/tree/38703034edb2c9c163263278ffe3dde05ed32d4b); the follow-up changes and targeted checks are recorded below. No release tag was published; tag upgrade and SHA rollback used a disposable local Git remote.
 
@@ -42,7 +52,7 @@ Completed on the Mac Mini, macOS 26.5 arm64, 2026-10-04. Installer: Node 26.0.0,
 
 | Check | Observed result |
 | --- | --- |
-| Package integrity | Eight frontmatter records, internal reference links, explicit mode policy, reachable conditional references, and both MIT notices in each installable directory pass. Entrypoints are 254–343 words after the review clarifications. |
+| Package integrity | Eight frontmatter records, internal reference links, explicit mode policy, reachable conditional references, and both MIT notices in each installable directory pass. The original entrypoints were 254–343 words after review clarifications; the later retro update is 449 words. |
 | Validator failure cases | Five unit tests pass, including rejecting missing references, sibling-skill dependencies, missing attribution and accidental implicit mode. |
 | Upstream skill-creator check | Seven skills pass directly. Mode's portable fields pass; the validator's older allowlist rejects Claude's `disable-model-invocation` extension. Real Codex/Claude discovery parses that file successfully. The extension is deliberately retained. |
 | Isolated installation | Selective/full installation, complete file hashes, provider lists, tag upgrade, SHA rollback, scoped Claude removal, full removal and unrelated sentinels pass. |

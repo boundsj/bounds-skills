@@ -1,11 +1,12 @@
 # bounds-skills
 
-Eight portable engineering workflows for Codex and Claude Code. Use them individually or enter Bounds mode for a task. The aim is more accepted work per minute of human attention: fewer repeated corrections, selective context, and evidence you can trust.
+Nine portable engineering workflows for Codex and Claude Code. Use them individually or enter Bounds mode for a task. The aim is more accepted work per minute of human attention: fewer repeated corrections, selective context, and evidence you can trust.
 
 - **bounds-mode** selects the relevant workflow and carries authorized work through proportionate checks.
 - **bounds-plan** defines scope, retained behavior, acceptance checks, and dependencies.
 - **bounds-debug** reproduces a symptom, isolates its cause, and verifies the fix.
 - **bounds-review** reviews a pinned change for correctness, requirements, and maintainability.
+- **bounds-recall** recovers prior decisions and unfinished work, then checks what still holds now.
 - **bounds-retro** finds recurring waste in accessible work and proposes structural improvements.
 - **bounds-agent-docs** keeps agent documentation short, accurate, and easy to navigate.
 - **bounds-create-verification** builds and executes a project-local Launch, Doctor, Drive, Evidence, Cleanup recipe.
@@ -22,6 +23,7 @@ Use bounds-mode to fix this failing import and verify the original error is gone
 Use bounds-plan to plan CSV export, preserving the current JSON interface.
 Use bounds-debug to reproduce why the second page repeats the first page's rows.
 Use bounds-review to review this branch against main and SPEC.md.
+Use bounds-recall to catch me up on this project across available sessions and the Dev Log.
 Use bounds-retro to examine the repeated corrections in this task.
 Use bounds-agent-docs to shorten this project's AGENTS.md and check its commands.
 Use bounds-create-verification to build and execute a local recipe for this CLI.
@@ -34,7 +36,7 @@ Use the provider's explicit prefix for any individual skill too. Bounds mode is 
 
 Use `npx skills` on each execution host, targeting `codex` and/or `claude-code`. [Installation](docs/install.md) covers a pinned source, selective installs, updates, status, and removal. No bespoke installer or plugin framework is required.
 
-Version **0.1.0** is a release candidate. Representative Codex and Claude CLI invocations are tested in isolated temporary homes; no real user-home rollout or other-host installation has been performed. [Validation](docs/validation.md) records the provider-specific coverage and remaining gaps.
+Version **0.2.0** is a release candidate. The original eight workflows have representative Codex and Claude CLI tests in isolated temporary homes. Recall-specific evidence is recorded separately; no real user-home rollout or other-host installation has been performed. [Validation](docs/validation.md) records the provider-specific coverage and remaining gaps.
 
 ## Develop
 

@@ -10,7 +10,7 @@ from urllib.parse import unquote, urlsplit
 
 NAMES = {
     "bounds-mode", "bounds-plan", "bounds-debug", "bounds-review", "bounds-retro",
-    "bounds-agent-docs", "bounds-create-verification", "bounds-maintain-verification",
+    "bounds-agent-docs", "bounds-create-verification", "bounds-maintain-verification", "bounds-recall",
 }
 
 

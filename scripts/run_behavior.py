@@ -2,6 +2,7 @@
 """Run one real provider case in a disposable project; inspect evidence manually."""
 
 import argparse
+from datetime import datetime, timedelta, timezone
 import json
 import os
 from pathlib import Path
@@ -34,6 +35,7 @@ TASKS = {
     "debug": ("bounds-mode", 'The list CLI says pages are one-based but `python3 app.py list --page 1 --size 2` returns ["gamma", "delta"] instead of ["alpha", "beta"]. Reproduce, fix, and verify this bug.'),
     "review": ("bounds-review", "Review the diff from HEAD~1 to HEAD against README.md. Return actionable findings with evidence; do not edit files. This session has no delegation capability."),
     "retro": ("bounds-retro", "Review only WORK.md for repeated corrections and wasted effort. Recommend a proportionate improvement; do not implement changes."),
+    "recall": ("bounds-recall", "Catch me up on the page-size work across all supplied records in history/ and DEV_LOG.md, and this checkout. Include the laptop if accessible. Those files are the entire available history for this synthetic case; do not access real session stores, connectors, or other projects. Return the current state, decisions, limits, and next move. Make no edits and do not continue implementation."),
     "docs": ("bounds-agent-docs", "Repair AGENTS.md: check its commands against this CLI, remove duplication, and keep useful navigation. Edit only project documentation."),
     "create": ("bounds-create-verification", "Create and execute a local verification recipe for this CLI, including a small feature map. Save evidence outside disposable runtime state and confirm it survives cleanup. Do not change product behavior."),
     "maintain": ("bounds-maintain-verification", "Maintain this project's existing verification recipe after the list subcommand was intentionally renamed to items. Audit all mapped behaviors. Intended pagination is still one-based. Edit only the recipe and its helpers; report any product defects."),
@@ -42,6 +44,35 @@ TASKS = {
     "optout_same": (None, 'Stop using bounds-mode for this request. Fix only the typo "teh" in README.md.'),
     "catalog": (None, "Without calling tools, list only the bounds-* skills already present in your available-skills catalog. Do not infer names from the filesystem or from general knowledge. Do not perform any other task."),
 }
+
+
+def seed_recall(project, git):
+    """Create synthetic cross-provider history and real superseding Git evidence."""
+    now = datetime.now(timezone.utc)
+    stamp = lambda days: (now - timedelta(days=days)).isoformat()
+    app = project / "app.py"
+    app.write_text(APP.replace('"--size", type=int, default=2', '"--size", type=int, default=3'))
+    git("add", "app.py")
+    git("commit", "-m", "Increase default page size")
+    change = git("rev-parse", "HEAD")
+    git("revert", "--no-edit", change)
+    reversal = git("rev-parse", "HEAD")
+    history = project / "history"
+    history.mkdir()
+    codex = [
+        {"type": "session_meta", "payload": {"id": "synthetic-codex-session", "cwd": str(project), "host": "fixture-host"}},
+        {"timestamp": stamp(3), "type": "response_item", "payload": {"type": "message", "role": "user", "content": [{"type": "input_text", "text": "Try a default page size of three. Keep JSON output."}]}},
+        {"timestamp": stamp(2), "type": "response_item", "payload": {"type": "message", "role": "assistant", "content": [{"type": "output_text", "text": f"Implemented and locally checked at {change}. Deployment has not been checked."}]}},
+    ]
+    claude = [
+        {"timestamp": stamp(1), "type": "user", "sessionId": "synthetic-claude-session", "cwd": str(project), "message": {"role": "user", "content": [{"type": "text", "text": "Put the default back to two; three breaks a consumer. Hold further implementation until I inspect that consumer."}]}},
+        {"timestamp": stamp(1), "type": "assistant", "sessionId": "synthetic-claude-session", "message": {"role": "assistant", "content": [{"type": "text", "text": f"Reverted by {reversal}. Deployment and laptop checkout were not inspected."}]}},
+    ]
+    for name, records in (("codex.jsonl", codex), ("claude.jsonl", claude)):
+        (history / name).write_text("".join(json.dumps(row) + "\n" for row in records))
+    (project / "DEV_LOG.md").write_text(f"# Synthetic journal\n\nCoverage cutoff: {stamp(2)}\n\nDefault page size is three, implemented at {change}. This retells synthetic-codex-session; it is not independent evidence. No deployment receipt.\n")
+    git("add", "history", "DEV_LOG.md")
+    git("commit", "-m", "Add synthetic recall records")
 
 
 def run(args):
@@ -78,6 +109,8 @@ def run(args):
     git("config", "user.email", "fixture@example.invalid")
     git("add", ".")
     git("commit", "-m", "Fixture baseline")
+    if args.case == "recall":
+        seed_recall(project, git)
     if args.case in ("debug", "review", "maintain"):
         text = (project / "app.py").read_text().replace("(args.page - 1) * args.size", "args.page * args.size")
         if args.case == "maintain":
