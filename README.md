@@ -11,22 +11,15 @@ Portable engineering workflows for Codex and Claude Code. Use them individually 
 - **bounds-agent-docs** keeps agent documentation short, accurate, and easy to navigate.
 - **bounds-create-verification** builds and executes a project-local Launch, Doctor, Drive, Evidence, Cleanup recipe.
 - **bounds-maintain-verification** refreshes that recipe and feature map, separating drift, tooling gaps, and product defects.
-
-- **bounds-ketchup** Briefs the user on what changed in the current conversation since their last substantive message, with rechecked state, user-owned decisions, and the next step.
-
-- **bounds-why** Investigates why code or a design has its current shape, separating cited evidence from inference, alternatives, and unknowns.
-
-- **bounds-blast-radius** Traces what an exact change could break beyond its diff and tests the safety fact it depends on through real interfaces when authorized.
-
-- **bounds-how** Explains how existing code or a subsystem works from entrypoint through state and boundaries to outcome, sized to the reader.
-
-- **bounds-architect** Designs state ownership, types, interfaces, and module shape before a nontrivial implementation, with real alternatives, compatibility, risk, and verification.
-
-- **bounds-unslop** Edits requested prose to be direct and concrete while preserving meaning, commitments, numbers, uncertainty, citations, quotes, and code.
-
-- **bounds-bro** Restates the previous answer or supplied text in plain short language, keeping its decision, consequential caveats, and next step.
-
-- **bounds-help** Guides the user to the Bounds skills actually available on this host, or a useful prompt for one, without starting the work.
+- **bounds-ketchup** briefs the user on what changed in the current conversation since their last substantive message, with rechecked state, user-owned decisions, and the next step.
+- **bounds-why** investigates why code or a design has its current shape, separating cited evidence from inference, alternatives, and unknowns.
+- **bounds-blast-radius** traces what an exact change could break beyond its diff and tests the safety fact it depends on through real interfaces when authorized.
+- **bounds-how** explains how existing code or a subsystem works from entrypoint through state and boundaries to outcome, sized to the reader.
+- **bounds-architect** designs state ownership, types, interfaces, and module shape before a nontrivial implementation, with real alternatives, compatibility, risk, and verification.
+- **bounds-unslop** edits requested prose to be direct and concrete while preserving meaning, commitments, numbers, uncertainty, citations, quotes, and code.
+- **bounds-bro** restates the previous answer or supplied text in plain short language, keeping its decision, consequential caveats, and next step.
+- **bounds-help** guides the user to the Bounds skills actually available on this host, or a useful prompt for one, without starting the work.
+- **bounds-automate-me** creates or updates one scoped working-style skill from the user's explicit preferences and bounded evidence of repeated decisions.
 
 A typo stays a small edit. A skill grants no extra permissions, installs no dependencies on invocation, and creates no cross-host delegation. Generated verification recipes belong in their own projects.
 
@@ -44,6 +37,7 @@ Use bounds-retro to examine the repeated corrections in this task.
 Use bounds-agent-docs to shorten this project's AGENTS.md and check its commands.
 Use bounds-create-verification to build and execute a local recipe for this CLI.
 Use bounds-maintain-verification to check the recipe after the search route changed.
+Use bounds-automate-me to draft a scoped working-style skill from my stated preferences.
 Use bounds-help to choose a skill for understanding a design decision.
 Use bounds-bro to say that again in plain language.
 Use bounds-unslop to tighten this PR description without changing its claims.

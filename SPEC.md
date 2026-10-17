@@ -13,22 +13,15 @@ Build a small, portable collection of engineering workflows for Codex and Claude
 - `bounds-agent-docs`: create and maintain concise agent-facing documentation with accurate commands, clear entrypoints and conditional references.
 - `bounds-create-verification`: create a project-local recipe using existing tools: Launch, Doctor, Drive, Evidence, Cleanup. Prove it by execution; evidence must survive cleanup. Include a small feature map.
 - `bounds-maintain-verification`: keep that recipe and feature map accurate as the project changes. Separate documentation drift, harness gaps and product defects; report coverage honestly.
-
 - `bounds-ketchup`: Briefs the user on what changed in the current conversation since their last substantive message, with rechecked state, user-owned decisions, and the next step.
-
 - `bounds-why`: Investigates why code or a design has its current shape, separating cited evidence from inference, alternatives, and unknowns.
-
 - `bounds-blast-radius`: Traces what an exact change could break beyond its diff and tests the safety fact it depends on through real interfaces when authorized.
-
 - `bounds-how`: Explains how existing code or a subsystem works from entrypoint through state and boundaries to outcome, sized to the reader.
-
 - `bounds-architect`: Designs state ownership, types, interfaces, and module shape before a nontrivial implementation, with real alternatives, compatibility, risk, and verification.
-
 - `bounds-unslop`: Edits requested prose to be direct and concrete while preserving meaning, commitments, numbers, uncertainty, citations, quotes, and code.
-
 - `bounds-bro`: Restates the previous answer or supplied text in plain short language, keeping its decision, consequential caveats, and next step.
-
 - `bounds-help`: Guides the user to the Bounds skills actually available on this host, or a useful prompt for one, without starting the work.
+- `bounds-automate-me`: Creates or updates one scoped working-style skill from the user's explicit preferences and bounded evidence of repeated decisions.
 
 ## Usage and portability
 
