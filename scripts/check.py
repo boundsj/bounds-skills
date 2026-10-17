@@ -19,6 +19,7 @@ NAMES = {
     "bounds-unslop",
     "bounds-bro",
     "bounds-help",
+    "bounds-automate-me",
 }
 
 

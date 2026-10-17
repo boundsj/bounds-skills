@@ -103,3 +103,4 @@ The added packages were proposed by Opus 5.5 at high effort from pinned public u
 | `bounds-unslop` | Rewrote a synthetic release note while preserving the exact code block, quotations, numeric sequence, uncertainty, and worsening tail-latency result. |
 | `bounds-bro` | Restated a technical decision in 161 words while retaining cancellation, ownership, untested native behavior, and the next check. |
 | `bounds-help` | Used a supplied complete catalog to route rationale then execution explanation; rejected a missing historical skill name and did not execute the work. |
+| `bounds-automate-me` | Drafted a project-scoped working-style skill from explicit and repeated evidence; excluded a rejected one-off preference and performed no installation or global change. |
