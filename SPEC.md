@@ -20,6 +20,8 @@ Build a small, portable collection of engineering workflows for Codex and Claude
 
 - `bounds-blast-radius`: Traces what an exact change could break beyond its diff and tests the safety fact it depends on through real interfaces when authorized.
 
+- `bounds-how`: Explains how existing code or a subsystem works from entrypoint through state and boundaries to outcome, sized to the reader.
+
 ## Usage and portability
 
 Users can explicitly enter bounds-mode with a task or invoke any individual skill. The mode loads supporting skills only when their phase is needed. It must not grant permissions, force broad audits for simple requests, hardcode model slugs or assume a particular tracker. Verify invocation metadata and discovery behavior separately for Codex and Claude; do not promise that Cursor sticky-mode behavior is portable.

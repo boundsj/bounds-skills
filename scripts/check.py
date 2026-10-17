@@ -14,6 +14,7 @@ NAMES = {
     "bounds-ketchup",
     "bounds-why",
     "bounds-blast-radius",
+    "bounds-how",
 }
 
 
