@@ -1,6 +1,6 @@
 # bounds-skills
 
-Nine portable engineering workflows for Codex and Claude Code. Use them individually or enter Bounds mode for a task. The aim is more accepted work per minute of human attention: fewer repeated corrections, selective context, and evidence you can trust.
+Portable engineering workflows for Codex and Claude Code. Use them individually or enter Bounds mode for a task. The aim is more accepted work per minute of human attention: fewer repeated corrections, selective context, and evidence you can trust.
 
 - **bounds-mode** selects the relevant workflow and carries authorized work through proportionate checks.
 - **bounds-plan** defines scope, retained behavior, acceptance checks, and dependencies.
@@ -11,6 +11,8 @@ Nine portable engineering workflows for Codex and Claude Code. Use them individu
 - **bounds-agent-docs** keeps agent documentation short, accurate, and easy to navigate.
 - **bounds-create-verification** builds and executes a project-local Launch, Doctor, Drive, Evidence, Cleanup recipe.
 - **bounds-maintain-verification** refreshes that recipe and feature map, separating drift, tooling gaps, and product defects.
+
+- **bounds-ketchup** Briefs the user on what changed in the current conversation since their last substantive message, with rechecked state, user-owned decisions, and the next step.
 
 A typo stays a small edit. A skill grants no extra permissions, installs no dependencies on invocation, and creates no cross-host delegation. Generated verification recipes belong in their own projects.
 
@@ -28,6 +30,7 @@ Use bounds-retro to examine the repeated corrections in this task.
 Use bounds-agent-docs to shorten this project's AGENTS.md and check its commands.
 Use bounds-create-verification to build and execute a local recipe for this CLI.
 Use bounds-maintain-verification to check the recipe after the search route changed.
+Use bounds-ketchup to catch me up on this thread since my last message.
 ```
 
 Use the provider's explicit prefix for any individual skill too. Bounds mode is an explicit entrypoint, not a persistent provider setting. Say “stop using bounds-mode” to opt out; reinvoke it in a new session.
@@ -36,7 +39,7 @@ Use the provider's explicit prefix for any individual skill too. Bounds mode is 
 
 Use `npx skills` on each execution host, targeting `codex` and/or `claude-code`. [Installation](docs/install.md) covers a pinned source, selective installs, updates, status, and removal. No bespoke installer or plugin framework is required.
 
-Version **0.2.0** is a release candidate. The original eight workflows have representative Codex and Claude CLI tests in isolated temporary homes. Recall-specific evidence is recorded separately; no real user-home rollout or other-host installation has been performed. [Validation](docs/validation.md) records the provider-specific coverage and remaining gaps.
+Version **0.3.0** is a release candidate. The original eight workflows have representative Codex and Claude CLI tests in isolated temporary homes. Evidence for recall and later additions is recorded separately; no real user-home rollout or other-host installation has been performed. [Validation](docs/validation.md) records the provider-specific coverage and remaining gaps.
 
 ## Develop
 
