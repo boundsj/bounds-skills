@@ -97,3 +97,4 @@ The added packages were proposed by Opus 5.5 at high effort from pinned public u
 | --- | --- |
 | `bounds-ketchup` | A supplied thread with changed scope, a corrected overclaim, skipped native coverage, and a failed preview; retained the latest request and named what remained unverified. |
 | `bounds-why` | Contradictory dated decisions and a provisional concurrency limit; separated documented reasons, inference, missing measurements, and the per-manager versus process-wide limit. |
+| `bounds-blast-radius` | Ran three synthetic runtime tests to disprove that cancellation prevents late results; traced consumer and lifetime effects, separating executed evidence from the unexecuted gate-removal counterfactual. |

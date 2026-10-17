@@ -13,6 +13,7 @@ NAMES = {
     "bounds-agent-docs", "bounds-create-verification", "bounds-maintain-verification", "bounds-recall",
     "bounds-ketchup",
     "bounds-why",
+    "bounds-blast-radius",
 }
 
 

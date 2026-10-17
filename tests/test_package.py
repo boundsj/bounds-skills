@@ -22,7 +22,7 @@ class PackageValidation(unittest.TestCase):
         self.temp.cleanup()
 
     def test_complete_package(self):
-        self.assertEqual(len(check(self.root)), 11)
+        self.assertEqual(len(check(self.root)), 12)
 
     def test_missing_reference(self):
         (self.root / "skills/bounds-mode/references/hosts.md").unlink()

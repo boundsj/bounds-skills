@@ -18,6 +18,8 @@ Build a small, portable collection of engineering workflows for Codex and Claude
 
 - `bounds-why`: Investigates why code or a design has its current shape, separating cited evidence from inference, alternatives, and unknowns.
 
+- `bounds-blast-radius`: Traces what an exact change could break beyond its diff and tests the safety fact it depends on through real interfaces when authorized.
+
 ## Usage and portability
 
 Users can explicitly enter bounds-mode with a task or invoke any individual skill. The mode loads supporting skills only when their phase is needed. It must not grant permissions, force broad audits for simple requests, hardcode model slugs or assume a particular tracker. Verify invocation metadata and discovery behavior separately for Codex and Claude; do not promise that Cursor sticky-mode behavior is portable.
