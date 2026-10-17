@@ -14,6 +14,8 @@ Portable engineering workflows for Codex and Claude Code. Use them individually 
 
 - **bounds-ketchup** Briefs the user on what changed in the current conversation since their last substantive message, with rechecked state, user-owned decisions, and the next step.
 
+- **bounds-why** Investigates why code or a design has its current shape, separating cited evidence from inference, alternatives, and unknowns.
+
 A typo stays a small edit. A skill grants no extra permissions, installs no dependencies on invocation, and creates no cross-host delegation. Generated verification recipes belong in their own projects.
 
 ## Try a task
@@ -30,6 +32,7 @@ Use bounds-retro to examine the repeated corrections in this task.
 Use bounds-agent-docs to shorten this project's AGENTS.md and check its commands.
 Use bounds-create-verification to build and execute a local recipe for this CLI.
 Use bounds-maintain-verification to check the recipe after the search route changed.
+Use bounds-why to investigate why this module uses a retry limit.
 Use bounds-ketchup to catch me up on this thread since my last message.
 ```
 
