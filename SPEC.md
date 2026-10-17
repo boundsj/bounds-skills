@@ -24,6 +24,8 @@ Build a small, portable collection of engineering workflows for Codex and Claude
 
 - `bounds-architect`: Designs state ownership, types, interfaces, and module shape before a nontrivial implementation, with real alternatives, compatibility, risk, and verification.
 
+- `bounds-unslop`: Edits requested prose to be direct and concrete while preserving meaning, commitments, numbers, uncertainty, citations, quotes, and code.
+
 ## Usage and portability
 
 Users can explicitly enter bounds-mode with a task or invoke any individual skill. The mode loads supporting skills only when their phase is needed. It must not grant permissions, force broad audits for simple requests, hardcode model slugs or assume a particular tracker. Verify invocation metadata and discovery behavior separately for Codex and Claude; do not promise that Cursor sticky-mode behavior is portable.

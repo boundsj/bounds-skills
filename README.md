@@ -22,6 +22,8 @@ Portable engineering workflows for Codex and Claude Code. Use them individually 
 
 - **bounds-architect** Designs state ownership, types, interfaces, and module shape before a nontrivial implementation, with real alternatives, compatibility, risk, and verification.
 
+- **bounds-unslop** Edits requested prose to be direct and concrete while preserving meaning, commitments, numbers, uncertainty, citations, quotes, and code.
+
 A typo stays a small edit. A skill grants no extra permissions, installs no dependencies on invocation, and creates no cross-host delegation. Generated verification recipes belong in their own projects.
 
 ## Try a task
@@ -38,6 +40,7 @@ Use bounds-retro to examine the repeated corrections in this task.
 Use bounds-agent-docs to shorten this project's AGENTS.md and check its commands.
 Use bounds-create-verification to build and execute a local recipe for this CLI.
 Use bounds-maintain-verification to check the recipe after the search route changed.
+Use bounds-unslop to tighten this PR description without changing its claims.
 Use bounds-architect to design offline draft sync while preserving old clients.
 Use bounds-how to explain this request flow and its failure paths.
 Use bounds-blast-radius to check the downstream effects of this cache change.
