@@ -18,6 +18,8 @@ Portable engineering workflows for Codex and Claude Code. Use them individually 
 
 - **bounds-blast-radius** Traces what an exact change could break beyond its diff and tests the safety fact it depends on through real interfaces when authorized.
 
+- **bounds-how** Explains how existing code or a subsystem works from entrypoint through state and boundaries to outcome, sized to the reader.
+
 A typo stays a small edit. A skill grants no extra permissions, installs no dependencies on invocation, and creates no cross-host delegation. Generated verification recipes belong in their own projects.
 
 ## Try a task
@@ -34,6 +36,7 @@ Use bounds-retro to examine the repeated corrections in this task.
 Use bounds-agent-docs to shorten this project's AGENTS.md and check its commands.
 Use bounds-create-verification to build and execute a local recipe for this CLI.
 Use bounds-maintain-verification to check the recipe after the search route changed.
+Use bounds-how to explain this request flow and its failure paths.
 Use bounds-blast-radius to check the downstream effects of this cache change.
 Use bounds-why to investigate why this module uses a retry limit.
 Use bounds-ketchup to catch me up on this thread since my last message.
