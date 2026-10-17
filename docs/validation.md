@@ -99,3 +99,4 @@ The added packages were proposed by Opus 5.5 at high effort from pinned public u
 | `bounds-why` | Contradictory dated decisions and a provisional concurrency limit; separated documented reasons, inference, missing measurements, and the per-manager versus process-wide limit. |
 | `bounds-blast-radius` | Ran three synthetic runtime tests to disprove that cancellation prevents late results; traced consumer and lifetime effects, separating executed evidence from the unexecuted gate-removal counterfactual. |
 | `bounds-how` | Explained normal replacement, advisory cancellation, state ownership, and two-document behavior from real fixture code; kept simulated surfaces and the per-manager limit distinct from platform claims. |
+| `bounds-architect` | Compared two viable document-scoped designs, rejected global latest-job state and direct provider-to-view fanout, and proposed bounded compatibility and validation steps without implementation. |

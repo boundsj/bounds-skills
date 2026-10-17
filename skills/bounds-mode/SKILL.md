@@ -27,6 +27,7 @@ Read the relevant project instructions and available skill descriptions. Load a 
 | Rationale behind existing code | `bounds-why` |
 | Downstream effects of a change | `bounds-blast-radius` |
 | A code walkthrough or explanation | `bounds-how` |
+| Interfaces and state ownership to design | `bounds-architect` |
 
 A typo needs a direct edit and a quick inspection. A feature may need a short plan, implementation, a behavior check, then review. A bug starts with reproduction. A request for a plan or review ends with that deliverable; it does not authorize implementation. Preserve relevant specialist skills and native tools.
 
