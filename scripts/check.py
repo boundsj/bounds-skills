@@ -17,6 +17,7 @@ NAMES = {
     "bounds-how",
     "bounds-architect",
     "bounds-unslop",
+    "bounds-bro",
 }
 
 
