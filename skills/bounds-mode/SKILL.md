@@ -23,6 +23,7 @@ Read the relevant project instructions and available skill descriptions. Load a 
 | Agent documentation to create or repair | `bounds-agent-docs` |
 | A reusable project verification recipe to establish | `bounds-create-verification` |
 | An existing recipe or feature map to refresh | `bounds-maintain-verification` |
+| Progress since the user's last message | `bounds-ketchup` |
 
 A typo needs a direct edit and a quick inspection. A feature may need a short plan, implementation, a behavior check, then review. A bug starts with reproduction. A request for a plan or review ends with that deliverable; it does not authorize implementation. Preserve relevant specialist skills and native tools.
 

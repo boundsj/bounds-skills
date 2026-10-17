@@ -2,7 +2,7 @@
 
 Build a small, portable collection of engineering workflows for Codex and Claude Code, usable directly and through T3 Code. Optimize for accepted useful work per minute of human attention: selective context loading, fewer repeated corrections, and trustworthy implementation, review and verification evidence.
 
-## Nine skills
+## Skills
 
 - `bounds-mode`: explicit entrypoint that selects the appropriate workflow, coordinates supporting skills and carries work through proportionate verification and review. Keep routing thin. Do not run every phase on every task. Honor opt-out and explain provider limits on continuity across turns.
 - `bounds-plan`: turn an idea into a concise plan with scope, retained behavior, acceptance checks and dependencies. Clarify material ambiguity; infer routine details from available context.
@@ -13,6 +13,8 @@ Build a small, portable collection of engineering workflows for Codex and Claude
 - `bounds-agent-docs`: create and maintain concise agent-facing documentation with accurate commands, clear entrypoints and conditional references.
 - `bounds-create-verification`: create a project-local recipe using existing tools: Launch, Doctor, Drive, Evidence, Cleanup. Prove it by execution; evidence must survive cleanup. Include a small feature map.
 - `bounds-maintain-verification`: keep that recipe and feature map accurate as the project changes. Separate documentation drift, harness gaps and product defects; report coverage honestly.
+
+- `bounds-ketchup`: Briefs the user on what changed in the current conversation since their last substantive message, with rechecked state, user-owned decisions, and the next step.
 
 ## Usage and portability
 
@@ -45,4 +47,4 @@ Retain both upstream MIT notices (Matt Pocock and Lauren Tan), source revisions 
 
 This is a standalone workstream. No project-specific tickets, paths, private session histories, required Notion integration, broader fleet automation, Grok Bot, Pi or Durable integrations. Do not publish raw conversation history, private roadmap links or local authentication data.
 
-Deliver nine coherent skills, selective references, concise docs, attribution and reproducible validation. Test discovery/packaging, reference integrity, representative routing examples, installation/update/removal in isolated homes, and truthful missing-capability behavior. Show actual results and remaining gaps. Real installation into user homes is a separate rollout after the bundle is reviewable; do not change other projects or hosts during authoring.
+Deliver coherent skills, selective references, concise docs, attribution and reproducible validation. Test discovery/packaging, reference integrity, representative routing examples, installation/update/removal in isolated homes, and truthful missing-capability behavior. Show actual results and remaining gaps. Real installation into user homes is a separate rollout after the bundle is reviewable; do not change other projects or hosts during authoring.

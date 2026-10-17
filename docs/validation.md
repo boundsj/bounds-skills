@@ -88,3 +88,11 @@ A second Claude Opus 5.5 medium review confirmed all three resolutions at `eead9
 The `bounds-retro` revision that folds in Pocock's retro documentation was rechecked on 2026-10-05: package checks, all five tests, and isolated installation pass. Fresh `retro` cases ran on Claude Opus 5.5 (medium) and Codex GPT-6 Astra (medium) against that installed payload. Both read only `WORK.md` and ranked the repeated JSON-default correction first. Both recommended wiring the existing test over more prose, gave a validation step, stated unverified enforcement, and changed no files. An independent Codex GPT-6 Astra review found one actionable issue: an incorrect Claude project-slug rule in the session-sources reference. It also flagged the lost repeated-versus-single-incident distinction. Both are fixed; the behavioral cases predate those two text edits.
 
 These are representative synthetic CLI cases, not a model reliability benchmark or proof for browser, mobile, performance, or production workflows. Claude's full eight-workflow matrix and same-session opt-out remain untested. Fresh installed-bundle discovery in the T3 composer, other hosts/operating systems, and a real user-home rollout remain untested. No cross-host synchronization or delegation is provided by the bundle.
+
+## Workflow additions (0.3.0)
+
+The added packages were proposed by Opus 5.5 at high effort from pinned public upstream sources and a generalized private research brief, then reviewed and integrated by Bounds Skills CoS. No private journal content is distributed. Each listed package passed package integrity, the five package tests, and the skill-creator quick validator for that individual skill. Supplied-artifact forward exercises are separate from fresh provider discovery/invocation and do not prove connector or other-host support.
+
+| Skill | Supplied-artifact exercise |
+| --- | --- |
+| `bounds-ketchup` | A supplied thread with changed scope, a corrected overclaim, skipped native coverage, and a failed preview; retained the latest request and named what remained unverified. |

@@ -4,7 +4,7 @@ Requires Git, Node.js/npm, and the provider installed on the execution host. The
 
 No repository registration or npm publication is needed. `npx` runs the skills CLI, which reads the skill directories directly from GitHub. The shorthand `boundsj/bounds-skills` follows the repository's default branch; use a pinned URL to try an unmerged candidate or keep installations repeatable.
 
-For repeatable installation, choose a reviewed full commit SHA (or a published release tag). Set `bounds_ref` to it, then use the same value on each host. Version 0.2.0 is a candidate; no release tag has been published. The exact tested revision is in [validation](validation.md).
+For repeatable installation, choose a reviewed full commit SHA (or a published release tag). Set `bounds_ref` to it, then use the same value on each host. Version 0.3.0 is a candidate; no release tag has been published. The exact tested revision is in [validation](validation.md).
 
 ```sh
 bounds_ref='<reviewed full commit SHA or published tag>'
@@ -13,7 +13,7 @@ bounds_source="https://github.com/boundsj/bounds-skills/tree/$bounds_ref"
 # Inspect the package before installation.
 npx --yes skills@1.7.0 add "$bounds_source" --list
 
-# Install all nine globally with explicit provider targets.
+# Install all available skills globally with explicit provider targets.
 npx --yes skills@1.7.0 add "$bounds_source" --global --agent codex claude-code --skill '*' --yes
 
 # Or select only the workflows you want.
@@ -39,7 +39,7 @@ Use explicit re-add for updates. In `skills@1.7.0`, `update --global <skill name
 npx --yes skills@1.7.0 remove bounds-plan --global --agent claude-code --yes
 
 # Remove the Bounds bundle from both providers, preserving unrelated skills.
-npx --yes skills@1.7.0 remove bounds-mode bounds-plan bounds-debug bounds-review bounds-recall bounds-retro bounds-agent-docs bounds-create-verification bounds-maintain-verification --global --agent codex claude-code --yes
+npx --yes skills@1.7.0 remove bounds-mode bounds-plan bounds-debug bounds-review bounds-recall bounds-retro bounds-agent-docs bounds-create-verification bounds-maintain-verification bounds-ketchup --global --agent codex claude-code --yes
 ```
 
 Removing a Claude link can leave Codex's canonical copy intact. Removing from Codex alone cannot hide that shared copy while another provider still uses it; remove from both when removing the shared bundle. Installation is per execution host. T3 does not synchronize these files to another machine. The first release was tested in temporary homes; real user-home rollout is a separate step.
