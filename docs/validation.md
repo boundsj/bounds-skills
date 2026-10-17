@@ -102,3 +102,4 @@ The added packages were proposed by Opus 5.5 at high effort from pinned public u
 | `bounds-architect` | Compared two viable document-scoped designs, rejected global latest-job state and direct provider-to-view fanout, and proposed bounded compatibility and validation steps without implementation. |
 | `bounds-unslop` | Rewrote a synthetic release note while preserving the exact code block, quotations, numeric sequence, uncertainty, and worsening tail-latency result. |
 | `bounds-bro` | Restated a technical decision in 161 words while retaining cancellation, ownership, untested native behavior, and the next check. |
+| `bounds-help` | Used a supplied complete catalog to route rationale then execution explanation; rejected a missing historical skill name and did not execute the work. |
