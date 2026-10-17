@@ -12,6 +12,7 @@ NAMES = {
     "bounds-mode", "bounds-plan", "bounds-debug", "bounds-review", "bounds-retro",
     "bounds-agent-docs", "bounds-create-verification", "bounds-maintain-verification", "bounds-recall",
     "bounds-ketchup",
+    "bounds-why",
 }
 
 
