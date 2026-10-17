@@ -16,6 +16,7 @@ NAMES = {
     "bounds-blast-radius",
     "bounds-how",
     "bounds-architect",
+    "bounds-unslop",
 }
 
 
