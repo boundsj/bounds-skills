@@ -18,6 +18,7 @@ NAMES = {
     "bounds-architect",
     "bounds-unslop",
     "bounds-bro",
+    "bounds-help",
 }
 
 

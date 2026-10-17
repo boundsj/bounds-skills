@@ -28,6 +28,8 @@ Build a small, portable collection of engineering workflows for Codex and Claude
 
 - `bounds-bro`: Restates the previous answer or supplied text in plain short language, keeping its decision, consequential caveats, and next step.
 
+- `bounds-help`: Guides the user to the Bounds skills actually available on this host, or a useful prompt for one, without starting the work.
+
 ## Usage and portability
 
 Users can explicitly enter bounds-mode with a task or invoke any individual skill. The mode loads supporting skills only when their phase is needed. It must not grant permissions, force broad audits for simple requests, hardcode model slugs or assume a particular tracker. Verify invocation metadata and discovery behavior separately for Codex and Claude; do not promise that Cursor sticky-mode behavior is portable.

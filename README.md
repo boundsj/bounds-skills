@@ -26,6 +26,8 @@ Portable engineering workflows for Codex and Claude Code. Use them individually 
 
 - **bounds-bro** Restates the previous answer or supplied text in plain short language, keeping its decision, consequential caveats, and next step.
 
+- **bounds-help** Guides the user to the Bounds skills actually available on this host, or a useful prompt for one, without starting the work.
+
 A typo stays a small edit. A skill grants no extra permissions, installs no dependencies on invocation, and creates no cross-host delegation. Generated verification recipes belong in their own projects.
 
 ## Try a task
@@ -42,6 +44,7 @@ Use bounds-retro to examine the repeated corrections in this task.
 Use bounds-agent-docs to shorten this project's AGENTS.md and check its commands.
 Use bounds-create-verification to build and execute a local recipe for this CLI.
 Use bounds-maintain-verification to check the recipe after the search route changed.
+Use bounds-help to choose a skill for understanding a design decision.
 Use bounds-bro to say that again in plain language.
 Use bounds-unslop to tighten this PR description without changing its claims.
 Use bounds-architect to design offline draft sync while preserving old clients.
