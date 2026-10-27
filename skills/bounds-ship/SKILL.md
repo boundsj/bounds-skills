@@ -6,13 +6,13 @@ license: MIT
 
 # Bounds ship
 
-Take an authorized change to its agreed finish line. Use `bounds-mode` for task coordination, `bounds-review` for review mechanics, and `bounds-ketchup` for a requested progress briefing; discover them by name and report missing skills. This skill grants no extra permissions.
+Take an authorized change to its agreed finish line. If Jesse invoked `bounds-mode`, it coordinates. Use `bounds-review` for review mechanics and `bounds-ketchup` for a requested briefing; report missing skills. This skill grants no extra permissions.
 
 ## Agree the finish
 
 Recover the goal, acceptance checks, exclusions, and authorized external actions from the request. Resolve material gaps while continuing independent work. If deployment makes sense but the request does not say whether it is intended, ask. If deployment makes no sense here, omit it entirely. A deploy needs authorization and its own acceptance evidence.
 
-Inspect the branch, local edits, and existing PR before changing anything. Preserve unrelated work. Use a task branch. If an existing PR could merge automatically, disable auto-merge/remove it from the queue when authorized; otherwise stop before pushing and report the blocker.
+Inspect the branch, local edits, and existing PR before changing anything. Preserve unrelated work. Use a task branch. Check auto-merge and queue state before each push, after filing, and at handoff. If it could merge automatically, disable auto-merge/remove it from the queue when authorized; otherwise stop before pushing and report the blocker.
 
 ## Finish and prove
 
