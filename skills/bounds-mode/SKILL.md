@@ -11,13 +11,16 @@ Use this entrypoint only when explicitly requested. Optimize for accepted work p
 
 ## Route the task
 
-Read the relevant project instructions and available skill descriptions. Load a supporting skill's body only when its phase is needed, using the host's skill mechanism or its discovered file path. References are conditional too.
+Read the relevant project instructions and available skill descriptions. Load a supporting skill's body only when its phase is needed, through host discovery. Load references conditionally.
 
 | Need | Skill |
 | --- | --- |
 | Material scope, behavior, or dependency decisions | `bounds-plan` |
 | An observed failure or regression | `bounds-debug` |
 | A requested review or consequential implementation to check | `bounds-review` |
+| An authorized change to finish through PR readiness | `bounds-ship` |
+| A stale or inherited PR to reassess and update | `bounds-modernize` |
+| Authorized GitHub comments on Jesse’s behalf | `bounds-leaving-pr-comments` |
 | Prior decisions or unfinished work to recover | `bounds-recall` |
 | Repeated corrections or avoidable work to examine | `bounds-retro` |
 | Agent documentation to create or repair | `bounds-agent-docs` |
@@ -31,9 +34,9 @@ Read the relevant project instructions and available skill descriptions. Load a 
 | Requested prose to tighten | `bounds-unslop` |
 | A reusable working-style skill | `bounds-automate-me` |
 
-A typo needs a direct edit and a quick inspection. A feature may need a short plan, implementation, a behavior check, then review. A bug starts with reproduction. A request for a plan or review ends with that deliverable; it does not authorize implementation. Preserve relevant specialist skills and native tools.
+Keep phases proportional: inspect a typo directly; reproduce a bug first. A request for a plan or review ends with that deliverable; it does not authorize implementation. Preserve relevant specialist skills and native tools.
 
-Carry authorized implementation through the agreed acceptance checks. Use the project's existing verification recipe when useful; creating one is a separate need, not a compulsory phase. Report the outcome, actual evidence, and consequential gaps. A short command/result is enough for a small change. Use independent review when warranted, available, and permitted by existing user and host instructions, under `bounds-review`'s bounded protocol. Reuse authorization already granted.
+Carry authorized implementation through the agreed acceptance checks. Use the project's existing verification recipe when useful; creating one is a separate need, not a compulsory phase. Report the outcome, evidence, and consequential gaps. Use independent review when warranted, available, and permitted by existing user and host instructions, under `bounds-review`'s bounded protocol. Reuse authorization already granted.
 
 If a selected skill is absent, say which one. Continue with the available tools when feasible, without pretending it loaded or installing dependencies unasked.
 

@@ -22,6 +22,9 @@ Build a small, portable collection of engineering workflows for Codex and Claude
 - `bounds-bro`: Restates the previous answer or supplied text in plain short language, keeping its decision, consequential caveats, and next step.
 - `bounds-help`: Guides the user to the Bounds skills actually available on this host, or a useful prompt for one, without starting the work.
 - `bounds-automate-me`: Creates or updates one scoped working-style skill from the user's explicit preferences and bounded evidence of repeated decisions.
+- `bounds-ship`: Carry an authorized change to proof, cross-provider review, green required CI, and a PR handoff. Use when asked to ship or finish through PR readiness; merge requires Jesse’s explicit instruction.
+- `bounds-modernize`: Reassess and update a stale, conflicting, duplicated, or inherited PR. Use for modernizing, rebasing, or taking over existing work while preserving contributor credit.
+- `bounds-leaving-pr-comments`: Write attributed GitHub comments on Jesse’s behalf when posting is authorized: PR comments, inline reviews, replies, and issue comments. Does not itself authorize posting.
 
 ## Usage and portability
 
@@ -46,9 +49,10 @@ Adapt selected workflows; do not install upstream collections wholesale or copy 
 - Matt Pocock: https://github.com/mattpocock/skills/tree/24fe0ef7737efae15c87225755e9f6f5965e4888 — to-spec, to-tickets, diagnosing-bugs, tdd, code-review, retro and writing-for-agents. Retro documentation at revision 4588b32ecab9ecc9fc8cc6b6c5e7d675b6004b0d.
 - pstack: https://github.com/cursor/plugins/tree/e43c7ee26e0038c6c1fa8380dd34ce86ff94cb2a/pstack — mode routing, interrogate, correct, create-verification-skill, maintain-verification-skill and relevant engineering principles.
 - Recall source: pstack `recall` at revision `182f2ce414e83224915c190d2f63239c1608d0a5`; see THIRD_PARTY.md for the adaptation boundary.
+- Theo Browne / tstack: https://github.com/t3dotgg/tstack/tree/7de017b3fc9d50c03cf3ecb98fb71e0ca65a78bd — selected shipping, modernization, review-loop and comment workflows; see THIRD_PARTY.md.
 - Installer: https://github.com/vercel-labs/skills
 
-Retain both upstream MIT notices (Matt Pocock and Lauren Tan), source revisions and meaningful adaptation notes. If newer upstream material is needed, explicitly record the chosen revision. Avoid mandatory seam-approval rituals, excessive ticket breakdowns, broad rewrites and Cursor-only model/delegation assumptions.
+Retain the applicable upstream MIT notices (Matt Pocock, Lauren Tan, and Theo Browne), source revisions and meaningful adaptation notes. If newer upstream material is needed, explicitly record the chosen revision. Avoid mandatory seam-approval rituals, excessive ticket breakdowns, broad rewrites and Cursor-only model/delegation assumptions.
 
 ## Boundaries and first release acceptance
 

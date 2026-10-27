@@ -104,3 +104,9 @@ The added packages were proposed by Opus 5.5 at high effort from pinned public u
 | `bounds-bro` | Restated a technical decision in 161 words while retaining cancellation, ownership, untested native behavior, and the next check. |
 | `bounds-help` | Used a supplied complete catalog to route rationale then execution explanation; rejected a missing historical skill name and did not execute the work. |
 | `bounds-automate-me` | Drafted a project-scoped working-style skill from explicit and repeated evidence; excluded a rejected one-off preference and performed no installation or global change. |
+
+## tstack port local validation (2026-10-26)
+
+The tstack adaptations are pinned to `7de017b3fc9d50c03cf3ecb98fb71e0ca65a78bd`. Local package/reference checks and six unit tests pass, including a negative check for missing Theo Browne notice in a selective package. The skill-creator quick validator passes `bounds-ship`, `bounds-modernize`, `bounds-leaving-pr-comments`, and the updated `bounds-review`. `git diff --check` passes.
+
+These checks establish package structure, reference integrity, word limits, and license retention. They do not prove live GitHub workflow behavior, deployment, or fresh installed-provider discovery. No throwaway GitHub repository was used, per Jesse’s instruction; no user-home installation was performed. Cross-provider review and actual PR CI results are reported with the PR rather than inferred from local checks.

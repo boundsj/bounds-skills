@@ -22,7 +22,7 @@ class PackageValidation(unittest.TestCase):
         self.temp.cleanup()
 
     def test_complete_package(self):
-        self.assertEqual(len(check(self.root)), 18)
+        self.assertEqual(len(check(self.root)), 21)
 
     def test_missing_reference(self):
         (self.root / "skills/bounds-mode/references/hosts.md").unlink()
@@ -39,6 +39,13 @@ class PackageValidation(unittest.TestCase):
         path = self.root / "skills/bounds-debug/LICENSE.txt"
         path.write_text("MIT\n")
         with self.assertRaisesRegex(AssertionError, "upstream notice"):
+            check(self.root)
+
+    def test_selective_tstack_package_keeps_theo_license(self):
+        path = self.root / "skills/bounds-ship/LICENSE.txt"
+        notice = (self.root / "licenses/Theo-Browne-MIT.txt").read_text()
+        path.write_text(path.read_text().replace(notice, ""))
+        with self.assertRaisesRegex(AssertionError, "tstack upstream notice"):
             check(self.root)
 
     def test_mode_cannot_silently_become_implicit(self):
