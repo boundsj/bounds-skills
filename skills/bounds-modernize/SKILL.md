@@ -22,12 +22,14 @@ Fetch the remote PR head and base; record the original merge-base and observed r
 
 ## Update the continuation
 
-Default to rebasing onto the PR’s actual base when the request does not specify a strategy. Resolve conflicts using current intent and newer invariants. Reconsider the verdict when conflicts expose product or architecture disagreements. Changing the base or expanding scope needs authorization.
+Bring branches up to date by rebasing onto the PR’s actual base by default; no merge commits from base unless Jesse asks.
+
+Force-pushing is allowed when appropriate. Prefer `--force-with-lease=<branch>:<observed-head-sha>` after rebase. Never force-push shared/default branches without Jesse’s say-so. On lease failure, fetch and reassess.
+
+Resolve conflicts using current intent and newer invariants. Reconsider the verdict when conflicts expose product or architecture disagreements. Changing the base or expanding scope needs authorization.
 
 For a takeover, honor an explicit in-place, replacement, or stacked continuation. Otherwise update the existing PR when authorized; if branch access is unavailable, prepare a replacement from the original commits and link the source. Preserve Git authorship and co-author trailers, add fixes separately, and credit original contributors in the PR description. Use verified identities from commits/git config; never guess emails. If squash merging is later authorized, preserve human credit in that commit too.
 
 Compare pre/post series with `git range-diff` and inspect the final diff for lost intent or revived obsolete behavior. Run focused repository checks and verify the original workflow. Use `bounds-review` for consequential changes and `bounds-ship` when the requested finish includes PR readiness; report unavailable skills.
-
-Force-pushing is allowed when appropriate. Prefer `--force-with-lease=<branch>:<observed-head-sha>` after rebase. Never force-push shared/default branches without Jesse’s say-so. On lease failure, fetch and reassess.
 
 Report verdict, base changes, conceptual conflicts, updates, preserved credit, proof/gaps, PR link, and remaining decisions. Merging, closing, and deleting each require Jesse’s explicit ask. Do not infer one from another.

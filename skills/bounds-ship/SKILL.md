@@ -24,7 +24,7 @@ Get one independent cross-provider review of the final commit under `bounds-revi
 
 Reuse the branch’s PR or open one against the intended base. Lead with the problem and resulting behavior, include proof and coverage limits, and identify the verified model/harness. Check public text for private details. Use `bounds-leaving-pr-comments` for authorized replies; filing a PR does not authorize unsolicited comments.
 
-Handle current CI and review findings. Use the host’s PR watcher when available; the owning thread watches and unwatches before handoff. Without one, report pending state and the monitoring gap. Force-push when appropriate, preferably `--force-with-lease` pinned to the observed remote head; never force-push shared/default branches without Jesse’s say-so. Reassess a failed lease.
+Handle CI and review findings. The owning thread uses the host’s PR watcher; unwatch before handoff. Report missing monitoring. Update branches by rebasing onto their base by default; no merge commits from base unless Jesse asks. Force-push when appropriate, preferably `--force-with-lease` pinned to the observed remote head; never force-push shared/default branches without Jesse’s say-so. Reassess a failed lease.
 
 ## Handoff gate
 
