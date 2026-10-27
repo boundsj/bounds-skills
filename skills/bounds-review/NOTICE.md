@@ -18,3 +18,11 @@ Adaptation: Checks requirements, maintainability and correctness. Pins revisions
 
 Full license notices are in [LICENSE.txt](LICENSE.txt). This source mapping travels
 with the installed revision; no link to a moving branch is required.
+
+## Theo Browne / tstack
+
+Selected source: `sol-loop` from https://github.com/t3dotgg/tstack/tree/7de017b3fc9d50c03cf3ecb98fb71e0ca65a78bd
+
+MIT, copyright (c) 2026 Theo Browne. Pinned commit `7de017b3fc9d50c03cf3ecb98fb71e0ca65a78bd`.
+
+Adaptation: Folds stable finding IDs, severity, bounded rounds, read-only briefs, timeout safety and verified model selection into existing review. Adds a no-reviewer packet; removes Sol-only model selection, unconditional loops, and review-implied publishing.

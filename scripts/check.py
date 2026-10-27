@@ -8,7 +8,10 @@ import re
 from urllib.parse import unquote, urlsplit
 
 
+TSTACK_NAMES = {"bounds-ship", "bounds-modernize", "bounds-review", "bounds-leaving-pr-comments"}
+
 NAMES = {
+    "bounds-ship", "bounds-modernize", "bounds-leaving-pr-comments",
     "bounds-mode", "bounds-plan", "bounds-debug", "bounds-review", "bounds-retro",
     "bounds-agent-docs", "bounds-create-verification", "bounds-maintain-verification", "bounds-recall",
     "bounds-ketchup",
@@ -43,6 +46,7 @@ def check(root):
     assert actual == NAMES, f"Skill set mismatch: {actual ^ NAMES}"
     notices = [(root / "licenses" / name).read_text() for name in (
         "Matt-Pocock-MIT.txt", "Lauren-Tan-MIT.txt")]
+    theo_notice = (root / "licenses/Theo-Browne-MIT.txt").read_text()
     stats = {}
     for name in sorted(NAMES):
         folder = skills / name
@@ -60,6 +64,8 @@ def check(root):
             assert not (folder / "agents/openai.yaml").exists(), f"{name}: unexpected override"
         license_text = (folder / "LICENSE.txt").read_text()
         assert all(notice in license_text for notice in notices), f"{name}: missing upstream notice"
+        if name in TSTACK_NAMES:
+            assert theo_notice in license_text, f"{name}: missing tstack upstream notice"
         assert (folder / "NOTICE.md").is_file()
         assert not re.search(r"\[TODO:|\bTBD\b", body), f"{name}: unfinished scaffold"
         count = len(body.split())

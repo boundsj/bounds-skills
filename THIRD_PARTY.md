@@ -1,6 +1,6 @@
 # Sources and adaptations
 
-Bounds adapts selected workflows from two MIT-licensed sources. These revisions are the source contract for 0.1.0. Later sources for `bounds-retro` and the 0.2.0 `bounds-recall` addition are recorded below; the other source contracts are unchanged.
+Bounds adapts selected workflows from pinned MIT-licensed sources. These revisions are the source contract for 0.1.0. Later sources for `bounds-retro` and the 0.2.0 `bounds-recall` addition are recorded below; the other source contracts are unchanged.
 
 - [Matt Pocock's skills](https://github.com/mattpocock/skills/tree/24fe0ef7737efae15c87225755e9f6f5965e4888), revision `24fe0ef7737efae15c87225755e9f6f5965e4888`. [Original MIT notice](licenses/Matt-Pocock-MIT.txt), copyright 2026 Matt Pocock.
 - [Lauren Tan's pstack](https://github.com/cursor/plugins/tree/e43c7ee26e0038c6c1fa8380dd34ce86ff94cb2a/pstack), revision `e43c7ee26e0038c6c1fa8380dd34ce86ff94cb2a`. [Original MIT notice](licenses/Lauren-Tan-MIT.txt), copyright 2026 Lauren Tan.
@@ -35,3 +35,14 @@ Source directories in Pocock's tree are `skills/engineering/` for the engineerin
 Both upstream notices are reproduced verbatim in `licenses/` and every installed skill's `LICENSE.txt`, alongside the Bounds MIT notice. Each skill also carries `NOTICE.md`, so selective installation preserves attribution. These files are packaging records, not references every invocation must load.
 
 [Vercel's skills CLI](https://github.com/vercel-labs/skills) is an external installer, not vendored code. Validation pins the npm distribution `skills@1.7.0`. Provider metadata follows the local skill-creator guidance, Codex runtime behavior, and [Claude Code's skills documentation](https://code.claude.com/docs/en/skills). Runtime results and limits are recorded separately in [validation](docs/validation.md).
+
+## Theo Browne / tstack additions
+
+[Theo Browne’s tstack](https://github.com/t3dotgg/tstack/tree/7de017b3fc9d50c03cf3ecb98fb71e0ca65a78bd), pinned commit `7de017b3fc9d50c03cf3ecb98fb71e0ca65a78bd` (`7de017b`). [Original MIT notice](licenses/Theo-Browne-MIT.txt), copyright 2026 Theo Browne. This notice also travels in every skill adapted from tstack. Earlier Matt Pocock and Lauren Tan notices remain in those packages.
+
+| Bounds skill | Selected source | Adaptation |
+| --- | --- | --- |
+| bounds-ship | `full-stop`, `full-send` (merge checklist), `babysit-pr`, `file-pr` | Keeps proof, final-head review, PR readiness, CI follow-through and a user handoff. Requires cross-provider review and explicit SHA-pinned merge authorization; removes blanket testing/merge grants, fixed reviewer models, and the bundled polling script. Deployment intent is clarified only when relevant. |
+| bounds-modernize | `modernize`, `takeover` | Keeps conceptual reassessment, disposition, rebase/range-diff, leases and contributor credit. Defaults to the actual PR base and permits authorized rework. Merging, closing and deleting each need Jesse’s explicit ask. |
+| bounds-review | `sol-loop` | Folds stable finding IDs, severity, bounded rounds, read-only briefs, timeout safety and verified model selection into existing review. Adds a no-reviewer packet; removes Sol-only model selection, unconditional loops, and review-implied publishing. |
+| bounds-leaving-pr-comments | `leaving-pr-comments` | Keeps note attribution, concise evidence-based replies, privacy checks and successful-post verification. Uses Jesse’s name and verified model identity; reads git identity only when email is needed, without embedding an email or granting posting permission. |
