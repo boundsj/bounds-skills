@@ -21,7 +21,7 @@ Portable engineering workflows for Codex and Claude Code. Use them individually 
 - **bounds-help** guides the user to the Bounds skills actually available on this host, or a useful prompt for one, without starting the work.
 - **bounds-automate-me** creates or updates one scoped working-style skill from the user's explicit preferences and bounded evidence of repeated decisions.
 - **bounds-ship** carries an authorized change to proof, cross-provider review, green required CI, and a PR handoff. Use when asked to ship or finish through PR readiness; merge requires Jesse’s explicit instruction.
-- **bounds-modernize** reassesses and update a stale, conflicting, duplicated, or inherited PR. Use for modernizing, rebasing, or taking over existing work while preserving contributor credit.
+- **bounds-modernize** reassesses and updates a stale, conflicting, duplicated, or inherited PR. Use for modernizing, rebasing, or taking over existing work while preserving contributor credit.
 - **bounds-leaving-pr-comments** writes attributed GitHub comments on Jesse’s behalf when posting is authorized: PR comments, inline reviews, replies, and issue comments. Does not itself authorize posting.
 
 A typo stays a small edit. A skill grants no extra permissions, installs no dependencies on invocation, and creates no cross-host delegation. Generated verification recipes belong in their own projects.

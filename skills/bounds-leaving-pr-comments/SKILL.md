@@ -19,7 +19,7 @@ The actual reply starts here.
 
 Replace `{model}` with the verified public model name that wrote the comment. If unavailable, use the harness name and do not guess. Keep attribution in the note and the reply outside it. Do not add a second attribution, signature footer, heading, or horizontal rule.
 
-Use Jesse’s verified identity. If an email is needed for the task, read `git config user.name` and `git config user.email` in the relevant repository and verify that they identify Jesse. If absent or conflicting, leave `<Jesse’s verified email>` in the prepared draft and ask before any action requiring it. Do not hardcode or publish his email merely to attribute a comment.
+Use Jesse’s verified identity. If an email is needed for the task, read `git config user.name` and `git config user.email` in the relevant repository and verify that they identify Jesse. If absent or conflicting, leave `<Jesse’s verified email>` in the prepared draft and ask before any action requiring it. Do not hardcode or publish Jesse’s email merely to attribute a comment.
 
 Apply the note to top-level PR comments, inline review comments, replies to bots or humans, issue comments, and explanations preceding thread resolution or feedback dismissal. Do not add it to PR descriptions, commit messages, or text Jesse explicitly asks to post verbatim without attribution.
 
