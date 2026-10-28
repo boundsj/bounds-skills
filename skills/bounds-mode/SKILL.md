@@ -20,7 +20,7 @@ Read the relevant project instructions and available skill descriptions. Load a 
 | A requested review or consequential implementation to check | `bounds-review` |
 | An authorized change to finish through PR readiness | `bounds-ship` |
 | A stale or inherited PR to reassess and update | `bounds-modernize` |
-| Authorized GitHub comments on Jesse’s behalf | `bounds-leaving-pr-comments` |
+| Authorized GitHub comments on the user’s behalf | `bounds-leaving-pr-comments` |
 | Prior decisions or unfinished work to recover | `bounds-recall` |
 | Repeated corrections or avoidable work to examine | `bounds-retro` |
 | Agent documentation to create or repair | `bounds-agent-docs` |

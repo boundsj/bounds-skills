@@ -8,7 +8,7 @@ Read environment identity first, then list relevant projects and threads. Includ
 
 Use the messages view for goals and decisions, then activity near a claim for tools, errors, reviewer findings, and pending child work. Follow timeline pagination and text continuation when an item is truncated. A durable thread marked completed proves a turn ended, not that its requested work shipped or its children stopped. Check creator/source metadata: a user-message timeline item can be an agent's relayed handoff. Child thread storage and delegated task lifecycle are distinct; use task status for a task owned by this run, and read historical child records for evidence.
 
-For another host, use only an already available, authorized remote T3/fleet read capability. Confirm the remote environment and project rather than assuming a client connection, provider, or similarly named checkout identifies it. Discover configured host inventory; if the requested host is absent or unreachable, name the gap and continue locally. Do not launch workers, message threads, change connections, or copy credentials to manufacture read access. Never silently substitute local history for remote history.
+For another host, use only an already available, authorized remote read capability. Confirm the remote environment and project rather than assuming a client connection, provider, or similarly named checkout identifies it. Discover configured host inventory; if the requested host is absent or unreachable, name the gap and continue locally. Do not launch workers, message threads, change connections, or copy credentials to manufacture read access. Never silently substitute local history for remote history.
 
 ## Codex and Claude files
 
@@ -20,8 +20,8 @@ Codex commonly stores `session_meta` with cwd/session identity, `response_item` 
 
 Claude project slugs are implementation-specific, including shortening of long paths. Prefer a supplied session path or match cwd/session metadata instead of inventing a slug. Do not assume a provider session ID equals a T3 thread ID.
 
-## Dev Log and other shared records
+## Development log and other shared records
 
-Fetch the supplied Notion page/database before searching. For a database, discover the actual data source and schema; a saved view is not necessarily the entire log. Query the relevant project/topic/date window, paginate, and fetch important entries for their coverage cutoff, links, and limitations. Use the connector's current search/query tools rather than assumed property names. Without a supplied source, use available project instructions or targeted discovery; never require a particular database ID.
+Fetch the supplied shared page or database before searching. For a database, discover the actual data source and schema; a saved view is not necessarily the entire log. Query the relevant project/topic/date window, paginate, and fetch important entries for their coverage cutoff, links, and limitations. Use the connector's current search/query tools rather than assumed property names. Without a supplied source, use available project instructions or targeted discovery; never require a particular database ID.
 
-A Dev Log is an index of historical claims. Follow consequential PR, release, issue, and session references to check current state. A newer edit timestamp does not override a decision by itself. Read only relevant entries; missing Notion access must not block recall from local records.
+A development log is an index of historical claims. Follow consequential PR, release, issue, and session references to check current state. A newer edit timestamp does not override a decision by itself. Read only relevant entries; missing connector access must not block recall from local records.

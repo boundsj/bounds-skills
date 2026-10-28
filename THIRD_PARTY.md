@@ -28,7 +28,7 @@ Bounds adapts selected workflows from pinned MIT-licensed sources. These revisio
 
 `bounds-retro` also draws on Pocock's [retro documentation](https://github.com/mattpocock/skills/blob/4588b32ecab9ecc9fc8cc6b6c5e7d675b6004b0d/docs/engineering/retro.md) at revision `4588b32ecab9ecc9fc8cc6b6c5e7d675b6004b0d`. Its known limits are one-session judgement, unpruned checks and generic advice. The retro `SKILL.md` at that revision is identical to the pinned one.
 
-`bounds-recall` adapts [pstack recall](https://github.com/cursor/plugins/blob/182f2ce414e83224915c190d2f63239c1608d0a5/pstack/skills/recall/SKILL.md). Its upstream MIT notice at that revision matches the retained Lauren Tan notice. Private workflow research informed the adaptation; no private source material is distributed.
+`bounds-recall` adapts [pstack recall](https://github.com/cursor/plugins/blob/182f2ce414e83224915c190d2f63239c1608d0a5/pstack/skills/recall/SKILL.md). Its upstream MIT notice at that revision matches the retained Lauren Tan notice.
 
 Source directories in Pocock's tree are `skills/engineering/` for the engineering workflows and `skills/productivity/` for `writing-for-agents`. Pstack workflows are under `pstack/skills/`.
 
@@ -43,6 +43,6 @@ Both upstream notices are reproduced verbatim in `licenses/` and every installed
 | Bounds skill | Selected source | Adaptation |
 | --- | --- | --- |
 | bounds-ship | `full-stop`, `full-send` (merge checklist), `babysit-pr`, `file-pr` | Keeps proof, final-head review, PR readiness, CI follow-through and a user handoff. Requires cross-provider review and explicit SHA-pinned merge authorization; removes blanket testing/merge grants, fixed reviewer models, and the bundled polling script. Deployment intent is clarified only when relevant. |
-| bounds-modernize | `modernize`, `takeover` | Keeps conceptual reassessment, disposition, rebase/range-diff, leases and contributor credit. Defaults to the actual PR base and permits authorized rework. Merging, closing and deleting each need Jesse’s explicit ask. |
+| bounds-modernize | `modernize`, `takeover` | Keeps conceptual reassessment, disposition, rebase/range-diff, leases and contributor credit. Defaults to the actual PR base and permits authorized rework. Merging, closing and deleting each need the user’s explicit ask. |
 | bounds-review | `sol-loop` | Folds stable finding IDs, severity, bounded rounds, read-only briefs, timeout safety and verified model selection into existing review. Adds a no-reviewer packet; removes Sol-only model selection, unconditional loops, and review-implied publishing. |
-| bounds-leaving-pr-comments | `leaving-pr-comments` | Keeps note attribution, concise evidence-based replies, privacy checks and successful-post verification. Uses Jesse’s name and verified model identity; reads git identity only when email is needed, without embedding an email or granting posting permission. |
+| bounds-leaving-pr-comments | `leaving-pr-comments` | Keeps note attribution, concise evidence-based replies, privacy checks and successful-post verification. Resolves the user name from repository git config at runtime, with an anonymous fallback; reads email only when needed, without granting posting permission. |

@@ -17,14 +17,14 @@ Fetch the remote PR head and base; record the original merge-base and observed r
 ## Give a verdict
 
 - **MODERNIZE:** the goal and implementation still fit. Update against the current base.
-- **REWORK:** the goal remains useful but needs a different implementation. Explain the smallest credible rewrite. Continue when the request authorizes that rework; otherwise present the concrete proposal for Jesse’s decision.
-- **CLOSE:** the work is superseded, obsolete, or no longer worth its cost. Cite evidence and stop updating it. Closing requires Jesse’s explicit ask.
+- **REWORK:** the goal remains useful but needs a different implementation. Explain the smallest credible rewrite. Continue when the request authorizes that rework; otherwise present the concrete proposal for the user’s decision.
+- **CLOSE:** the work is superseded, obsolete, or no longer worth its cost. Cite evidence and stop updating it. Closing requires the user’s explicit ask.
 
 ## Update the continuation
 
-Bring branches up to date by rebasing onto the PR’s actual base by default; no merge commits from base unless Jesse asks.
+Bring branches up to date by rebasing onto the PR’s actual base by default; no merge commits from base unless the user asks.
 
-Force-pushing is allowed when appropriate. Prefer `--force-with-lease=<branch>:<observed-head-sha>` after rebase. Never force-push shared/default branches without Jesse’s say-so. On lease failure, fetch and reassess.
+Force-pushing is allowed when appropriate. Prefer `--force-with-lease=<branch>:<observed-head-sha>` after rebase. Never force-push shared/default branches without the user’s say-so. On lease failure, fetch and reassess.
 
 Resolve conflicts using current intent and newer invariants. Reconsider the verdict when conflicts expose product or architecture disagreements. Changing the base or expanding scope needs authorization.
 
@@ -32,4 +32,4 @@ For a takeover, honor an explicit in-place, replacement, or stacked continuation
 
 Compare pre/post series with `git range-diff` and inspect the final diff for lost intent or revived obsolete behavior. Run focused repository checks and verify the original workflow. Use `bounds-review` for consequential changes and `bounds-ship` when the requested finish includes PR readiness; report unavailable skills.
 
-Report verdict, base changes, conceptual conflicts, updates, preserved credit, proof/gaps, PR link, and remaining decisions. Merging, closing, and deleting each require Jesse’s explicit ask. Do not infer one from another.
+Report verdict, base changes, conceptual conflicts, updates, preserved credit, proof/gaps, PR link, and remaining decisions. Merging, closing, and deleting each require the user’s explicit ask. Do not infer one from another.

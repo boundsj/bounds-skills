@@ -14,9 +14,5 @@ states. Removes the required sibling voice skill, mandatory visuals and visualiz
 tools, rigid word and box limits, slash-command-only invocation, and explicit-only
 metadata.
 
-Workflow design was informed by a private, generalized summary of one user's
-engineering practices. No transcripts, private links, host addresses, or personal
-project details are distributed. Integrations remain optional.
-
 Full Bounds and upstream notices are in [LICENSE.txt](LICENSE.txt). The bundle
 also retains Matt Pocock's MIT notice for consistency with its existing packages.

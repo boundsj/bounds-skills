@@ -10,9 +10,5 @@ Retains a short plain-language restatement of the previous message. Adds support
 for user-supplied text, preservation of decisions, consequential caveats, and the
 next step, and a rule against resuming work. Removes explicit-only metadata.
 
-Workflow design was informed by a private, generalized summary of one user's
-engineering practices. No transcripts, private links, host addresses, or personal
-project details are distributed. Integrations remain optional.
-
 Full Bounds and upstream notices are in [LICENSE.txt](LICENSE.txt). The bundle
 also retains Matt Pocock's MIT notice for consistency with its existing packages.
