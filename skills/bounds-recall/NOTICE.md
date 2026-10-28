@@ -13,9 +13,5 @@ separate review/merge/deployment/acceptance evidence. Removes Cursor-only paths,
 mandatory fan-out, fixed model choices, rigid status tags, explicit-only metadata,
 and dependencies on `why`, `poteto-mode`, `session-pickup`, and `unslop`.
 
-Workflow design was informed by a private, bounded sample of agent history and a
-development journal. No transcripts, private links, host addresses, or personal
-project details are distributed. Integrations remain optional.
-
 Full Bounds and upstream notices are in [LICENSE.txt](LICENSE.txt). The bundle
 also retains Matt Pocock's MIT notice for consistency with its existing packages.

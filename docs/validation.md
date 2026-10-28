@@ -17,7 +17,8 @@ CI runs only package integrity and validator failure cases. Installer and provid
 Once a candidate commit is pushed, also test the GitHub path:
 
 ```sh
-python3 scripts/validate_install.py --remote "https://github.com/boundsj/bounds-skills/tree/$bounds_ref"
+# Set bounds_repo and bounds_ref as described in install.md.
+python3 scripts/validate_install.py --remote "https://github.com/$bounds_repo/tree/$bounds_ref"
 python3 scripts/validate_codex_discovery.py /path/printed/by/validate_install
 ```
 
@@ -36,7 +37,7 @@ Other cases are `plan`, `debug`, `review`, `retro`, `recall`, `docs`, `missing`,
 
 ## Recall addition (0.2.0)
 
-The recall workflow was added on 2026-10-16. Research covered a bounded sample of local Codex/Claude sessions, relevant T3 messages/activity, and a development journal. Only generalized retrieval and evidence rules are distributed. Another requested host was absent from the available configured inventory; its history was not inspected. No private source links or transcripts are included here.
+The recall workflow was added on 2026-10-16. Only generalized retrieval and evidence rules are distributed; the reproducible synthetic checks and their coverage limits are recorded below.
 
 Package integrity, all five package tests, and Python syntax pass for the nine-skill bundle. The skill-creator quick validator passes for `bounds-recall`; it was not run against the whole bundle. The deliberate mode extension retains the compatibility limit described in the initial results below. The quick validator used an isolated Python environment with PyYAML; this is a validation dependency, not an invocation dependency.
 
@@ -50,9 +51,9 @@ To reproduce through a fresh installed provider, use `scripts/run_behavior.py` w
 
 ## Initial eight-skill results (0.1.0)
 
-The latest immutable package source tested on GitHub is [`eead99dee0bc7cd9b09b926720fe861db38853ab`](https://github.com/boundsj/bounds-skills/tree/eead99dee0bc7cd9b09b926720fe861db38853ab). The original full workflow matrix used [`38703034edb2c9c163263278ffe3dde05ed32d4b`](https://github.com/boundsj/bounds-skills/tree/38703034edb2c9c163263278ffe3dde05ed32d4b); the follow-up changes and targeted checks are recorded below. No release tag was published; tag upgrade and SHA rollback used a disposable local Git remote.
+The latest immutable package source tested on GitHub is `eead99dee0bc7cd9b09b926720fe861db38853ab`. The original full workflow matrix used `38703034edb2c9c163263278ffe3dde05ed32d4b`; the follow-up changes and targeted checks are recorded below. No release tag was published; tag upgrade and SHA rollback used a disposable local Git remote.
 
-Completed on the Mac Mini, macOS 26.5 arm64, 2026-10-04. Installer: Node 26.0.0, npm 11.12.1, `skills@1.7.0`. Validation scripts: Python 3.14.2; Git 2.50.1 (Apple Git-155). Providers: Codex CLI 0.160.0 and Claude Code 2.1.288. Codex behavioral cases requested GPT-6 Astra, max reasoning, fast service; its fixture commands used the provider shell's Python 3.9.6. Claude used its default `claude-opus-5-5` model. The per-workflow rows below describe Codex; Claude coverage is listed explicitly.
+Completed on macOS 26.5 arm64, 2026-10-04. Installer: Node 26.0.0, npm 11.12.1, `skills@1.7.0`. Validation scripts: Python 3.14.2; Git 2.50.1 (Apple Git-155). Providers: Codex CLI 0.160.0 and Claude Code 2.1.288. Codex behavioral cases requested GPT-6 Astra, max reasoning, fast service; its fixture commands used the provider shell's Python 3.9.6. Claude used its default `claude-opus-5-5` model. The per-workflow rows below describe Codex; Claude coverage is listed explicitly.
 
 | Check | Observed result |
 | --- | --- |
@@ -91,7 +92,7 @@ These are representative synthetic CLI cases, not a model reliability benchmark 
 
 ## Workflow additions (0.3.0)
 
-The added packages were proposed by Opus 5.5 at high effort from pinned public upstream sources and a generalized private research brief, then reviewed and integrated by Bounds Skills CoS. No private journal content is distributed. Each listed package passed package integrity, the five package tests, and the skill-creator quick validator for that individual skill. Supplied-artifact forward exercises are separate from fresh provider discovery/invocation and do not prove connector or other-host support.
+The added packages were proposed by Opus 5.5 at high effort from pinned public upstream sources, then independently reviewed and integrated. Each listed package passed package integrity, the five package tests, and the skill-creator quick validator for that individual skill. Supplied-artifact forward exercises are separate from fresh provider discovery/invocation and do not prove connector or other-host support.
 
 | Skill | Supplied-artifact exercise |
 | --- | --- |
@@ -109,4 +110,4 @@ The added packages were proposed by Opus 5.5 at high effort from pinned public u
 
 The tstack adaptations are pinned to `7de017b3fc9d50c03cf3ecb98fb71e0ca65a78bd`. Local package/reference checks and six unit tests pass, including a negative check for missing Theo Browne notice in a selective package. The skill-creator quick validator passes `bounds-ship`, `bounds-modernize`, `bounds-leaving-pr-comments`, and the updated `bounds-review`. `git diff --check` passes.
 
-These checks establish package structure, reference integrity, word limits, and license retention. They do not prove live GitHub workflow behavior, deployment, or fresh installed-provider discovery. No throwaway GitHub repository was used, per Jesse’s instruction; no user-home installation was performed. Cross-provider review and actual PR CI results are reported with the PR rather than inferred from local checks.
+These checks establish package structure, reference integrity, word limits, and license retention. They do not prove live GitHub workflow behavior, deployment, or fresh installed-provider discovery. No throwaway GitHub repository was used; no user-home installation was performed. Cross-provider review and actual PR CI results are reported with the PR rather than inferred from local checks.

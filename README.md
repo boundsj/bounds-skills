@@ -20,9 +20,9 @@ Portable engineering workflows for Codex and Claude Code. Use them individually 
 - **bounds-bro** restates the previous answer or supplied text in plain short language, keeping its decision, consequential caveats, and next step.
 - **bounds-help** guides the user to the Bounds skills actually available on this host, or a useful prompt for one, without starting the work.
 - **bounds-automate-me** creates or updates one scoped working-style skill from the user's explicit preferences and bounded evidence of repeated decisions.
-- **bounds-ship** carries an authorized change to proof, cross-provider review, green required CI, and a PR handoff. Use when asked to ship or finish through PR readiness; merge requires Jesse’s explicit instruction.
+- **bounds-ship** carries an authorized change to proof, cross-provider review, green required CI, and a PR handoff. Use when asked to ship or finish through PR readiness; merge requires the user’s explicit instruction.
 - **bounds-modernize** reassesses and updates a stale, conflicting, duplicated, or inherited PR. Use for modernizing, rebasing, or taking over existing work while preserving contributor credit.
-- **bounds-leaving-pr-comments** writes attributed GitHub comments on Jesse’s behalf when posting is authorized: PR comments, inline reviews, replies, and issue comments. Does not itself authorize posting.
+- **bounds-leaving-pr-comments** writes attributed GitHub comments on the user’s behalf when posting is authorized: PR comments, inline reviews, replies, and issue comments. Does not itself authorize posting.
 
 A typo stays a small edit. A skill grants no extra permissions, installs no dependencies on invocation, and creates no cross-host delegation. Generated verification recipes belong in their own projects.
 
@@ -38,7 +38,7 @@ Use bounds-review to review this branch against main and SPEC.md.
 Use bounds-ship to finish this authorized change through a ready PR; do not merge.
 Use bounds-modernize to reassess and update PR #42 against its base.
 Use bounds-leaving-pr-comments to reply to this reviewer on my behalf.
-Use bounds-recall to catch me up on this project across available sessions and the Dev Log.
+Use bounds-recall to catch me up on this project across available sessions and the development log.
 Use bounds-retro to examine the repeated corrections in this task.
 Use bounds-agent-docs to shorten this project's AGENTS.md and check its commands.
 Use bounds-create-verification to build and execute a local recipe for this CLI.

@@ -22,9 +22,9 @@ Build a small, portable collection of engineering workflows for Codex and Claude
 - `bounds-bro`: Restates the previous answer or supplied text in plain short language, keeping its decision, consequential caveats, and next step.
 - `bounds-help`: Guides the user to the Bounds skills actually available on this host, or a useful prompt for one, without starting the work.
 - `bounds-automate-me`: Creates or updates one scoped working-style skill from the user's explicit preferences and bounded evidence of repeated decisions.
-- `bounds-ship`: Carry an authorized change to proof, cross-provider review, green required CI, and a PR handoff. Use when asked to ship or finish through PR readiness; merge requires Jesse’s explicit instruction.
+- `bounds-ship`: Carry an authorized change to proof, cross-provider review, green required CI, and a PR handoff. Use when asked to ship or finish through PR readiness; merge requires the user’s explicit instruction.
 - `bounds-modernize`: Reassess and update a stale, conflicting, duplicated, or inherited PR. Use for modernizing, rebasing, or taking over existing work while preserving contributor credit.
-- `bounds-leaving-pr-comments`: Write attributed GitHub comments on Jesse’s behalf when posting is authorized: PR comments, inline reviews, replies, and issue comments. Does not itself authorize posting.
+- `bounds-leaving-pr-comments`: Write attributed GitHub comments on the user’s behalf when posting is authorized: PR comments, inline reviews, replies, and issue comments. Does not itself authorize posting.
 
 ## Usage and portability
 
@@ -56,6 +56,6 @@ Retain the applicable upstream MIT notices (Matt Pocock, Lauren Tan, and Theo Br
 
 ## Boundaries and first release acceptance
 
-This is a standalone workstream. No project-specific tickets, paths, private session histories, required Notion integration, broader fleet automation, Grok Bot, Pi or Durable integrations. Do not publish raw conversation history, private roadmap links or local authentication data.
+This is a standalone workstream. No project-specific tickets, paths, private session histories, required tracker integration, or infrastructure automation. Do not publish raw conversation history, private roadmap links or local authentication data.
 
 Deliver coherent skills, selective references, concise docs, attribution and reproducible validation. Test discovery/packaging, reference integrity, representative routing examples, installation/update/removal in isolated homes, and truthful missing-capability behavior. Show actual results and remaining gaps. Real installation into user homes is a separate rollout after the bundle is reviewable; do not change other projects or hosts during authoring.

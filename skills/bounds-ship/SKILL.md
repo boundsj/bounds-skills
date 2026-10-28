@@ -1,12 +1,12 @@
 ---
 name: bounds-ship
-description: "Carry an authorized change to proof, cross-provider review, green required CI, and a PR handoff. Use when asked to ship or finish through PR readiness; merge requires Jesse’s explicit instruction."
+description: "Carry an authorized change to proof, cross-provider review, green required CI, and a PR handoff. Use when asked to ship or finish through PR readiness; merge requires the user’s explicit instruction."
 license: MIT
 ---
 
 # Bounds ship
 
-Take an authorized change to its agreed finish line. If Jesse invoked `bounds-mode`, it coordinates. Use `bounds-review` for review mechanics and `bounds-ketchup` for a requested briefing; report missing skills. This skill grants no extra permissions.
+Take an authorized change to its agreed finish line. If the user invoked `bounds-mode`, it coordinates. Use `bounds-review` for review mechanics and `bounds-ketchup` for a requested briefing; report missing skills. This skill grants no extra permissions.
 
 ## Agree the finish
 
@@ -24,10 +24,10 @@ Get one independent cross-provider review of the final commit under `bounds-revi
 
 Reuse the branch’s PR or open one against the intended base. Lead with the problem and resulting behavior, include proof and coverage limits, and identify the verified model/harness. Check public text for private details. Use `bounds-leaving-pr-comments` for authorized replies; filing a PR does not authorize unsolicited comments.
 
-Handle CI and review findings. The owning thread uses the host’s PR watcher; unwatch before handoff. Report missing monitoring. Update branches by rebasing onto their base by default; no merge commits from base unless Jesse asks. Force-push when appropriate, preferably `--force-with-lease` pinned to the observed remote head; never force-push shared/default branches without Jesse’s say-so. Reassess a failed lease.
+Handle CI and review findings. The owning thread uses the host’s PR watcher; unwatch before handoff. Report missing monitoring. Update branches by rebasing onto their base by default; no merge commits from base unless the user asks. Force-push when appropriate, preferably `--force-with-lease` pinned to the observed remote head; never force-push shared/default branches without the user’s say-so. Reassess a failed lease.
 
 ## Handoff gate
 
 Re-fetch and check the live head/base, required CI, completed reviews, unresolved requests, and mergeability. Readiness requires proof and cross-provider review on that head, green required CI, an up-to-date mergeable branch, and no unresolved actionable findings. Separate missing human approval from technical blockers.
 
-Report PR URL, final SHA, evidence, review outcome, risks, and exactly what Jesse must accept. Leave it open and unmerged. Merge only on Jesse’s explicit word pinned to the reviewed SHA; revalidate the gate immediately beforehand, without protection bypasses. Never enable automatic merging without that authorization.
+Report PR URL, final SHA, evidence, review outcome, risks, and exactly what the user must accept. Leave it open and unmerged. Merge only on the user’s explicit word pinned to the reviewed SHA; revalidate the gate immediately beforehand, without protection bypasses. Never enable automatic merging without that authorization.
