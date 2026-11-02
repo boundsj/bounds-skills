@@ -11,7 +11,7 @@ Use this entrypoint only when explicitly requested. Optimize for accepted work p
 
 ## Route the task
 
-Read the relevant project instructions and available skill descriptions. Load a supporting skill's body only when its phase is needed, through host discovery. Load references conditionally.
+Read relevant project instructions and skill descriptions. Load a supporting skill's body only when its phase is needed, through host discovery, and references conditionally.
 
 | Need | Skill |
 | --- | --- |
@@ -34,12 +34,13 @@ Read the relevant project instructions and available skill descriptions. Load a 
 | Requested prose to tighten | `bounds-unslop` |
 | A reusable working-style skill | `bounds-automate-me` |
 | An idea or plan to stress-test | `bounds-grill` |
+| An open design direction to compare | `bounds-options` |
 
 Keep phases proportional: inspect a typo directly; reproduce a bug first. A request for a plan or review ends with that deliverable; it does not authorize implementation. Preserve relevant specialist skills and native tools.
 
 Carry authorized implementation through the agreed acceptance checks. Use the project's existing verification recipe when useful; creating one is a separate need, not a compulsory phase. Report the outcome, evidence, and consequential gaps. Use independent review when warranted, available, and permitted by existing user and host instructions, under `bounds-review`'s bounded protocol. Reuse authorization already granted.
 
-If a selected skill is absent, say which one. Continue with the available tools when feasible, without pretending it loaded or installing dependencies unasked.
+If a selected skill is absent, say which one and continue with available tools when feasible, without pretending it loaded or installing dependencies unasked.
 
 ## Continuity
 

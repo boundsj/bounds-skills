@@ -47,3 +47,11 @@ Both upstream notices are reproduced verbatim in `licenses/` and every installed
 | bounds-modernize | `modernize`, `takeover` | Keeps conceptual reassessment, disposition, rebase/range-diff, leases and contributor credit. Defaults to the actual PR base and permits authorized rework. Merging, closing and deleting each need the user’s explicit ask. |
 | bounds-review | `sol-loop` | Folds stable finding IDs, severity, bounded rounds, read-only briefs, timeout safety and verified model selection into existing review. Adds a no-reviewer packet; removes Sol-only model selection, unconditional loops, and review-implied publishing. |
 | bounds-leaving-pr-comments | `leaving-pr-comments` | Keeps note attribution, concise evidence-based replies, privacy checks and successful-post verification. Resolves the user name from repository git config at runtime, with an anonymous fallback; reads email only when needed, without granting posting permission. |
+
+## Emil Kowalski additions
+
+[Emil Kowalski's skills](https://github.com/emilkowalski/skills/tree/a81dbca07f2217b7103e510c0f13f8d5b017afc9), pinned commit `a81dbca07f2217b7103e510c0f13f8d5b017afc9` (`a81dbca`). [Original MIT notice](licenses/Emil-Kowalski-MIT.txt), copyright 2026 Emil Kowalski. This notice also travels in every skill adapted from that repository, alongside the earlier notices.
+
+| Bounds skill | Selected source | Adaptation |
+| --- | --- | --- |
+| bounds-options | Emil `prototype` and `break-ui` (with `CATALOG.md`); Pocock `prototype` (`SKILL.md`, `UI.md`, `LOGIC.md`) at `24fe0ef7737efae15c87225755e9f6f5965e4888` | Keeps one stated question, variants on named axes that differ in structure, a `?variant=` switch on the existing page with a development-only floating switcher, a standalone file when there is no project, scenarios for interaction models, combining parts from different variants, a neutral comparison then a stop for the human's choice, worst-case data, and a throwaway branch for the exploration. Adds the current version as baseline, harnesses for native and film or 3D work with fail-closed release gating, live controls for magnitudes, a mixing procedure and round limit, and a drafted decision record with evidence and approval scope that is posted only when authorized. |

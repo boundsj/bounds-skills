@@ -24,6 +24,7 @@ Portable engineering workflows for Codex and Claude Code. Use them individually 
 - **bounds-modernize** reassesses and updates a stale, conflicting, duplicated, or inherited PR. Use for modernizing, rebasing, or taking over existing work while preserving contributor credit.
 - **bounds-leaving-pr-comments** writes attributed GitHub comments on the user’s behalf when posting is authorized: PR comments, inline reviews, replies, and issue comments. Does not itself authorize posting.
 - **bounds-grill** questions you in short rounds about an idea, plan, or design, each question with a recommended answer, until decisions are explicit; for an idea, it checks the evidence that it is worth building before anything else.
+- **bounds-options** builds two to four genuinely different variants of an undecided UI, visual, or interaction direction behind a switcher with real worst-case content, stops for your pick or mix, records the decision and approval scope, and removes the harness.
 
 A typo stays a small edit. A skill grants no extra permissions, installs no dependencies on invocation, and creates no cross-host delegation. Generated verification recipes belong in their own projects.
 
@@ -54,6 +55,7 @@ Use bounds-blast-radius to check the downstream effects of this cache change.
 Use bounds-why to investigate why this module uses a retry limit.
 Use bounds-ketchup to catch me up on this thread since my last message.
 Use bounds-grill to stress-test whether offline drafts are worth building.
+Use bounds-options to show three directions for the onboarding screen before we build one.
 ```
 
 Use the provider's explicit prefix for any individual skill too. Bounds mode is an explicit entrypoint, not a persistent provider setting. Say “stop using bounds-mode” to opt out; reinvoke it in a new session.
@@ -68,4 +70,4 @@ Version **0.3.0** is a release candidate. The original eight workflows have repr
 
 Read [SPEC.md](SPEC.md) for the durable contract. Run `python3 scripts/check.py` and `python3 -m unittest discover -s tests`. For isolated installer and provider checks, follow [validation](docs/validation.md). Test artifacts stay outside the repository.
 
-MIT licensed. Adapted from selected pinned Matt Pocock, Lauren Tan/pstack, and Theo Browne/tstack workflows; see [sources, notices, and adaptations](THIRD_PARTY.md).
+MIT licensed. Adapted from selected pinned Matt Pocock, Lauren Tan/pstack, Theo Browne/tstack, and Emil Kowalski workflows; see [sources, notices, and adaptations](THIRD_PARTY.md).

@@ -26,6 +26,7 @@ Build a small, portable collection of engineering workflows for Codex and Claude
 - `bounds-modernize`: Reassess and update a stale, conflicting, duplicated, or inherited PR. Use for modernizing, rebasing, or taking over existing work while preserving contributor credit.
 - `bounds-leaving-pr-comments`: Write attributed GitHub comments on the user’s behalf when posting is authorized: PR comments, inline reviews, replies, and issue comments. Does not itself authorize posting.
 - `bounds-grill`: Question the user in short rounds about an idea, plan, or design, each question with a recommended answer, until decisions are explicit and nothing rests on a silent assumption. Idea mode puts evidence of the problem first. Ends with a confirmed summary; grants no implementation authority.
+- `bounds-options`: Build two to four genuinely different variants of an undecided UI, visual, or interaction direction behind a switcher with real worst-case content; stop for the human's pick or mix; record the decision, rejected options, and approval scope; remove the harness from shipping code.
 
 ## Usage and portability
 
@@ -47,13 +48,14 @@ The README should lead with a bullet summary of each skill and useful example pr
 
 Adapt selected workflows; do not install upstream collections wholesale or copy their provider-specific assumptions unchanged.
 
-- Matt Pocock: https://github.com/mattpocock/skills/tree/24fe0ef7737efae15c87225755e9f6f5965e4888 — to-spec, to-tickets, diagnosing-bugs, tdd, code-review, retro, writing-for-agents and grilling. Retro documentation at revision 4588b32ecab9ecc9fc8cc6b6c5e7d675b6004b0d.
+- Matt Pocock: https://github.com/mattpocock/skills/tree/24fe0ef7737efae15c87225755e9f6f5965e4888 — to-spec, to-tickets, diagnosing-bugs, tdd, code-review, retro, writing-for-agents, grilling and prototype. Retro documentation at revision 4588b32ecab9ecc9fc8cc6b6c5e7d675b6004b0d.
 - pstack: https://github.com/cursor/plugins/tree/e43c7ee26e0038c6c1fa8380dd34ce86ff94cb2a/pstack — mode routing, interrogate, correct, create-verification-skill, maintain-verification-skill and relevant engineering principles.
 - Recall source: pstack `recall` at revision `182f2ce414e83224915c190d2f63239c1608d0a5`; see THIRD_PARTY.md for the adaptation boundary.
 - Theo Browne / tstack: https://github.com/t3dotgg/tstack/tree/7de017b3fc9d50c03cf3ecb98fb71e0ca65a78bd — selected shipping, modernization, review-loop and comment workflows; see THIRD_PARTY.md.
+- Emil Kowalski: https://github.com/emilkowalski/skills/tree/a81dbca07f2217b7103e510c0f13f8d5b017afc9 — selected interface prototyping, review, worst-case data, motion, platform-design and Swift material; see THIRD_PARTY.md.
 - Installer: https://github.com/vercel-labs/skills
 
-Retain the applicable upstream MIT notices (Matt Pocock, Lauren Tan, and Theo Browne), source revisions and meaningful adaptation notes. If newer upstream material is needed, explicitly record the chosen revision. Avoid mandatory seam-approval rituals, excessive ticket breakdowns, broad rewrites and Cursor-only model/delegation assumptions.
+Retain the applicable upstream MIT notices (Matt Pocock, Lauren Tan, Theo Browne, and Emil Kowalski), source revisions and meaningful adaptation notes. If newer upstream material is needed, explicitly record the chosen revision. Avoid mandatory seam-approval rituals, excessive ticket breakdowns, broad rewrites and Cursor-only model/delegation assumptions.
 
 ## Boundaries and first release acceptance
 
