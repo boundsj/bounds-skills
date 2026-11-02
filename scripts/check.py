@@ -9,7 +9,7 @@ from urllib.parse import unquote, urlsplit
 
 
 TSTACK_NAMES = {"bounds-ship", "bounds-modernize", "bounds-review", "bounds-leaving-pr-comments"}
-EMIL_NAMES = {"bounds-options", "bounds-dial"}
+EMIL_NAMES = {"bounds-options", "bounds-dial", "bounds-ui-review"}
 
 NAMES = {
     "bounds-ship", "bounds-modernize", "bounds-leaving-pr-comments",
@@ -27,6 +27,7 @@ NAMES = {
     "bounds-grill",
     "bounds-options",
     "bounds-dial",
+    "bounds-ui-review",
 }
 
 
