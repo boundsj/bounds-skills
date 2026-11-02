@@ -27,6 +27,7 @@ Build a small, portable collection of engineering workflows for Codex and Claude
 - `bounds-leaving-pr-comments`: Write attributed GitHub comments on the user’s behalf when posting is authorized: PR comments, inline reviews, replies, and issue comments. Does not itself authorize posting.
 - `bounds-grill`: Question the user in short rounds about an idea, plan, or design, each question with a recommended answer, until decisions are explicit and nothing rests on a silent assumption. Idea mode puts evidence of the problem first. Ends with a confirmed summary; grants no implementation authority.
 - `bounds-options`: Build two to four genuinely different variants of an undecided UI, visual, or interaction direction behind a switcher with real worst-case content; stop for the human's pick or mix; record the decision, rejected options, and approval scope; remove the harness from shipping code.
+- `bounds-dial`: Build a small dev-only tool for tuning a value judged by eye, ear, or hand when direct attempts keep missing, then apply the saved version the user chooses. Measure objective values instead, get a go before building, stop iterating while the user tunes, never transcribe values from screenshots, and state what the tool's surface cannot prove.
 
 ## Usage and portability
 
