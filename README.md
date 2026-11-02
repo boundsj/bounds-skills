@@ -26,6 +26,7 @@ Portable engineering workflows for Codex and Claude Code. Use them individually 
 - **bounds-grill** questions you in short rounds about an idea, plan, or design, each question with a recommended answer, until decisions are explicit; for an idea, it checks the evidence that it is worth building before anything else.
 - **bounds-options** builds two to four genuinely different variants of an undecided UI, visual, or interaction direction behind a switcher with real worst-case content, stops for your pick or mix, records the decision and approval scope, and removes the harness.
 - **bounds-dial** builds a small dev-only tool for tuning a value judged by eye, ear, or hand when direct attempts keep missing, then applies the version the user saves.
+- **bounds-ui-review** reviews an interface change for experience quality, choosing only the lenses it needs and tying findings to the build and evidence actually observed; reports a verdict, source fixes, device checks, and human decisions, and fixes only when authorized.
 
 A typo stays a small edit. A skill grants no extra permissions, installs no dependencies on invocation, and creates no cross-host delegation. Generated verification recipes belong in their own projects.
 
@@ -58,6 +59,7 @@ Use bounds-ketchup to catch me up on this thread since my last message.
 Use bounds-grill to stress-test whether offline drafts are worth building.
 Use bounds-options to show three directions for the onboarding screen before we build one.
 Use bounds-dial to build a tool for tuning this sheet's spring.
+Use bounds-ui-review to review the new checkout flow before it ships.
 ```
 
 Use the provider's explicit prefix for any individual skill too. Bounds mode is an explicit entrypoint, not a persistent provider setting. Say “stop using bounds-mode” to opt out; reinvoke it in a new session.

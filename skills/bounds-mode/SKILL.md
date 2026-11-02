@@ -17,7 +17,7 @@ Read relevant project instructions and skill descriptions. Load a supporting ski
 | --- | --- |
 | Material scope, behavior, or dependency decisions | `bounds-plan` |
 | An observed failure or regression | `bounds-debug` |
-| A requested review or consequential implementation to check | `bounds-review` |
+| A requested review or consequential implementation to check | `bounds-review`; for UI experience, `bounds-ui-review` |
 | An authorized change to finish through PR readiness | `bounds-ship` |
 | A stale or inherited PR to reassess and update | `bounds-modernize` |
 | Authorized GitHub comments on the user’s behalf | `bounds-leaving-pr-comments` |
