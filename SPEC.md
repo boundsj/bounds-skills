@@ -25,6 +25,7 @@ Build a small, portable collection of engineering workflows for Codex and Claude
 - `bounds-ship`: Carry an authorized change to proof, cross-provider review, green required CI, and a PR handoff. Use when asked to ship or finish through PR readiness; merge requires the user’s explicit instruction.
 - `bounds-modernize`: Reassess and update a stale, conflicting, duplicated, or inherited PR. Use for modernizing, rebasing, or taking over existing work while preserving contributor credit.
 - `bounds-leaving-pr-comments`: Write attributed GitHub comments on the user’s behalf when posting is authorized: PR comments, inline reviews, replies, and issue comments. Does not itself authorize posting.
+- `bounds-grill`: Question the user in short rounds about an idea, plan, or design, each question with a recommended answer, until decisions are explicit and nothing rests on a silent assumption. Idea mode puts evidence of the problem first. Ends with a confirmed summary; grants no implementation authority.
 
 ## Usage and portability
 
@@ -46,7 +47,7 @@ The README should lead with a bullet summary of each skill and useful example pr
 
 Adapt selected workflows; do not install upstream collections wholesale or copy their provider-specific assumptions unchanged.
 
-- Matt Pocock: https://github.com/mattpocock/skills/tree/24fe0ef7737efae15c87225755e9f6f5965e4888 — to-spec, to-tickets, diagnosing-bugs, tdd, code-review, retro and writing-for-agents. Retro documentation at revision 4588b32ecab9ecc9fc8cc6b6c5e7d675b6004b0d.
+- Matt Pocock: https://github.com/mattpocock/skills/tree/24fe0ef7737efae15c87225755e9f6f5965e4888 — to-spec, to-tickets, diagnosing-bugs, tdd, code-review, retro, writing-for-agents and grilling. Retro documentation at revision 4588b32ecab9ecc9fc8cc6b6c5e7d675b6004b0d.
 - pstack: https://github.com/cursor/plugins/tree/e43c7ee26e0038c6c1fa8380dd34ce86ff94cb2a/pstack — mode routing, interrogate, correct, create-verification-skill, maintain-verification-skill and relevant engineering principles.
 - Recall source: pstack `recall` at revision `182f2ce414e83224915c190d2f63239c1608d0a5`; see THIRD_PARTY.md for the adaptation boundary.
 - Theo Browne / tstack: https://github.com/t3dotgg/tstack/tree/7de017b3fc9d50c03cf3ecb98fb71e0ca65a78bd — selected shipping, modernization, review-loop and comment workflows; see THIRD_PARTY.md.

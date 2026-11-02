@@ -23,6 +23,7 @@ Portable engineering workflows for Codex and Claude Code. Use them individually 
 - **bounds-ship** carries an authorized change to proof, cross-provider review, green required CI, and a PR handoff. Use when asked to ship or finish through PR readiness; merge requires the user’s explicit instruction.
 - **bounds-modernize** reassesses and updates a stale, conflicting, duplicated, or inherited PR. Use for modernizing, rebasing, or taking over existing work while preserving contributor credit.
 - **bounds-leaving-pr-comments** writes attributed GitHub comments on the user’s behalf when posting is authorized: PR comments, inline reviews, replies, and issue comments. Does not itself authorize posting.
+- **bounds-grill** questions you in short rounds about an idea, plan, or design, each question with a recommended answer, until decisions are explicit; for an idea, it checks the evidence that it is worth building before anything else.
 
 A typo stays a small edit. A skill grants no extra permissions, installs no dependencies on invocation, and creates no cross-host delegation. Generated verification recipes belong in their own projects.
 
@@ -52,6 +53,7 @@ Use bounds-how to explain this request flow and its failure paths.
 Use bounds-blast-radius to check the downstream effects of this cache change.
 Use bounds-why to investigate why this module uses a retry limit.
 Use bounds-ketchup to catch me up on this thread since my last message.
+Use bounds-grill to stress-test whether offline drafts are worth building.
 ```
 
 Use the provider's explicit prefix for any individual skill too. Bounds mode is an explicit entrypoint, not a persistent provider setting. Say “stop using bounds-mode” to opt out; reinvoke it in a new session.

@@ -33,6 +33,7 @@ Read the relevant project instructions and available skill descriptions. Load a 
 | Interfaces and state ownership to design | `bounds-architect` |
 | Requested prose to tighten | `bounds-unslop` |
 | A reusable working-style skill | `bounds-automate-me` |
+| An idea or plan to stress-test | `bounds-grill` |
 
 Keep phases proportional: inspect a typo directly; reproduce a bug first. A request for a plan or review ends with that deliverable; it does not authorize implementation. Preserve relevant specialist skills and native tools.
 
