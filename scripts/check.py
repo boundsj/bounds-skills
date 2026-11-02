@@ -23,6 +23,7 @@ NAMES = {
     "bounds-bro",
     "bounds-help",
     "bounds-automate-me",
+    "bounds-grill",
 }
 
 
