@@ -111,3 +111,17 @@ The added packages were proposed by Opus 5.5 at high effort from pinned public u
 The tstack adaptations are pinned to `7de017b3fc9d50c03cf3ecb98fb71e0ca65a78bd`. Local package/reference checks and six unit tests pass, including a negative check for missing Theo Browne notice in a selective package. The skill-creator quick validator passes `bounds-ship`, `bounds-modernize`, `bounds-leaving-pr-comments`, and the updated `bounds-review`. `git diff --check` passes.
 
 These checks establish package structure, reference integrity, word limits, and license retention. They do not prove live GitHub workflow behavior, deployment, or fresh installed-provider discovery. No throwaway GitHub repository was used; no user-home installation was performed. Cross-provider review and actual PR CI results are reported with the PR rather than inferred from local checks.
+
+## Design and product additions (2026-11-01)
+
+Seven stacked commits add `bounds-grill`, `bounds-options`, `bounds-dial`, `bounds-ui-review`, `bounds-web-craft`, a design-rules reference for `bounds-agent-docs`, and `bounds-native-craft`. They also add Emil Kowalski's MIT notice with a selective-package check. Craft skills (`bounds-web-craft`, `bounds-native-craft`) are installed per project; the others are global workflows.
+
+| Check | Observed result |
+| --- | --- |
+| Package integrity | At each commit, `scripts/check.py`, all seven package tests (including the Emil Kowalski notice failure case), the skill-creator quick validator for the added skill, and `git diff --check` pass. New entrypoints are 422–445 words; mode is 449. |
+| Global install selection | With `skills@1.7.0`, an isolated home, and a local-path source, the documented global command installs exactly the 25 workflow skills for Codex and Claude and no craft skills. |
+| Per-project craft install | From a temporary project root without `--global`, adding `bounds-web-craft` or `bounds-native-craft` writes `.agents/skills/<name>` with a payload identical to the checkout, a relative `.claude/skills` link, and `skills-lock.json`. Project removal leaves empty folders and a lock file with no skills. Nothing is written to the home skill folders. |
+| Independent review | Two rounds by a fresh Claude Opus 5.5 reviewer at max effort covered factual accuracy (WCAG 2.2, Apple HIG and API names, CSS behavior, Swift), agent usability and overlaps, the repository contract, provenance against pinned sources, and privacy. Round-one findings led to rewrites and fixes. Round two found no blocking issues, and its should-fix items and nits were applied. |
+| Forward exercise | An earlier `bounds-grill` draft was run against a supplied idea session and plan session. Its eight instruction gaps shaped the current round, recommendation, and stopping rules. The current skills were walked through by the round-two reviewer, not executed by a provider. |
+
+These checks do not prove fresh-session discovery or invocation in Codex or Claude, automatic loading of project-installed craft skills, installation from a GitHub tree URL, or device behavior described in the craft references. No user-home installation was performed.

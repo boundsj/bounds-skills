@@ -27,6 +27,9 @@ Craft skills carry platform interface guidance and load automatically while buil
 # From a web project's root: install web craft for this project only.
 npx --yes skills@1.7.0 add "$bounds_source" --agent codex claude-code --skill bounds-web-craft --yes
 
+# From a native app project's root: install native craft instead.
+npx --yes skills@1.7.0 add "$bounds_source" --agent codex claude-code --skill bounds-native-craft --yes
+
 # Remove a craft skill from this project.
 npx --yes skills@1.7.0 remove bounds-web-craft --agent codex claude-code --yes
 ```
