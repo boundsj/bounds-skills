@@ -8,7 +8,7 @@ Portable engineering workflows for Codex and Claude Code. Use them individually 
 - **bounds-review** reviews a pinned change for correctness, requirements, and maintainability.
 - **bounds-recall** recovers prior decisions and unfinished work, then checks what still holds now.
 - **bounds-retro** finds recurring waste in accessible work and proposes structural improvements.
-- **bounds-agent-docs** keeps agent documentation short, accurate, and easy to navigate.
+- **bounds-agent-docs** keeps agent documentation short, accurate, and easy to navigate, including design-system rules agents can follow.
 - **bounds-create-verification** builds and executes a project-local Launch, Doctor, Drive, Evidence, Cleanup recipe.
 - **bounds-maintain-verification** refreshes that recipe and feature map, separating drift, tooling gaps, and product defects.
 - **bounds-ketchup** briefs the user on what changed in the current conversation since their last substantive message, with rechecked state, user-owned decisions, and the next step.

@@ -8,7 +8,7 @@ license: MIT
 
 Start from the requests future agents need to complete and the documentation already in scope. Read applicable instructions and inspect the relevant commands and entrypoints. Preserve project conventions and user-authored constraints; make a focused patch rather than replacing unrelated guidance.
 
-Keep always-loaded files small: the project purpose, essential constraints, navigation, and commands that earn their space. Put a specialized procedure behind a link that says when to read it. Keep each fact in one maintained location. Prefer an accurate pointer to configuration over duplicating a discoverable inventory.
+Keep always-loaded files small: the project purpose, essential constraints, navigation, and commands that earn their space. Put a specialized procedure behind a link that says when to read it. Keep each fact in one maintained location. Prefer an accurate pointer to configuration over duplicating a discoverable inventory. When the project has a visual system, such as tokens or theme values, shared components with variants, or styles, read [design rules](references/design-rules.md) before documenting how agents should build screens with it.
 
 Write direct actions with observable completion criteria. Include working directory, prerequisites, and side effects where a command would otherwise be ambiguous. Run safe commands to check accuracy; label commands that could not be executed and why. Do not run deployments or other external mutations just to validate documentation.
 
