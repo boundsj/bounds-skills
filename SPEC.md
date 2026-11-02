@@ -29,6 +29,7 @@ Build a small, portable collection of engineering workflows for Codex and Claude
 - `bounds-options`: Build two to four genuinely different variants of an undecided UI, visual, or interaction direction behind a switcher with real worst-case content; stop for the human's pick or mix; record the decision, rejected options, and approval scope; remove the harness from shipping code.
 - `bounds-dial`: Build a small dev-only tool for tuning a value judged by eye, ear, or hand when direct attempts keep missing, then apply the saved version the user chooses. Measure objective values instead, get a go before building, stop iterating while the user tunes, never transcribe values from screenshots, and state what the tool's surface cannot prove.
 - `bounds-ui-review`: Review an interface change for experience quality: interaction across inputs, accessibility, states, worst-case content, layout, motion, and leftovers. Pin the build and evidence observed; choose lenses per change; report a verdict with source fixes, device checks, and human decisions, plus approval scope. Report by default; fix only when authorized.
+- `bounds-web-craft`: Apply interface craft when building, styling, or reviewing web UIs, loading only the topic references a task touches and verifying in a real browser at measured widths, themes, zoom, keyboard, and reduced motion. Installed per web project rather than globally.
 
 ## Usage and portability
 
@@ -40,7 +41,7 @@ Shared skills do not provide cross-host delegation. Where review uses delegation
 
 ## Installation and documentation
 
-Use standard SKILL.md directories in this repository and prefer the existing Vercel skills CLI (`npx skills`) over a custom installer. Target global Codex and Claude installations so skills are available across projects. Install separately on each execution host; T3 uses that host's provider. Keep generated project-specific verification recipes in the relevant project.
+Use standard SKILL.md directories in this repository and prefer the existing Vercel skills CLI (`npx skills`) over a custom installer. Target global Codex and Claude installations so skills are available across projects. Craft skills, which carry platform interface guidance, install per project so they load only where that platform is used. Install separately on each execution host; T3 uses that host's provider. Keep generated project-specific verification recipes in the relevant project.
 
 Validate exact commands before documenting them. Cover install, selective installation, update, list/status and removal. Test tagged/revision-based installation for repeatable multi-host updates. Use temporary provider homes first and preserve existing skill files. Verify fresh-session discovery before claiming a provider/host is supported. Do not claim an installation on one host synchronizes others.
 

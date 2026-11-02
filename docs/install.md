@@ -14,12 +14,24 @@ bounds_source="https://github.com/$bounds_repo/tree/$bounds_ref"
 # Inspect the package before installation.
 npx --yes skills@1.7.0 add "$bounds_source" --list
 
-# Install all available skills globally with explicit provider targets.
-npx --yes skills@1.7.0 add "$bounds_source" --global --agent codex claude-code --skill '*' --yes
+# Install every workflow skill globally with explicit provider targets.
+npx --yes skills@1.7.0 add "$bounds_source" --global --agent codex claude-code --skill bounds-ship bounds-modernize bounds-leaving-pr-comments bounds-mode bounds-plan bounds-debug bounds-review bounds-recall bounds-retro bounds-agent-docs bounds-create-verification bounds-maintain-verification bounds-ketchup bounds-why bounds-blast-radius bounds-how bounds-architect bounds-unslop bounds-bro bounds-help bounds-automate-me bounds-grill bounds-options bounds-dial bounds-ui-review --yes
 
 # Or select only the workflows you want.
 npx --yes skills@1.7.0 add "$bounds_source" --global --agent codex claude-code --skill bounds-mode bounds-plan --yes
 ```
+
+Craft skills carry platform interface guidance and load automatically while building or reviewing UI. Install them per project instead of globally: run the command from that project's root without `--global`. The CLI writes `.agents/skills/` (read by Codex), links in `.claude/skills/`, and `skills-lock.json` into the project; commit or ignore them according to the project's conventions. The global commands name workflow skills explicitly because `--skill '*'` would also install craft skills globally.
+
+```sh
+# From a web project's root: install web craft for this project only.
+npx --yes skills@1.7.0 add "$bounds_source" --agent codex claude-code --skill bounds-web-craft --yes
+
+# Remove a craft skill from this project.
+npx --yes skills@1.7.0 remove bounds-web-craft --agent codex claude-code --yes
+```
+
+Project removal leaves empty `.agents/skills/` and `.claude/skills/` folders and an empty `skills-lock.json`; delete them if nothing else uses them.
 
 Installing a selection does not remove previously installed skills. Mode can use whichever supporting skills are present and reports missing ones. Each skill's references and license notices travel with it. In the tested CLI, Codex reads the canonical `~/.agents/skills` copy; Claude receives links in its configured skill home. Other providers that read the universal directory can also discover those files. Agent selection controls installer targets, not universal-directory visibility. Avoid `--all`, which selects every supported agent.
 
