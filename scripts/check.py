@@ -9,6 +9,7 @@ from urllib.parse import unquote, urlsplit
 
 
 TSTACK_NAMES = {"bounds-ship", "bounds-modernize", "bounds-review", "bounds-leaving-pr-comments"}
+EMIL_NAMES = {"bounds-options"}
 
 NAMES = {
     "bounds-ship", "bounds-modernize", "bounds-leaving-pr-comments",
@@ -24,6 +25,7 @@ NAMES = {
     "bounds-help",
     "bounds-automate-me",
     "bounds-grill",
+    "bounds-options",
 }
 
 
@@ -48,6 +50,7 @@ def check(root):
     notices = [(root / "licenses" / name).read_text() for name in (
         "Matt-Pocock-MIT.txt", "Lauren-Tan-MIT.txt")]
     theo_notice = (root / "licenses/Theo-Browne-MIT.txt").read_text()
+    emil_notice = (root / "licenses/Emil-Kowalski-MIT.txt").read_text()
     stats = {}
     for name in sorted(NAMES):
         folder = skills / name
@@ -67,6 +70,8 @@ def check(root):
         assert all(notice in license_text for notice in notices), f"{name}: missing upstream notice"
         if name in TSTACK_NAMES:
             assert theo_notice in license_text, f"{name}: missing tstack upstream notice"
+        if name in EMIL_NAMES:
+            assert emil_notice in license_text, f"{name}: missing Emil Kowalski upstream notice"
         assert (folder / "NOTICE.md").is_file()
         assert not re.search(r"\[TODO:|\bTBD\b", body), f"{name}: unfinished scaffold"
         count = len(body.split())
