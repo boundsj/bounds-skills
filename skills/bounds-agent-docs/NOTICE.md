@@ -14,7 +14,7 @@ metadata and fixed model choices. Scope and permissions come from the user's tas
 
 Selected source material: Pocock `writing-for-agents`; pstack `principle-guard-the-context-window`.
 
-Adaptation: Short entrypoints, conditional pointers, observable completion and pruning. Uses portable distribution boundaries without universal word/style rituals.
+Adaptation: Short entrypoints, conditional pointers, observable completion and pruning. Uses portable distribution boundaries without universal word/style rituals. The design-rules reference also draws on Pocock `writing-for-agents`, pstack `principle-guard-the-context-window` and `principle-encode-lessons-in-structure` at `101b274dd991f694e1f7024be2157e5f3adf07de`, and the published Design Tokens Community Group format.
 
 Full license notices are in [LICENSE.txt](LICENSE.txt). This source mapping travels
 with the installed revision; no link to a moving branch is required.
