@@ -28,6 +28,7 @@ Portable engineering workflows for Codex and Claude Code. Use them individually 
 - **bounds-dial** builds a small dev-only tool for tuning a value judged by eye, ear, or hand when direct attempts keep missing, then applies the version the user saves.
 - **bounds-ui-review** reviews an interface change for experience quality, choosing only the lenses it needs and tying findings to the build and evidence actually observed; reports a verdict, source fixes, device checks, and human decisions, and fixes only when authorized.
 - **bounds-web-craft** applies interface craft to web UIs: typography, color, surfaces, layout, components, forms, accessibility, motion, performance, mobile web, and marketing pages, verified in a real browser. Install it per web project.
+- **bounds-native-craft** applies platform-correct interface craft to native apps, with Apple references (SwiftUI first; iOS, iPadOS, macOS, visionOS) and device-grade evidence; other native platforms follow their own guidelines. Install it per native project.
 
 A typo stays a small edit. A skill grants no extra permissions, installs no dependencies on invocation, and creates no cross-host delegation. Generated verification recipes belong in their own projects.
 
@@ -62,6 +63,7 @@ Use bounds-options to show three directions for the onboarding screen before we 
 Use bounds-dial to build a tool for tuning this sheet's spring.
 Use bounds-ui-review to review the new checkout flow before it ships.
 Use bounds-web-craft to tighten the typography and spacing on the pricing page.
+Use bounds-native-craft to make this SwiftUI settings screen hold up at the largest text size.
 ```
 
 Use the provider's explicit prefix for any individual skill too. Bounds mode is an explicit entrypoint, not a persistent provider setting. Say “stop using bounds-mode” to opt out; reinvoke it in a new session.
