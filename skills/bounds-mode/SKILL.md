@@ -35,6 +35,7 @@ Read relevant project instructions and skill descriptions. Load a supporting ski
 | A reusable working-style skill | `bounds-automate-me` |
 | An idea or plan to stress-test | `bounds-grill` |
 | An open design direction to compare | `bounds-options` |
+| A felt value that keeps missing | `bounds-dial` |
 
 Keep phases proportional: inspect a typo directly; reproduce a bug first. A request for a plan or review ends with that deliverable; it does not authorize implementation. Preserve relevant specialist skills and native tools.
 
