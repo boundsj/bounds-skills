@@ -33,6 +33,26 @@ NAMES = {
 }
 
 
+PRIVATE_PATTERNS = (
+    (re.compile(r"(?:(?<![\w.])|(?<=/mnt/[a-z]))/(?:Users|home)/(?!\d+\b)[A-Za-z0-9._-]+"), "absolute home path"),
+    (re.compile(r"\b[A-Za-z]:\\{1,2}Users\\{1,2}", re.I), "Windows home path"),
+    (re.compile(r"\b[\w-]+(?:\.[\w-]+)*\.ts\.net\b"), "tailnet hostname"),
+    (re.compile(r"(?<![.\w-])[A-Za-z0-9-]+\.local\b(?!\.\w)"), "local network hostname"),
+    (re.compile(r"\b(?:192\.168|10\.\d{1,3}|172\.(?:1[6-9]|2\d|3[01])|100\.(?:6[4-9]|[7-9]\d|1[01]\d|12[0-7]))\.\d{1,3}\.\d{1,3}\b"), "private IP address"),
+    (re.compile(r"\bf[cd][0-9a-f]{2}(?::[0-9a-f]{0,4}){2,7}", re.I), "private IPv6 address"),
+)
+EMAIL = re.compile(r"(?<![\w.%+-])(?!git@|noreply@|no-reply@)[A-Za-z0-9._%+-]+@((?:[A-Za-z0-9-]+\.)+[A-Za-z]{2,})")
+EXAMPLE_DOMAIN = re.compile(r"(?:^|\.)(?:example\.(?:com|org|net)|[a-z0-9-]+\.(?:example|test|invalid|localhost))$")
+
+
+def private_details(text):
+    """Name generic private-detail patterns; a stored list of real names would itself leak them."""
+    found = [label for pattern, label in PRIVATE_PATTERNS if pattern.search(text)]
+    if any(not EXAMPLE_DOMAIN.search(domain.lower()) for domain in EMAIL.findall(text)):
+        found.append("email address")
+    return found
+
+
 def frontmatter(path):
     """Read this repository's deliberately flat YAML subset, not arbitrary YAML."""
     text = path.read_text()
@@ -77,6 +97,14 @@ def check(root):
         if name in EMIL_NAMES:
             assert emil_notice in license_text, f"{name}: missing Emil Kowalski upstream notice"
         assert (folder / "NOTICE.md").is_file()
+        for path in folder.rglob("*"):
+            if path.is_file() and path.name != ".DS_Store":
+                try:
+                    text = path.read_text()
+                except UnicodeDecodeError:
+                    raise AssertionError(f"{path.relative_to(root)}: not UTF-8 text; the privacy scan cannot read it")
+                leaks = private_details(text)
+                assert not leaks, f"{path.relative_to(root)}: private detail ({', '.join(leaks)})"
         assert not re.search(r"\[TODO:|\bTBD\b", body), f"{name}: unfinished scaffold"
         count = len(body.split())
         assert count <= 450, f"{name}: {count} words; move conditional detail to references"

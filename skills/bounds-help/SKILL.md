@@ -1,6 +1,6 @@
 ---
 name: bounds-help
-description: "Help the user choose among the Bounds skills available on this host, or word a useful prompt for one, without starting the work. Use for questions about which Bounds skill fits or how to ask for it."
+description: "Help the user choose among the Bounds skills available on this host, or word a useful prompt for one, without starting the work. Use for questions about which Bounds skill fits, how to ask for it, or to sharpen a prompt."
 license: MIT
 ---
 
@@ -21,3 +21,5 @@ Recommend one skill, or two for a close call, with a sentence on the difference.
 ## Word the prompt
 
 Give at most one example prompt in a code block, using host invocation syntax only if you know it. A good prompt states the goal and a pass/fail done check, the proof to show (real output, screenshot, stored value), what the user already knows (symptom, repro, log), and real constraints ("don't change code yet", "zero behavior change"). Leave out step lists and guesses at the cause. Keep the reply short unless they asked for the whole catalog.
+
+If the user asks to sharpen a prompt, make the task deeper, not bigger. Briefly name what a top professional would do that the prompt does not ask for, the rawest material they would start from, their methods and tools, and what outside check would show the result is right. Then rewrite the prompt to ask for that. Have it prototype choices an experiment can settle and recommend from what it observed; leave product and preference choices to the user.

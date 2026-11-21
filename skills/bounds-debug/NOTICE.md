@@ -16,5 +16,7 @@ Selected source material: Pocock `diagnosing-bugs`, `tdd`; pstack `principle-tes
 
 Adaptation: Keeps symptom-specific feedback, falsifiable probes and regression evidence. Allows proportionate diagnosis and honest partial progress without mandatory hypothesis counts.
 
+Update from Pocock `diagnosing-bugs` at `abeeaf95660ba9e8b7c753eb38f441ca707a8823` (https://github.com/mattpocock/skills/tree/abeeaf95660ba9e8b7c753eb38f441ca707a8823): prove a forced mutation landed by diffing against a pristine copy before trusting the failure. Bounds adds a check that a probe is installed and producing output before its silence counts as evidence.
+
 Full license notices are in [LICENSE.txt](LICENSE.txt). This source mapping travels
 with the installed revision; no link to a moving branch is required.

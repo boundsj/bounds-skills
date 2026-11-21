@@ -8,6 +8,8 @@ For local edits, capture `git diff --binary HEAD` and the relevant untracked fil
 
 Discover the session's native or app-owned capabilities. Inherit the user's provider/model settings unless they specify otherwise; never guess model slugs, launch another host, or install tooling to manufacture independence. For a required cross-provider review, select a provider distinct from the implementer. Verify returned provider/model/options; no silent model swaps. If the requested selection cannot run, report the mismatch. No delegation tool means a local review with an explicit coverage limit, not independent approval.
 
+Start each reviewer with a fresh context that holds only the brief and the artifacts it names. Do not fork or copy the implementing conversation; some hosts fork by default, so choose the fresh option where one exists. A reviewer that inherits the implementer's reasoning is not independent.
+
 Give a reviewer a bounded read-only brief:
 
 ```text
@@ -35,7 +37,7 @@ Keep a ledger of ID, severity, evidence, response, and status: open, fixed pendi
 
 Do not edit the scoped change while its reviewer runs. Keep its task ID. A timeout, error, silence, or exhausted budget never counts as approval. Inspect task status before retrying; cancel and verify a failed/stuck task has stopped before starting its replacement. Do not duplicate active reviews. Follow host lifecycle and waiting tools.
 
-When fixes are authorized, use at most two fix/review cycles unless the user sets another bound. Later briefs include the original acceptance contract, new head, delta, ledger, responses, and unresolved objections. Focus on changed code and open IDs. Approval covers only the reviewed revision; explicitly identify unreviewed changes. At the limit, report both sides of disputes and unresolved blockers for the user’s decision.
+When fixes are authorized, use at most two fix/review cycles unless the user sets another bound. Later briefs include the original acceptance contract, new head, delta, ledger, responses, and unresolved objections. Focus on changed code and open IDs. Approval covers only the reviewed revision; explicitly identify unreviewed changes. After a rebase, squash, or amend, approval carries to the new head only when its tree equals the reviewed tree, or when all of these hold: `git range-diff <old-base>..<old-head> <new-base>..<new-head>` shows the same patches; the base changes touch neither the reviewed files nor code they call or that calls them; and the required checks pass on the new head. Otherwise review that range-diff plus any base changes that interact with the change. At the limit, report both sides of disputes and unresolved blockers for the user’s decision.
 
 ## No-reviewer packet
 

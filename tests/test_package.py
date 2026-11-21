@@ -55,6 +55,18 @@ class PackageValidation(unittest.TestCase):
         with self.assertRaisesRegex(AssertionError, "Emil Kowalski upstream notice"):
             check(self.root)
 
+    def test_skill_cannot_carry_private_details(self):
+        path = self.root / "skills/bounds-plan/SKILL.md"
+        for leak in ("/Users/someone/project", "/mnt/c/Users/someone", "C:\\Users\\someone", "someone@private-mail.dev",
+                     "build-box.tail1234.ts.net", "studio.local", "100.101.102.103", "192.168.1.20", "fd7a:115c:a1e0::1"):
+            original = path.read_text()
+            path.write_text(original + f"\nRun it from {leak}.\n")
+            with self.assertRaisesRegex(AssertionError, "private detail"):
+                check(self.root)
+            path.write_text(original)
+        path.write_text(path.read_text() + "\nWrite to sam@example.org.\n")
+        check(self.root)
+
     def test_mode_cannot_silently_become_implicit(self):
         path = self.root / "skills/bounds-mode/SKILL.md"
         path.write_text(path.read_text().replace("disable-model-invocation: true", "disable-model-invocation: false"))
