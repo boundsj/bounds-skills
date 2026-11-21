@@ -1,6 +1,6 @@
 # Validation
 
-This file records release-candidate evidence and its limits. Installer validation creates fresh temporary homes for child processes, with isolated provider/config/cache directories. It never installs into the invoking user's skill homes. Logs and generated recipes remain in the temporary test projects.
+This file records validation evidence and its limits. Installer validation creates fresh temporary homes for child processes, with isolated provider/config/cache directories. It never installs into the invoking user's skill homes. Logs and generated recipes remain in the temporary test projects.
 
 ## Reproduce
 

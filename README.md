@@ -84,7 +84,7 @@ Use the provider's explicit prefix for any individual skill too. Bounds mode is 
 
 Use `npx skills` on each execution host, targeting `codex` and/or `claude-code`. [Installation](docs/install.md) covers a pinned source, selective installs, per-project craft skills, updates, status, and removal. No bespoke installer or plugin framework is required.
 
-Version **0.3.0** is a release candidate. The original eight workflows have representative Codex and Claude CLI tests in isolated temporary homes. Evidence for recall and later additions is recorded separately; no real user-home rollout or other-host installation has been performed. [Validation](docs/validation.md) records the provider-specific coverage and remaining gaps.
+Version **0.4.0** adds council, handoff, measure, research, post, and cleanup, and refreshes existing skills from newer upstream revisions. The original eight workflows have representative Codex and Claude CLI tests in isolated temporary homes. Evidence for later additions is recorded separately. No release tag has been published, and no real user-home rollout or other-host installation has been performed. [Validation](docs/validation.md) records the provider-specific coverage and remaining gaps.
 
 ## Develop
 
