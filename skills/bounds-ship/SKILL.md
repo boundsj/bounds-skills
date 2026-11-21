@@ -18,7 +18,7 @@ Inspect the branch, local edits, and existing PR first. Preserve unrelated work.
 
 Complete the smallest coherent change and run the required checks. Observe direct evidence for the intended behavior: reproduce a fix, exercise a workflow, or inspect the running UI where applicable. Record commands/results and gaps against the exact commit; green mocks alone do not prove a user workflow.
 
-Get one independent cross-provider review of the final commit under `bounds-review`. Discover capabilities; never silently substitute providers or models. If unavailable, provide its review packet and report blocked review. Fix real findings within the bounded protocol. Recheck and review any changed head before claiming readiness; rebases follow `bounds-review`'s approval rule.
+Get one independent cross-provider review of the final commit under `bounds-review`, or `bounds-council` when the user asks for council. Discover capabilities; never silently substitute providers or models. If unavailable, provide its review packet and report blocked review. Fix real findings within the bounded protocol. Recheck and review any changed head before claiming readiness; rebases follow `bounds-review`'s approval rule.
 
 ## File and follow through
 

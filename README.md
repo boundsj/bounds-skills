@@ -6,6 +6,7 @@ Portable engineering workflows for Codex and Claude Code. Use them individually 
 - **bounds-plan** defines scope, retained behavior, acceptance checks, and dependencies.
 - **bounds-debug** reproduces a symptom, isolates its cause, and verifies the fix.
 - **bounds-review** reviews a pinned change for correctness, requirements, and maintainability.
+- **bounds-council** convenes one fresh-context reviewer per available provider on a pinned change, plan, or design when you ask for council, scores each round, stops after 3 rounds (up to 5 for a security, data-loss, or concurrency change while a blocker is open), and writes a results table into the PR when authorized.
 - **bounds-recall** recovers prior decisions and unfinished work, then checks what still holds now.
 - **bounds-retro** finds recurring waste in accessible work and proposes structural improvements.
 - **bounds-agent-docs** keeps agent documentation short, accurate, and easy to navigate, including design-system rules agents can follow.
@@ -41,6 +42,7 @@ Use bounds-mode to fix this failing import and verify the original error is gone
 Use bounds-plan to plan CSV export, preserving the current JSON interface.
 Use bounds-debug to reproduce why the second page repeats the first page's rows.
 Use bounds-review to review this branch against main and SPEC.md.
+Use bounds-council to review this branch before it ships.
 Use bounds-ship to finish this authorized change through a ready PR; do not merge.
 Use bounds-modernize to reassess and update PR #42 against its base.
 Use bounds-leaving-pr-comments to reply to this reviewer on my behalf.
