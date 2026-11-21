@@ -32,6 +32,7 @@ NAMES = {
     "bounds-native-craft",
     "bounds-council",
     "bounds-handoff",
+    "bounds-measure",
 }
 
 
