@@ -22,6 +22,7 @@ Build a small, portable collection of engineering workflows for Codex and Claude
 - `bounds-how`: Explains how existing code or a subsystem works from entrypoint through state and boundaries to outcome, sized to the reader.
 - `bounds-architect`: Designs state ownership, types, interfaces, and module shape before a nontrivial implementation, with real alternatives, compatibility, risk, and verification.
 - `bounds-unslop`: Edits requested prose to be direct and concrete while preserving meaning, commitments, numbers, uncertainty, citations, quotes, and code.
+- `bounds-post`: Drafts one public blog post from user-named material in the user's voice: one idea, a reader, a concrete proof and honest limit, every claim checked against its source, and a privacy pass that lists each change. Sources and voice come from the user's instructions; never publishes, posts, or commits.
 - `bounds-bro`: Restates the previous answer or supplied text in plain short language, keeping its decision, consequential caveats, and next step; on request, in ASD-STE100 Simplified Technical English.
 - `bounds-help`: Guides the user to the Bounds skills actually available on this host, or a useful prompt for one, without starting the work. On request, sharpens a prompt to be deeper, not bigger.
 - `bounds-automate-me`: Creates or updates one scoped working-style skill from the user's explicit preferences and bounded evidence of repeated decisions.
