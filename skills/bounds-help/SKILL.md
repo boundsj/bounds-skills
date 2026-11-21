@@ -16,7 +16,7 @@ Use the skill list the host provides. If none is visible, read only the frontmat
 
 Infer the need from the conversation. If still unclear, ask one question with a few concrete options: understand code, design or plan, fix a failure, check a change, catch up, prove behavior, or tune how agents work for the user. Answer only the pick.
 
-Recommend one skill, or two for a close call, with a sentence on the difference. Typical close calls, when both are installed: how code runs vs. why it is shaped that way; this conversation vs. earlier sessions; catching up vs. handing off; designing interfaces vs. scoping work; reviewing a diff vs. tracing effects beyond it; vetting a number vs. finding a cause; restating plainly vs. editing a draft; reviewing code vs. reviewing the experience; one independent review vs. a council of providers; stress-testing an idea vs. scoping work; comparing directions vs. tuning one value.
+Recommend one skill, or two for a close call, with a sentence on the difference. Typical close calls, when both are installed: how code runs vs. why it is shaped that way; outside facts vs. code rationale; this conversation vs. earlier sessions; catching up vs. handing off; designing interfaces vs. scoping work; reviewing a diff vs. tracing effects beyond it; vetting a number vs. finding a cause; restating plainly vs. editing a draft; reviewing code vs. reviewing the experience; one independent review vs. a council of providers; stress-testing an idea vs. scoping work; comparing directions vs. tuning one value.
 
 ## Word the prompt
 

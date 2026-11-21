@@ -28,6 +28,7 @@ Read relevant project instructions and skill descriptions. Load a supporting ski
 | An existing recipe or feature map | `bounds-maintain-verification` |
 | Progress since the user's last message | `bounds-ketchup` |
 | Work to pause or pass to another agent | `bounds-handoff` |
+| An external fact a decision waits on | `bounds-research` |
 | Rationale behind existing code | `bounds-why` |
 | Downstream effects of a change | `bounds-blast-radius` |
 | A measured number to vet before reporting | `bounds-measure` |

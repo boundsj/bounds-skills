@@ -33,6 +33,7 @@ NAMES = {
     "bounds-council",
     "bounds-handoff",
     "bounds-measure",
+    "bounds-research",
 }
 
 
