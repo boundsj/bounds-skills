@@ -12,6 +12,7 @@ Portable engineering workflows for Codex and Claude Code. Use them individually 
 - **bounds-agent-docs** keeps agent documentation short, accurate, and easy to navigate, including design-system rules agents can follow.
 - **bounds-create-verification** builds and executes a project-local Launch, Doctor, Drive, Evidence, Cleanup recipe.
 - **bounds-maintain-verification** refreshes that recipe and feature map, separating drift, tooling gaps, and product defects.
+- **bounds-handoff** writes a resume note so another agent, model, or later session can continue the work: Git state left as is and recorded, verified versus unverified claims, open findings, live jobs, and the first next action.
 - **bounds-ketchup** briefs the user on what changed in the current conversation since their last substantive message, with rechecked state, user-owned decisions, and the next step.
 - **bounds-why** investigates why code or a design has its current shape, separating cited evidence from inference, alternatives, and unknowns.
 - **bounds-blast-radius** traces what an exact change could break beyond its diff and tests the safety fact it depends on through real interfaces when authorized.
@@ -60,6 +61,7 @@ Use bounds-how to explain this request flow and its failure paths.
 Use bounds-blast-radius to check the downstream effects of this cache change.
 Use bounds-why to investigate why this module uses a retry limit.
 Use bounds-ketchup to catch me up on this thread since my last message.
+Use bounds-handoff to write a resume note before I switch providers on this branch.
 Use bounds-grill to stress-test whether offline drafts are worth building.
 Use bounds-options to show three directions for the onboarding screen before we build one.
 Use bounds-dial to build a tool for tuning this sheet's spring.
