@@ -15,7 +15,7 @@ bounds_source="https://github.com/$bounds_repo/tree/$bounds_ref"
 npx --yes skills@1.7.0 add "$bounds_source" --list
 
 # Install every workflow skill globally with explicit provider targets.
-npx --yes skills@1.7.0 add "$bounds_source" --global --agent codex claude-code --skill bounds-ship bounds-modernize bounds-leaving-pr-comments bounds-mode bounds-plan bounds-debug bounds-review bounds-recall bounds-retro bounds-agent-docs bounds-create-verification bounds-maintain-verification bounds-ketchup bounds-why bounds-blast-radius bounds-how bounds-architect bounds-unslop bounds-bro bounds-help bounds-automate-me bounds-grill bounds-options bounds-dial bounds-ui-review bounds-council bounds-handoff bounds-measure --yes
+npx --yes skills@1.7.0 add "$bounds_source" --global --agent codex claude-code --skill bounds-ship bounds-modernize bounds-leaving-pr-comments bounds-mode bounds-plan bounds-debug bounds-review bounds-recall bounds-retro bounds-agent-docs bounds-create-verification bounds-maintain-verification bounds-ketchup bounds-why bounds-blast-radius bounds-how bounds-architect bounds-unslop bounds-bro bounds-help bounds-automate-me bounds-grill bounds-options bounds-dial bounds-ui-review bounds-council bounds-handoff bounds-measure bounds-research --yes
 
 # Or select only the workflows you want.
 npx --yes skills@1.7.0 add "$bounds_source" --global --agent codex claude-code --skill bounds-mode bounds-plan --yes
@@ -55,7 +55,7 @@ Use explicit re-add for updates. In `skills@1.7.0`, `update --global <skill name
 npx --yes skills@1.7.0 remove bounds-plan --global --agent claude-code --yes
 
 # Remove the Bounds bundle from both providers, preserving unrelated skills.
-npx --yes skills@1.7.0 remove bounds-ship bounds-modernize bounds-leaving-pr-comments bounds-mode bounds-plan bounds-debug bounds-review bounds-recall bounds-retro bounds-agent-docs bounds-create-verification bounds-maintain-verification bounds-ketchup bounds-why bounds-blast-radius bounds-how bounds-architect bounds-unslop bounds-bro bounds-help bounds-automate-me bounds-grill bounds-options bounds-dial bounds-ui-review bounds-council bounds-handoff bounds-measure --global --agent codex claude-code --yes
+npx --yes skills@1.7.0 remove bounds-ship bounds-modernize bounds-leaving-pr-comments bounds-mode bounds-plan bounds-debug bounds-review bounds-recall bounds-retro bounds-agent-docs bounds-create-verification bounds-maintain-verification bounds-ketchup bounds-why bounds-blast-radius bounds-how bounds-architect bounds-unslop bounds-bro bounds-help bounds-automate-me bounds-grill bounds-options bounds-dial bounds-ui-review bounds-council bounds-handoff bounds-measure bounds-research --global --agent codex claude-code --yes
 ```
 
 Removing a Claude link can leave Codex's canonical copy intact. Removing from Codex alone cannot hide that shared copy while another provider still uses it; remove from both when removing the shared bundle. Installation is per execution host. T3 does not synchronize these files to another machine. The first release was tested in temporary homes; real user-home rollout is a separate step.

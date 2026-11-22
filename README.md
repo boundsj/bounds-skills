@@ -14,6 +14,7 @@ Portable engineering workflows for Codex and Claude Code. Use them individually 
 - **bounds-maintain-verification** refreshes that recipe and feature map, separating drift, tooling gaps, and product defects.
 - **bounds-handoff** writes a resume note so another agent, model, or later session can continue the work: Git state left as is and recorded, verified versus unverified claims, open findings, live jobs, and the first next action.
 - **bounds-ketchup** briefs the user on what changed in the current conversation since their last substantive message, with rechecked state, user-owned decisions, and the next step.
+- **bounds-research** answers a bounded factual question from primary sources (installed source, official docs, specs, release notes), with every claim dated, versioned, and cited, and facts kept separate from inference and unknowns.
 - **bounds-why** investigates why code or a design has its current shape, separating cited evidence from inference, alternatives, and unknowns.
 - **bounds-measure** vets a measured number before it is reported or acted on (performance, disk reclaimed, backtest or study results, eval scores, usage counts) and reports a verdict with unit, denominator, run count, range, exclusions, and limiter, or calls it inconclusive.
 - **bounds-blast-radius** traces what an exact change could break beyond its diff and tests the safety fact it depends on through real interfaces when authorized.
@@ -61,6 +62,7 @@ Use bounds-architect to design offline draft sync while preserving old clients.
 Use bounds-how to explain this request flow and its failure paths.
 Use bounds-measure to check this 30% export speedup before it goes in the PR.
 Use bounds-blast-radius to check the downstream effects of this cache change.
+Use bounds-research to find whether this SDK version still supports background refresh on the installed OS.
 Use bounds-why to investigate why this module uses a retry limit.
 Use bounds-ketchup to catch me up on this thread since my last message.
 Use bounds-handoff to write a resume note before I switch providers on this branch.
