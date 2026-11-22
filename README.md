@@ -21,6 +21,7 @@ Portable engineering workflows for Codex and Claude Code. Use them individually 
 - **bounds-how** explains how existing code or a subsystem works from entrypoint through state and boundaries to outcome, sized to the reader.
 - **bounds-architect** designs state ownership, types, interfaces, and module shape before a nontrivial implementation, with real alternatives, compatibility, risk, and verification.
 - **bounds-unslop** edits requested prose to be direct and concrete while preserving meaning, commitments, numbers, uncertainty, citations, quotes, and code.
+- **bounds-post** drafts a public blog post from material you name, such as notes, a log entry, or a shipped PR, in your voice, with every claim checked against its source and private details removed; it never publishes.
 - **bounds-bro** restates the previous answer or supplied text in plain short language, keeping its decision, consequential caveats, and next step; on request, in Simplified Technical English.
 - **bounds-help** guides the user to the Bounds skills actually available on this host, or a useful prompt for one, without starting the work; on request, it sharpens a prompt to be deeper, not bigger.
 - **bounds-automate-me** creates or updates one scoped working-style skill from the user's explicit preferences and bounded evidence of repeated decisions.
@@ -57,6 +58,7 @@ Use bounds-maintain-verification to check the recipe after the search route chan
 Use bounds-automate-me to draft a scoped working-style skill from my stated preferences.
 Use bounds-help to choose a skill for understanding a design decision.
 Use bounds-bro to say that again in plain language.
+Use bounds-post to draft a post from last week's offline sync fix and its PR.
 Use bounds-unslop to tighten this PR description without changing its claims.
 Use bounds-architect to design offline draft sync while preserving old clients.
 Use bounds-how to explain this request flow and its failure paths.
