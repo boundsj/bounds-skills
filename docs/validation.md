@@ -1,6 +1,6 @@
 # Validation
 
-This file records release-candidate evidence and its limits. Installer validation creates fresh temporary homes for child processes, with isolated provider/config/cache directories. It never installs into the invoking user's skill homes. Logs and generated recipes remain in the temporary test projects.
+This file records validation evidence and its limits. Installer validation creates fresh temporary homes for child processes, with isolated provider/config/cache directories. It never installs into the invoking user's skill homes. Logs and generated recipes remain in the temporary test projects.
 
 ## Reproduce
 
@@ -125,3 +125,18 @@ Seven stacked commits add `bounds-grill`, `bounds-options`, `bounds-dial`, `boun
 | Forward exercise | An earlier `bounds-grill` draft was run against a supplied idea session and plan session. Its eight instruction gaps shaped the current round, recommendation, and stopping rules. The current skills were walked through by the round-two reviewer, not executed by a provider. |
 
 These checks do not prove fresh-session discovery or invocation in Codex or Claude, automatic loading of project-installed craft skills, installation from a GitHub tree URL, or device behavior described in the craft references. No user-home installation was performed.
+
+## 0.4.0 additions (2026-11-21)
+
+Eight stacked commits refresh existing skills from Pocock `abeeaf9` and pstack `792440e`, add `bounds-council`, `bounds-handoff`, `bounds-measure`, `bounds-research`, `bounds-post`, and `bounds-cleanup`, and bump the version. Opus 5.5 in Claude Code wrote them from pinned public upstream sources; fresh-context subagents drafted handoff, cleanup, measure, research, and post, and the parent integrated them. Run on macOS 27.0.1 arm64 with Node 26.12.1, Python 3.14.7, and Git 2.54.0.
+
+| Check | Observed result |
+| --- | --- |
+| Package integrity | At every layer head (`c18ff10`, `8417249`, `db2acf1`, `a1694e7`, `2f43b87`, `3fb7e13`, `d9edbff`, `c958a61`), `scripts/check.py`, all eight package tests, and `git diff --check` pass. The new test rejects generic private details: home paths, non-example emails, tailnet and `.local` hostnames, and private IPv4 and IPv6 addresses. The skill-creator quick validator passes for every added or changed skill except mode, whose `disable-model-invocation` extension it rejects as before. Entrypoints changed in this release are 143 to 449 words. |
+| Isolated installation | At the final tree, `scripts/validate_install.py` with `skills@1.7.0` passes for all 33 skills: discovery, selective install, complete file hashes, provider lists, tag upgrade, SHA rollback, provider-scoped and full removal, and sentinel preservation. |
+| Global install selection | In an isolated home with a local-path source, the documented global command installs exactly the 31 workflow skills for Codex and Claude, with payloads identical to the checkout, and no craft skills. |
+| Fresh Codex discovery | A new Codex CLI 0.171.0 app-server reports all 33 skills enabled with no parse errors. |
+| Independent review | Two fresh-context Claude Opus 5.5 reviewers each ran two rounds: one over the refresh and council, one over the other additions and the release. Round one found one blocker and several should-fix items, all fixed. The blocker, reproduced on a fixture: cleanup's unpushed-commit check missed a detached worktree's own HEAD. The should-fix items covered approval across a rebase when base changes affect called code, council edits on review-only requests, T3 task status semantics, measure checks that only fit comparisons, ignored files and stopped containers in cleanup, and search privacy in research. Round two approved every layer except two: the release layer, pending this record, and a handoff fix that would overwrite the backup patch at pickup. Both are resolved, and the remaining round-two nits are applied. |
+| T3 claims | Council's use of `orchestrator_capabilities`, `delegate_task`, `task_status`, and `task_cancel` was checked against the tool descriptions in the installed T3 Code (Beta) app, not by a live delegated run. |
+
+These checks do not prove fresh-session invocation of the new skills in Codex or Claude, a live council run in T3, supplied-artifact forward exercises for the new skills, other-host support, or installation from a GitHub tree URL. No user-home installation was performed.
