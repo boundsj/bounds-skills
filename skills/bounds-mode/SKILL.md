@@ -30,6 +30,7 @@ Read relevant project instructions and skill descriptions. Load a supporting ski
 | Work to pause or pass to another agent | `bounds-handoff` |
 | Rationale behind existing code | `bounds-why` |
 | Downstream effects of a change | `bounds-blast-radius` |
+| A measured number to vet before reporting | `bounds-measure` |
 | A code walkthrough | `bounds-how` |
 | Interfaces and state ownership | `bounds-architect` |
 | Requested prose to tighten | `bounds-unslop` |
