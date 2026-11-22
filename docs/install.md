@@ -4,7 +4,7 @@ Requires Git, Node.js/npm, and the provider installed on the execution host. The
 
 No repository registration or npm publication is needed. `npx` runs the skills CLI, which reads the skill directories directly from GitHub. The shorthand `<owner>/bounds-skills` follows the repository's default branch; use a pinned URL to try an unmerged candidate or keep installations repeatable.
 
-For repeatable installation, choose a reviewed full commit SHA (or a published release tag). Set `bounds_ref` to it, then use the same value on each host. Version 0.4.0 has no published release tag yet. The exact tested revision is in [validation](validation.md).
+For repeatable installation, choose a reviewed full commit SHA (or a published release tag). Set `bounds_ref` to it, then use the same value on each host. Version 0.4.0 is published as tag `v0.4.0`. The exact tested revisions are in [validation](validation.md).
 
 ```sh
 bounds_repo='<owner>/bounds-skills' # Set the public repository or fork to install.
