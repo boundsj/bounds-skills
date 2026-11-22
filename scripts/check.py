@@ -35,6 +35,7 @@ NAMES = {
     "bounds-measure",
     "bounds-research",
     "bounds-post",
+    "bounds-cleanup",
 }
 
 

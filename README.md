@@ -28,6 +28,7 @@ Portable engineering workflows for Codex and Claude Code. Use them individually 
 - **bounds-ship** carries an authorized change to proof, cross-provider review, green required CI, and a PR handoff. Use when asked to ship or finish through PR readiness; merge requires the user’s explicit instruction.
 - **bounds-modernize** reassesses and updates a stale, conflicting, duplicated, or inherited PR. Use for modernizing, rebasing, or taking over existing work while preserving contributor credit.
 - **bounds-leaving-pr-comments** writes attributed GitHub comments on the user’s behalf when posting is authorized: PR comments, inline reviews, replies, and issue comments. Does not itself authorize posting.
+- **bounds-cleanup** measures what uses disk space, proposes deletions by category with gates for uncommitted, unpushed, in-use, and open-PR work, deletes only what you approve, and reports measured space freed.
 - **bounds-grill** questions you in short rounds about an idea, plan, or design, each question with a recommended answer, until decisions are explicit; for an idea, it checks the evidence that it is worth building before anything else.
 - **bounds-options** builds two to four genuinely different variants of an undecided UI, visual, or interaction direction behind a switcher with real worst-case content, stops for your pick or mix, records the decision and approval scope, and removes the harness.
 - **bounds-dial** builds a small dev-only tool for tuning a value judged by eye, ear, or hand when direct attempts keep missing, then applies the version the user saves.
@@ -68,6 +69,7 @@ Use bounds-research to find whether this SDK version still supports background r
 Use bounds-why to investigate why this module uses a retry limit.
 Use bounds-ketchup to catch me up on this thread since my last message.
 Use bounds-handoff to write a resume note before I switch providers on this branch.
+Use bounds-cleanup to free disk space from old worktrees and build output without losing work.
 Use bounds-grill to stress-test whether offline drafts are worth building.
 Use bounds-options to show three directions for the onboarding screen before we build one.
 Use bounds-dial to build a tool for tuning this sheet's spring.
