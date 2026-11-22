@@ -20,6 +20,6 @@ Include, at a scale useful for the task:
 
 Prefer a complete narrow behavior over separate infrastructure, API, and UI phases. For a migration that cannot land in independent slices, use an expand, migrate, remove sequence with explicit compatibility checks. Do not turn a simple edit into a ticket hierarchy or speculative redesign.
 
-Choose existing public interfaces for verification; routine test-boundary choices need no approval ritual. For nontrivial changes, include how to detect a regression in retained behavior, not just the new happy path.
+Choose existing public interfaces for verification; routine test-boundary choices need no approval ritual. Give each proposed test seam one line on what it catches and what it misses. For nontrivial changes, include how to detect a regression in retained behavior, not just the new happy path.
 
 Return the plan in the conversation unless the user requested a durable file or tracker action. Planning alone does not authorize implementation or publication. If implementation is already authorized, use the plan to continue the work.

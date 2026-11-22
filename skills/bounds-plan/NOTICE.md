@@ -16,5 +16,7 @@ Selected source material: Pocock `to-spec`, `to-tickets`, `tdd`.
 
 Adaptation: Retains scope, observable acceptance, verifiable slices and dependency edges. Adds retained behavior; removes required tracker setup, exhaustive stories, ticket publication and seam approval.
 
+Update from Pocock `tdd` at `abeeaf95660ba9e8b7c753eb38f441ca707a8823` (https://github.com/mattpocock/skills/tree/abeeaf95660ba9e8b7c753eb38f441ca707a8823): each proposed test seam gets one line on what it catches and what it misses.
+
 Full license notices are in [LICENSE.txt](LICENSE.txt). This source mapping travels
 with the installed revision; no link to a moving branch is required.

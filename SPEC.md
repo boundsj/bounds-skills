@@ -19,8 +19,8 @@ Build a small, portable collection of engineering workflows for Codex and Claude
 - `bounds-how`: Explains how existing code or a subsystem works from entrypoint through state and boundaries to outcome, sized to the reader.
 - `bounds-architect`: Designs state ownership, types, interfaces, and module shape before a nontrivial implementation, with real alternatives, compatibility, risk, and verification.
 - `bounds-unslop`: Edits requested prose to be direct and concrete while preserving meaning, commitments, numbers, uncertainty, citations, quotes, and code.
-- `bounds-bro`: Restates the previous answer or supplied text in plain short language, keeping its decision, consequential caveats, and next step.
-- `bounds-help`: Guides the user to the Bounds skills actually available on this host, or a useful prompt for one, without starting the work.
+- `bounds-bro`: Restates the previous answer or supplied text in plain short language, keeping its decision, consequential caveats, and next step; on request, in ASD-STE100 Simplified Technical English.
+- `bounds-help`: Guides the user to the Bounds skills actually available on this host, or a useful prompt for one, without starting the work. On request, sharpens a prompt to be deeper, not bigger.
 - `bounds-automate-me`: Creates or updates one scoped working-style skill from the user's explicit preferences and bounded evidence of repeated decisions.
 - `bounds-ship`: Carry an authorized change to proof, cross-provider review, green required CI, and a PR handoff. Use when asked to ship or finish through PR readiness; merge requires the user’s explicit instruction.
 - `bounds-modernize`: Reassess and update a stale, conflicting, duplicated, or inherited PR. Use for modernizing, rebasing, or taking over existing work while preserving contributor credit.
@@ -57,12 +57,13 @@ Adapt selected workflows; do not install upstream collections wholesale or copy 
 - Recall source: pstack `recall` at revision `182f2ce414e83224915c190d2f63239c1608d0a5`; see THIRD_PARTY.md for the adaptation boundary.
 - Theo Browne / tstack: https://github.com/t3dotgg/tstack/tree/7de017b3fc9d50c03cf3ecb98fb71e0ca65a78bd — selected shipping, modernization, review-loop and comment workflows; see THIRD_PARTY.md.
 - Emil Kowalski: https://github.com/emilkowalski/skills/tree/a81dbca07f2217b7103e510c0f13f8d5b017afc9 — selected interface prototyping, review, worst-case data, motion, platform-design and Swift material; see THIRD_PARTY.md.
+- 0.4.0 refresh: Matt Pocock at `abeeaf95660ba9e8b7c753eb38f441ca707a8823` and pstack at `792440e8a560a4a3f63748cdee70491ecd412982` for the updates and additions recorded in THIRD_PARTY.md.
 - Installer: https://github.com/vercel-labs/skills
 
 Retain the applicable upstream MIT notices (Matt Pocock, Lauren Tan, Theo Browne, and Emil Kowalski), source revisions and meaningful adaptation notes. If newer upstream material is needed, explicitly record the chosen revision. Avoid mandatory seam-approval rituals, excessive ticket breakdowns, broad rewrites and Cursor-only model/delegation assumptions.
 
 ## Boundaries and first release acceptance
 
-This is a standalone workstream. No project-specific tickets, paths, private session histories, required tracker integration, or infrastructure automation. Do not publish raw conversation history, private roadmap links or local authentication data.
+This is a standalone workstream. No project-specific tickets, paths, private session histories, required tracker integration, or infrastructure automation. Do not publish raw conversation history, private roadmap links or local authentication data. Skills may fit the maintainer's way of working but stay generic: private sources, tools, and locations come from the user's own instructions at runtime, never from the package. `scripts/check.py` rejects generic private-detail patterns in installable skill files: home-directory paths, non-example email addresses, tailnet hostnames, and private IP addresses.
 
 Deliver coherent skills, selective references, concise docs, attribution and reproducible validation. Test discovery/packaging, reference integrity, representative routing examples, installation/update/removal in isolated homes, and truthful missing-capability behavior. Show actual results and remaining gaps. Real installation into user homes is a separate rollout after the bundle is reviewable; do not change other projects or hosts during authoring.

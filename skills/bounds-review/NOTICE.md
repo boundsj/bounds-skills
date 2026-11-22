@@ -16,6 +16,8 @@ Selected source material: Pocock `code-review`; pstack `interrogate`.
 
 Adaptation: Checks requirements, maintainability and correctness. Pins revisions, supports local snapshots, defaults to one warranted independent reviewer and bounds re-review. Removes model tables and unconditional fan-out.
 
+Update from Pocock at `abeeaf95660ba9e8b7c753eb38f441ca707a8823` (https://github.com/mattpocock/skills/tree/abeeaf95660ba9e8b7c753eb38f441ca707a8823): start each reviewer with a fresh context, not a fork of the implementing conversation. Bounds adds the rule for carrying approval across a rebase, squash, or amend.
+
 Full license notices are in [LICENSE.txt](LICENSE.txt). This source mapping travels
 with the installed revision; no link to a moving branch is required.
 
