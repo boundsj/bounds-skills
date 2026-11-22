@@ -12,7 +12,7 @@ Return enough working context to resume without repeating decisions or mistaking
 
 Use the requested topic, projects, hosts, and dates. Otherwise state a default of the active project and the last seven days, in the user's timezone. Preserve “all” scope: paginate or report incomplete coverage rather than silently sampling. Ask only about material ambiguity.
 
-Use a supplied state capsule first; mine only missing context. Discover the execution environment: the client displaying a thread may be on another computer. Local tools do not see every connected host. Read [source discovery](references/sources.md) for selected sources.
+Use a supplied state capsule or handoff note first; mine only missing context. Discover the execution environment: the client displaying a thread may be on another computer. Local tools do not see every connected host. Read [source discovery](references/sources.md) for selected sources.
 
 ## Recover the thread
 
