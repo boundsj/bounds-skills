@@ -60,8 +60,9 @@ Designs the shape of a bigger change before any code is written: who owns the st
 ### bounds-grill
 Asks you questions in short rounds, each with a suggested answer, until every decision about an idea or plan is out in the open. For a new idea, it first checks whether the problem is real. Documentation is optional: only on request, it records agreed glossary terms and important decisions in the project.
 
-- **By name:** `/bounds-grill question this order model and record agreed glossary terms and important decisions in this project's docs`
-- **Just ask:** "Grill me on this order design, and save the vocabulary and important tradeoffs we agree on in this project."
+- **By name:** `/bounds-grill is offline drafts worth building?`
+- **Just ask:** "Grill me on this plan. I want to find the holes before we build anything."
+- **With docs:** "Grill me on this order design, and save the vocabulary and important tradeoffs we agree on in this project's docs."
 
 ### bounds-options
 Builds two to four genuinely different versions of an undecided design behind a switcher, using realistic worst-case content. Then it waits for you to choose. It removes the switcher afterwards.
