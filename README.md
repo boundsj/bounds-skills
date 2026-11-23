@@ -260,7 +260,7 @@ After installing, start a fresh agent session and try one skill by name to confi
 
 ## Version
 
-**0.4.0** (tag `v0.4.0`) adds council, handoff, measure, research, post and cleanup, and refreshes existing skills from newer upstream versions. See [validation](docs/validation.md) for what has been tested on which provider, and [compatibility](docs/compatibility.md) for provider differences.
+**0.5.0** (tag `v0.5.0`) adds an optional documentation mode to bounds-grill: when you ask, it records agreed glossary terms and important decisions in your project as you go. 0.4.0 added council, handoff, measure, research, post and cleanup. See [validation](docs/validation.md) for what has been tested on which provider, and [compatibility](docs/compatibility.md) for provider differences.
 
 ## Develop
 
