@@ -2,6 +2,9 @@
   <img src="docs/assets/banner.png" alt="bounds-skills: shared engineering workflows for coding agents" width="100%">
 </p>
 
+> [!NOTE]
+> **Built for one person's workflow, shared as an example.** These skills draw on work by [Matt Pocock](https://github.com/mattpocock/skills), [Lauren Tan (pstack)](https://github.com/cursor/plugins/tree/main/pstack), [Theo Browne (tstack)](https://github.com/t3dotgg/tstack) and [Emil Kowalski](https://github.com/emilkowalski/skills). I've customized them heavily for the way I work. I'm sharing them so others can borrow ideas, read how they're built, or fork them. They're tuned to my habits, so expect to adapt them before they fit yours.
+
 # bounds-skills
 
 A library of engineering skills for coding agents like **Codex** and **Claude Code**. Each skill teaches the agent one way of working well: reproduce a bug before fixing it, check a number before reporting it, review a change against what was actually asked.
