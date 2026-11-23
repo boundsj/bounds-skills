@@ -4,7 +4,7 @@ Requires Git, Node.js/npm, and the provider installed on the execution host. The
 
 No repository registration or npm publication is needed. `npx` runs the skills CLI, which reads the skill directories directly from GitHub. The shorthand `<owner>/bounds-skills` follows the repository's default branch; use a pinned URL to try an unmerged candidate or keep installations repeatable.
 
-For repeatable installation, choose a reviewed full commit SHA (or a published release tag). Set `bounds_ref` to it, then use the same value on each host. Version 0.4.0 is published as tag `v0.4.0`. The exact tested revisions are in [validation](validation.md).
+For repeatable installation, choose a reviewed full commit SHA (or a published release tag). Set `bounds_ref` to it, then use the same value on each host. Version 0.5.0 is published as tag `v0.5.0`. The exact tested revisions are in [validation](validation.md).
 
 ```sh
 bounds_repo='<owner>/bounds-skills' # Set the public repository or fork to install.
@@ -46,7 +46,7 @@ npx --yes skills@1.7.0 list --global --agent claude-code
 npx --yes skills@1.7.0 check
 ```
 
-`check` is an informational installer status check and may include other tracked skills. Inspect its skipped/error messages. It does not prove provider discovery or invocation. Start a fresh Codex or Claude Code session and confirm the installed names are available. Invoke a small task explicitly before relying on the bundle across projects.
+`check` reports installer status and may include other tracked skills. In `skills@1.7.0` it can also update an outdated tracked skill, so do not treat it as read-only. Inspect its skipped/error messages. It does not prove provider discovery or invocation. Start a fresh Codex or Claude Code session and confirm the installed names are available. Invoke a small task explicitly before relying on the bundle across projects.
 
 For a reproducible upgrade or rollback, change `bounds_ref` to the chosen revision and rerun `add` with your same explicit skill/agent selection. Keep the previous ref if you need to roll back. Re-adding overwrites selected skill names, so preserve any intentional local edits first.
 

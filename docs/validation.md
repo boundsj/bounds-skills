@@ -214,3 +214,9 @@ path covers a different opt-out case. We have not proved confirmation across
 turns, five-round continuation, lazy first-file creation, rejection of every
 ineligible ADR, collisions under concurrent writers, supersession, automatic
 catalog selection, other hosts, or a GitHub-tree install of this candidate.
+
+## 0.5.0 release (2026-11-23)
+
+Release tree: `59d5706` plus this version bump. Every file under `skills/` and `scripts/` is identical to `59d5706`, the merged bounds-grill documentation mode recorded above. `python3 scripts/check.py` and `python3 -m unittest discover -s tests` pass on the release tree.
+
+Since the 0.4.0 record: `v0.4.0` was installed from its GitHub tree URL with `skills@1.7.0` on two macOS hosts and one Linux host. On each, fresh Codex and Claude Code sessions listed the 30 model-invocable workflow skills, an explicit `bounds-mode` invocation loaded, and a small explicit `bounds-bro` task succeeded. On one host, `skills check` also updated an unrelated tracked skill, so treat `check` as able to change installed skills.
