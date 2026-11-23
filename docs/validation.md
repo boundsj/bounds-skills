@@ -142,3 +142,75 @@ Eight stacked commits refresh existing skills from Pocock `abeeaf9` and pstack `
 Tag `v0.4.0` adds only README and install wording about the tag to the tested final tree; every file under `skills/` and `scripts/` is identical to `c958a61`.
 
 These checks do not prove fresh-session invocation of the new skills in Codex or Claude, a live council run in T3, supplied-artifact forward exercises for the new skills, other-host support, or installation from a GitHub tree URL. No user-home installation was performed.
+
+## Optional bounds-grill documentation mode (2026-11-23)
+
+Implementation payload: `9b736d67c4822a8581569a0e0d8fbeac2342fdbd`, based on
+`8e02102fae355ae94619cf870c0ebc7f1bc5786c`. VERSION remains 0.4.0. The skill
+frontmatter and description are unchanged; its body is 441 words (limit 450),
+and its description is 384 characters (limit 1,024). No new skill is added:
+33 total packages, including 31 global workflow skills and two project craft skills.
+
+Executed commands:
+
+```sh
+python3 scripts/check.py
+python3 -m unittest discover -s tests
+python3 scripts/validate_install.py
+```
+
+All pass: package/reference/privacy checks, eight package tests, and isolated
+`skills@1.7.0` discovery, selective installation, payload hashes, provider lists,
+disposable tag upgrade/SHA rollback, scoped/full removal, and sentinel preservation.
+The local-path candidate was then installed as `bounds-grill` only into the same
+isolated provider homes using the real skills CLI, before the behavior runs.
+No GitHub test repository or real user-home installation was created.
+
+Reproduce the behavior matrix after installing that candidate into the temporary
+install-run (the validator's removal checks leave it uninstalled). Use the
+`isolated_env` helper from `scripts/validate_install.py` to run the CLI with that
+run's temporary HOME and provider directories, from its `work` directory:
+
+```sh
+npx --yes skills@1.7.0 add "$candidate_checkout" --global --agent codex claude-code --skill bounds-grill --yes
+```
+
+Then run each of `grill`, `grill_docs`, and `grill_readonly` with both providers;
+`install_run` is the validator's printed directory. Credential paths below refer
+to existing provider files, never their contents:
+
+```sh
+python3 scripts/run_behavior.py "$install_run" --provider codex --case grill --model gpt-6.1-sol --effort medium --codex-auth "$codex_auth" --timeout 240
+python3 scripts/run_behavior.py "$install_run" --provider codex --case grill_docs --model gpt-6.1-sol --effort medium --codex-auth "$codex_auth" --timeout 240
+python3 scripts/run_behavior.py "$install_run" --provider codex --case grill_readonly --model gpt-6.1-sol --effort medium --codex-auth "$codex_auth" --timeout 240
+python3 scripts/run_behavior.py "$install_run" --provider claude --case grill --model claude-opus-5-5 --effort medium --claude-auth "$claude_auth" --timeout 240
+python3 scripts/run_behavior.py "$install_run" --provider claude --case grill_docs --model claude-opus-5-5 --effort medium --claude-auth "$claude_auth" --timeout 240
+python3 scripts/run_behavior.py "$install_run" --provider claude --case grill_readonly --model claude-opus-5-5 --effort medium --claude-auth "$claude_auth" --timeout 240
+```
+
+Providers: Codex CLI 0.170.0 (requested `gpt-6.1-sol`, medium; the event stream
+records no separate executed-model identity) and Claude Code 2.1.328 (requested
+and reported `claude-opus-5-5`, medium). All six processes exited 0. The author
+inspected the actual files, tracked diffs, untracked paths, Git heads, and final
+responses rather than treating exit status or provider claims as behavioral proof.
+
+| Case | Codex observation | Claude observation |
+| --- | --- | --- |
+| `grill` | Read supplied facts, asked three questions with recommendations, no files changed | Read supplied facts and code, asked three questions with recommendations, no files changed |
+| `grill_docs` | Added confirmed Order definition and avoided synonyms to Ordering's glossary; created `src/ordering/docs/adr/0004-retain-cancelled-orders.md`; marked retention as intended policy; asked three further questions | Same two paths and confirmed records, marked ADR accepted intended policy, checked code lacked implementation, asked three further questions |
+| `grill_readonly` | Returned glossary and ADR drafts in conversation, kept Reservation unresolved, asked three further questions, no files changed | Returned both drafts, kept Reservation unresolved, asked three further questions, no files changed |
+
+Both docs-mode fixtures modified only `src/ordering/GLOSSARY.md` and created the
+single `0004` ADR. Neither persisted Reservation, changed Billing, the map, the
+existing `0003` ADR, code, or supplied answers. All six fixture heads remained at
+their baseline commits; no provider commits occurred. Temporary copied credential
+files were verified absent after every run. Raw traces and authentication data
+are not published.
+
+Coverage limits: these are fresh single-turn invocations against supplied,
+explicitly confirmed answers, not a live multi-turn interview. The existing
+harness cannot feed successive answers for these cases; the Codex-only resume
+path covers a different opt-out case. We have not proved confirmation across
+turns, five-round continuation, lazy first-file creation, rejection of every
+ineligible ADR, collisions under concurrent writers, supersession, automatic
+catalog selection, other hosts, or a GitHub-tree install of this candidate.
