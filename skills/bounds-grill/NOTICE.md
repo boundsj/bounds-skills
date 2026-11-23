@@ -22,3 +22,7 @@ past behavior, assumption mapping, and pre-mortems). Removes required sub-agent
 dispatch.
 
 Full Bounds and upstream notices are in [LICENSE.txt](LICENSE.txt).
+
+## Optional documentation mode
+
+Additionally adapts Matt Pocock’s [grill-with-docs](https://github.com/mattpocock/skills/blob/abeeaf95660ba9e8b7c753eb38f441ca707a8823/skills/engineering/grill-with-docs/SKILL.md), [domain-modeling](https://github.com/mattpocock/skills/blob/abeeaf95660ba9e8b7c753eb38f441ca707a8823/skills/engineering/domain-modeling/SKILL.md), [GLOSSARY-FORMAT.md](https://github.com/mattpocock/skills/blob/abeeaf95660ba9e8b7c753eb38f441ca707a8823/skills/engineering/domain-modeling/GLOSSARY-FORMAT.md), [ADR-FORMAT.md](https://github.com/mattpocock/skills/blob/abeeaf95660ba9e8b7c753eb38f441ca707a8823/skills/engineering/domain-modeling/ADR-FORMAT.md), at revision `abeeaf95660ba9e8b7c753eb38f441ca707a8823`. Retains terminology checks and selective incremental records; adds explicit scope, confirmed capture, and project conventions; removes provider-specific composition and mandatory delegation. Existing source contracts and notices remain unchanged.
