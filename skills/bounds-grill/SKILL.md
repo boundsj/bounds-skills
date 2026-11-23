@@ -15,6 +15,8 @@ Question the user in rounds until every decision is explicit and nothing rests o
 
 Read the mode's reference before the first round. Infer the mode from the request; ask only when both fit.
 
+When documentation is requested, read [domain records](references/domain-records.md); capture confirmed records within authorized scope during rounds.
+
 ## Prepare
 
 Privately frame how an expert would approach this, what raw material they would start from, and what outside check would show the result is right. Let that shape the questions without narrating it.
@@ -39,7 +41,7 @@ In idea mode, evidence comes first. Until something shows that someone has the p
 
 ## Close
 
-Write the closing summary from the mode's reference, keeping user decisions, verified facts, and open assumptions distinct. Take no action until the user confirms it. Confirmation covers the summary as written, not implementation.
+Write the closing summary from the mode's reference, keeping user decisions, verified facts, and open assumptions distinct. Apart from authorized documentation, take no action until the user confirms it. Confirmation covers the summary as written, not implementation.
 
 Name the next step where one fits:
 

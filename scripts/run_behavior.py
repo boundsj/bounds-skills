@@ -30,6 +30,9 @@ print(json.dumps(items[start:start + args.size]))
 '''
 
 TASKS = {
+    "grill": ("bounds-grill", "Grill me on the order model in DOMAIN.md. Start the first round; do not write documentation or change files."),
+    "grill_docs": ("bounds-grill", "Grill this order model with docs. DOMAIN.md contains my already-confirmed answers and one unresolved proposal. I authorize incremental documentation of the confirmed records in this project now, including the qualifying ADR. Do not record the unresolved proposal as settled. Then ask the next round. Do not change code, commit, or publish."),
+    "grill_readonly": ("bounds-grill", "Grill this order model with docs using the confirmed answers in DOMAIN.md. This request is read-only: show glossary and ADR drafts in the conversation, then ask the next round. Do not write files, commit, or publish. Keep the unresolved proposal unsettled."),
     "simple": ("bounds-mode", 'Fix only the typo "teh" in README.md. Verify the edit.'),
     "plan": ("bounds-plan", "Plan a CSV output option for this CLI. Keep current JSON output as the default. Deliver the plan here; do not implement it."),
     "debug": ("bounds-mode", 'The list CLI says pages are one-based but `python3 app.py list --page 1 --size 2` returns ["gamma", "delta"] instead of ["alpha", "beta"]. Reproduce, fix, and verify this bug.'),
@@ -100,6 +103,30 @@ def run(args):
         (project / "app.py").write_text(APP)
         (project / "README.md").write_text('# Fixture CLI\n\nUse `python3 app.py list --page 1 --size 2` to list items.\nPages are one-based; page 1 returns ["alpha", "beta"], page 2 returns ["gamma", "delta"].\nJSON is the default output. Page and size must be positive.\n\nThis is teh fixture.\n')
 
+    if args.case in ("grill", "grill_docs", "grill_readonly"):
+        ordering = project / "src/ordering"
+        (ordering / "docs/adr").mkdir(parents=True)
+        (project / "GLOSSARY-MAP.md").write_text(
+            "# Glossary Map\n\n## Contexts\n\n"
+            "- [Ordering](src/ordering/GLOSSARY.md): owns orders\n"
+            "- [Billing](src/billing/GLOSSARY.md): owns invoices\n\n"
+            "## Relationships\n\nOrdering sends confirmed orders to Billing.\n")
+        (ordering / "GLOSSARY.md").write_text("# Ordering\n\nTracks orders.\n\n## Language\n")
+        billing = project / "src/billing"
+        billing.mkdir()
+        (billing / "GLOSSARY.md").write_text("# Billing\n\nOwns invoices.\n\n## Language\n")
+        (ordering / "docs/adr/0003-existing.md").write_text("# Existing decision\n\nKeep this historical record unchanged.\n")
+        (project / "DOMAIN.md").write_text(
+            "# Supplied user answers\n\n"
+            "Confirmed: In Ordering, Order means a customer's confirmed request for goods. "
+            "Use Order, avoiding Purchase and transaction.\n\n"
+            "Confirmed decision: Keep cancelled orders for seven years, rather than deleting them. "
+            "Deletion is the obvious alternative but would irreversibly destroy audit evidence; "
+            "the retention requirement explains this otherwise surprising tradeoff. "
+            "This is an intended domain policy, not a claim about implemented behavior.\n\n"
+            "Unresolved proposal: whether a Reservation is distinct from an Order. "
+            "Do not treat Reservation as accepted vocabulary or policy.\n")
+
     def git(*argv, **extra_env):
         return subprocess.run(["git", *argv], cwd=project, env=dict(env, **extra_env), text=True, capture_output=True, check=True).stdout.strip()
 
@@ -128,6 +155,7 @@ def run(args):
     if args.case == "docs":
         (project / "AGENTS.md").write_text('# Agent guide\n\nRun `python3 app.py --list` to verify listing.\nAlways preserve JSON default.\nAlways preserve JSON default.\nSee README.md for expected page results.\n')
 
+    baseline = git("rev-parse", "HEAD")
     skill, task = TASKS[args.case]
     prefix = "$" if args.provider == "codex" else "/"
     prompt = (f"{prefix}{skill} " if skill else "") + task
@@ -192,7 +220,8 @@ def run(args):
         auth_target.unlink(missing_ok=True)
     summary = {"provider": args.provider, "model_requested": args.model, "case": args.case,
                "exit": code, "project": str(project), "revision": git("rev-parse", "HEAD"),
-               "changed": git("status", "--short"), "evaluation": "Requires artifact and trace review"}
+               "changed": git("status", "--short"), "baseline": baseline,
+               "head_unchanged": git("rev-parse", "HEAD") == baseline, "evaluation": "Requires artifact and trace review"}
     (root / "result.json").write_text(json.dumps(summary, indent=2) + "\n")
     print(json.dumps(summary, indent=2))
     return code

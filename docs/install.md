@@ -36,6 +36,8 @@ npx --yes skills@1.7.0 remove bounds-web-craft --agent codex claude-code --yes
 
 Project removal leaves empty `.agents/skills/` and `.claude/skills/` folders and an empty `skills-lock.json`; delete them if nothing else uses them.
 
+The optional documentation mode ships with `bounds-grill`; no additional skill is needed.
+
 Installing a selection does not remove previously installed skills. Mode can use whichever supporting skills are present and reports missing ones. Each skill's references and license notices travel with it. In the tested CLI, Codex reads the canonical `~/.agents/skills` copy; Claude receives links in its configured skill home. Other providers that read the universal directory can also discover those files. Agent selection controls installer targets, not universal-directory visibility. Avoid `--all`, which selects every supported agent.
 
 ```sh
